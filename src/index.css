@@ -43,9 +43,9 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(185, 57%, 63%));
-    --gradient-hero: linear-gradient(180deg, hsl(349, 38%, 93%), hsl(0, 0%, 100%), hsl(153, 59%, 95%));
-    --gradient-accent: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(185, 57%, 63%), hsl(153, 59%, 75%));
+    --gradient-primary: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(262, 44%, 60%), hsl(185, 57%, 63%));
+    --gradient-hero: linear-gradient(180deg, hsl(262, 44%, 95%), hsl(262, 44%, 85%), hsl(0, 0%, 100%));
+    --gradient-accent: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(262, 44%, 55%), hsl(262, 44%, 65%));
     
     /* Shadows */
     --shadow-card: 0 2px 8px hsl(262 44% 71% / 0.08);
@@ -112,13 +112,13 @@ All colors MUST be HSL.
   }
 
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(185, 57%, 63%), hsl(153, 59%, 75%));
+    background: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(262, 44%, 60%), hsl(185, 57%, 63%));
     background-size: 200% 100%;
     animation: wave-gradient 3s ease-in-out infinite;
   }
 
   .gradient-hero {
-    background: linear-gradient(135deg, hsl(349, 38%, 93%), hsl(0, 0%, 100%), hsl(153, 59%, 95%));
+    background: linear-gradient(135deg, hsl(262, 44%, 95%), hsl(262, 44%, 85%), hsl(0, 0%, 100%));
     background-size: 200% 200%;
     animation: wave-gradient-hero 6s ease-in-out infinite;
   }
