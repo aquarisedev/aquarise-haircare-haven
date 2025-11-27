@@ -41,7 +41,11 @@ const Categories = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div
-                  className={`mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${category.gradient} shadow-lg`}
+                  className={`mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${category.gradient} shadow-lg animate-wave-gradient`}
+                  style={{ 
+                    backgroundSize: '200% 200%',
+                    animationDelay: `${index * 0.3}s`
+                  }}
                 >
                   <Icon className="h-10 w-10 text-white" />
                 </div>
