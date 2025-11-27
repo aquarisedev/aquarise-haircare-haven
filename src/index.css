@@ -107,14 +107,20 @@ All colors MUST be HSL.
 @layer utilities {
   .gradient-text {
     @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
+    background-size: 200% 100%;
+    animation: wave-gradient 3s ease-in-out infinite;
   }
 
   .gradient-primary {
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(185, 57%, 63%), hsl(153, 59%, 75%));
+    background-size: 200% 100%;
+    animation: wave-gradient 3s ease-in-out infinite;
   }
 
   .gradient-hero {
-    background: var(--gradient-hero);
+    background: linear-gradient(135deg, hsl(349, 38%, 93%), hsl(0, 0%, 100%), hsl(153, 59%, 95%));
+    background-size: 200% 200%;
+    animation: wave-gradient-hero 6s ease-in-out infinite;
   }
 
   .hover-scale {
@@ -127,5 +133,23 @@ All colors MUST be HSL.
 
   .card-shadow-hover {
     box-shadow: var(--shadow-card-hover);
+  }
+
+  @keyframes wave-gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes wave-gradient-hero {
+    0%, 100% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
   }
 }
