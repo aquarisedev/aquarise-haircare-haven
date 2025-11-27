@@ -1,10 +1,12 @@
-import { Search, ShoppingCart, User, Instagram, Menu } from "lucide-react";
+import { Search, ShoppingCart, User, Instagram, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useState } from "react";
 
 const Header = () => {
   const [cartCount] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-surface shadow-sm">
@@ -20,7 +22,11 @@ const Header = () => {
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <button className="lg:hidden">
+            <button 
+              className="lg:hidden"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Abrir menu"
+            >
               <Menu className="h-6 w-6 text-foreground" />
             </button>
             <div className="flex flex-col">
@@ -135,6 +141,88 @@ const Header = () => {
           </ul>
         </div>
       </nav>
+
+      {/* Mobile Menu Drawer */}
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <SheetContent side="left" className="w-[280px] sm:w-[350px]">
+          <SheetHeader>
+            <SheetTitle className="gradient-text text-2xl font-bold font-heading">
+              Aquarise
+            </SheetTitle>
+          </SheetHeader>
+          
+          <nav className="mt-8">
+            <ul className="space-y-1">
+              <li>
+                <a
+                  href="/"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#produtos"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">Produtos</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#haskell"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">HASKELL</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#lola"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">LOLA</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#sobre"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">Sobre</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contato"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">Contato</span>
+                </a>
+              </li>
+            </ul>
+
+            <div className="mt-8 border-t border-border pt-6">
+              <a
+                href="https://instagram.com/aquariseshop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+              >
+                <Instagram className="h-5 w-5" />
+                <span className="font-medium">@aquariseshop</span>
+              </a>
+            </div>
+          </nav>
+        </SheetContent>
+      </Sheet>
     </header>
   );
 };
