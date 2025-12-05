@@ -4,6 +4,78 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
+import { Button } from "./ui/button";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
+const ProductCollectionSection = ({
+  collection,
+  products,
+  onProductClick
+}: {
+  collection: string;
+  products: Product[];
+  onProductClick: (product: Product) => void;
+}) => {
+  const { t } = useTranslation();
+  // Initial visible count: 4 (1 row on desktop)
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + 4);
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(4);
+  };
+
+  const visibleProducts = products.slice(0, visibleCount);
+  const hasMore = visibleCount < products.length;
+  const canShowLess = visibleCount > 4;
+
+  return (
+    <div className="mb-12">
+      <h4 className="mb-6 text-xl font-semibold text-secondary">
+        {collection !== "Outros" ? collection : t("products.collection")}
+      </h4>
+
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {visibleProducts.map((product) => (
+          <div key={product.id} className="min-w-0">
+            <ProductCard
+              {...product}
+              onClick={() => onProductClick(product)}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Show More / Show Less Buttons */}
+      <div className="mt-6 flex justify-center gap-4">
+        {hasMore && (
+          <Button
+            variant="outline"
+            onClick={handleShowMore}
+            className="flex items-center gap-2"
+          >
+            {t("products.showMore", "Mostrar mais")}
+            <ChevronDown className="h-4 w-4" />
+          </Button>
+        )}
+
+        {canShowLess && (
+          <Button
+            variant="ghost"
+            onClick={handleShowLess}
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary"
+          >
+            {t("products.showLess", "Mostrar menos")}
+            <ChevronUp className="h-4 w-4" />
+          </Button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ProductGrid = () => {
   const { t } = useTranslation();
@@ -140,21 +212,12 @@ const ProductGrid = () => {
                   {brand}
                 </h3>
                 {Object.entries(collections).map(([collection, collectionProducts]) => (
-                  <div key={collection} className="mb-12">
-                    <h4 className="mb-6 text-xl font-semibold text-secondary">
-                      {collection !== "Outros" ? collection : t("products.collection")}
-                    </h4>
-                    <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory -mx-4 px-4 scrollbar-hide sm:grid sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
-                      {collectionProducts.map((product) => (
-                        <div key={product.id} className="min-w-[280px] snap-center sm:min-w-0">
-                          <ProductCard
-                            {...product}
-                            onClick={() => handleProductClick(product)}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  <ProductCollectionSection
+                    key={collection}
+                    collection={collection}
+                    products={collectionProducts}
+                    onProductClick={handleProductClick}
+                  />
                 ))}
               </div>
             ))
