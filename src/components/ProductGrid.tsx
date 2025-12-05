@@ -1,104 +1,149 @@
 import ProductCard from "./ProductCard";
-
-const products = [
-  {
-    id: 1,
-    name: "Shampoo Cachos Sim",
-    brand: "HASKELL",
-    size: "300ml",
-    price: 21.95,
-    rating: 5,
-    featured: true,
-  },
-  {
-    id: 2,
-    name: "Condicionador Cachos Sim",
-    brand: "HASKELL",
-    size: "300ml",
-    price: 21.95,
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: "Máscara Cachos Sim",
-    brand: "HASKELL",
-    size: "300g",
-    price: 21.95,
-    rating: 5,
-  },
-  {
-    id: 4,
-    name: "Máscara Cavalo Forte",
-    brand: "HASKELL",
-    size: "900g",
-    price: 37.95,
-    rating: 5,
-    featured: true,
-  },
-  {
-    id: 5,
-    name: "Creme de Pentear Ela é Carioca",
-    brand: "LOLA",
-    size: "480g",
-    price: 21.95,
-    rating: 5,
-  },
-  {
-    id: 6,
-    name: "Máscara Morte Súbita",
-    brand: "LOLA",
-    size: "450g",
-    price: 18.95,
-    rating: 5,
-  },
-  {
-    id: 7,
-    name: "Óleo Papo Reto",
-    brand: "LOLA",
-    size: "50ml",
-    price: 18.95,
-    rating: 5,
-  },
-  {
-    id: 8,
-    name: "Máscara Be(m)dita Ghee Banana",
-    brand: "LOLA",
-    size: "350g",
-    price: 21.95,
-    rating: 5,
-    featured: true,
-  },
-];
+import { products, Product } from "@/data/products";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import ProductDetails from "./ProductDetails";
 
 const ProductGrid = () => {
+  const { t } = useTranslation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const searchQuery = searchParams.get("search")?.toLowerCase() || "";
+  const productIdParam = searchParams.get("product");
+
+  // Sync URL with selected product
+  useEffect(() => {
+    if (productIdParam) {
+      const product = products.find((p) => p.id === Number(productIdParam));
+      if (product) {
+        setSelectedProduct(product);
+      }
+    } else {
+      setSelectedProduct(null);
+    }
+  }, [productIdParam]);
+
+  const handleProductClick = (product: Product) => {
+    setSelectedProduct(product);
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      newParams.set("product", product.id.toString());
+      return newParams;
+    });
+  };
+
+  const handleCloseModal = () => {
+    setSelectedProduct(null);
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      newParams.delete("product");
+      return newParams;
+    });
+  };
+
+  // Filter products based on search query
+  const filteredProducts = searchQuery
+    ? products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery) ||
+      product.brand.toLowerCase().includes(searchQuery) ||
+      product.collection?.toLowerCase().includes(searchQuery)
+    )
+    : products;
+
+  // Group products by Brand and then by Collection (only if no search query)
+  const groupedProducts = !searchQuery
+    ? products.reduce((acc, product) => {
+      const brand = product.brand;
+      const collection = product.collection || "Outros";
+
+      if (!acc[brand]) {
+        acc[brand] = {};
+      }
+      if (!acc[brand][collection]) {
+        acc[brand][collection] = [];
+      }
+      acc[brand][collection].push(product);
+      return acc;
+    }, {} as Record<string, Record<string, typeof products>>)
+    : {};
+
   return (
     <section id="produtos" className="py-16 lg:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold font-heading lg:text-4xl">
-            Produtos em Destaque
+            {searchQuery ? t("search.results", "Resultados da Busca") : t("products.featured")}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Descubra nossa seleção premium de produtos HASKELL e LOLA
+            {searchQuery
+              ? `${filteredProducts.length} ${t("search.found", "produtos encontrados para")} "${searchQuery}"`
+              : t("products.subtitle")}
           </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} {...product} />
-          ))}
-        </div>
+        {searchQuery ? (
+          // Search Results View (Flat Grid)
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {filteredProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                {...product}
+                onClick={() => handleProductClick(product)}
+              />
+            ))}
+            {filteredProducts.length === 0 && (
+              <div className="col-span-full text-center py-12">
+                <p className="text-xl text-muted-foreground">
+                  {t("search.noResults", "Nenhum produto encontrado.")}
+                </p>
+              </div>
+            )}
+          </div>
+        ) : (
+          // Default Grouped View
+          Object.entries(groupedProducts).map(([brand, collections]) => (
+            <div key={brand} id={brand.toLowerCase()} className="mb-16">
+              <h3 className="mb-8 text-2xl font-bold text-primary border-b pb-2">
+                {brand}
+              </h3>
+              {Object.entries(collections).map(([collection, collectionProducts]) => (
+                <div key={collection} className="mb-12">
+                  <h4 className="mb-6 text-xl font-semibold text-secondary">
+                    {collection !== "Outros" ? collection : t("products.collection")}
+                  </h4>
+                  <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory -mx-4 px-4 scrollbar-hide sm:grid sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 sm:overflow-visible sm:pb-0 sm:mx-0 sm:px-0">
+                    {collectionProducts.map((product) => (
+                      <div key={product.id} className="min-w-[280px] snap-center sm:min-w-0">
+                        <ProductCard
+                          {...product}
+                          onClick={() => handleProductClick(product)}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))
+        )}
 
         <div className="mt-12 text-center">
           <a
             href="#todos-produtos"
             className="inline-flex items-center gap-2 text-primary font-medium hover:underline"
           >
-            Ver todos os produtos
+            {t("products.viewAll")}
             <span className="text-lg">→</span>
           </a>
         </div>
       </div>
+
+      <ProductDetails
+        product={selectedProduct}
+        open={!!selectedProduct}
+        onOpenChange={(open) => !open && handleCloseModal()}
+      />
     </section>
   );
 };
