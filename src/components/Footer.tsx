@@ -5,28 +5,6 @@ import { Button } from "@/components/ui/button";
 const Footer = () => {
   return (
     <footer className="mt-20 bg-surface border-t border-border">
-      {/* Newsletter */}
-      <div className="gradient-primary py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="mb-2 text-2xl font-bold font-heading text-white">
-            Receba Ofertas Exclusivas
-          </h3>
-          <p className="mb-6 text-white/90">
-            Cadastre-se e ganhe 10% na primeira compra!
-          </p>
-          <div className="mx-auto flex max-w-md gap-2">
-            <Input
-              type="email"
-              placeholder="Seu melhor e-mail"
-              className="bg-white border-white"
-            />
-            <Button variant="outline" className="bg-white text-primary hover:bg-white/90">
-              Cadastrar
-            </Button>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="py-12">
         <div className="container mx-auto px-4">
@@ -135,7 +113,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-border py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Aquarise. Desenvolvido com ♥</p>
+          <p>© 2025 Aquarise. Desenvolvido com ♥ pela NeoVertex</p>
         </div>
       </div>
     </footer>
