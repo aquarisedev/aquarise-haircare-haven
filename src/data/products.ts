@@ -10,6 +10,7 @@ export interface Product {
   featured?: boolean;
   description: string;
   imageClassName?: string;
+  groups?: string[];
 }
 
 export const products: Product[] = [
@@ -23,6 +24,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/cavalo-forte-shampoo.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Fortalece e restaura profundamente os fios, auxiliando no crescimento saudável. Com Biotina, Pantenol e Queratina, aumenta a elasticidade e o brilho."
   },
   {
@@ -34,6 +37,8 @@ export const products: Product[] = [
     price: 37.95,
     category: "Shampoo",
     image: "/cavalo-forte-shampoo-1l.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Versão de 1L do Shampoo Cavalo Forte. Limpeza fortalecedora que estimula o crescimento e recupera o brilho dos fios."
   },
   {
@@ -45,6 +50,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/cavalo-forte-condicionador.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Desembaraça e sela as cutículas, proporcionando força e brilho. Auxilia no combate à quebra e pontas duplas."
   },
   {
@@ -56,6 +63,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/cavalo-forte-mascara-300g.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Tratamento profundo que reconstrói a fibra capilar, proporcionando força, brilho e crescimento acelerado."
   },
   {
@@ -68,6 +77,8 @@ export const products: Product[] = [
     category: "Máscara",
     image: "/cavalo-forte-mascara-900g.png",
     featured: true,
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Versão profissional de 900g. Hidratação e reconstrução intensa para cabelos fracos e com dificuldade de crescimento."
   },
   {
@@ -79,6 +90,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Leave-in",
     image: "/cavalo-forte-leave-in.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Finalizador sem enxágue que protege os fios, facilita o pentear e reforça a estrutura capilar."
   },
   {
@@ -90,6 +103,8 @@ export const products: Product[] = [
     price: 12.95,
     category: "Tratamento",
     image: "/cavalo-forte-complexo-fortalecedor.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Concentrado de vitaminas que potencializa a hidratação e o fortalecimento quando adicionado à máscara."
   },
   {
@@ -101,6 +116,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/cavalo-forte-selante-pontas.png",
+    groups: ["RECONSTRUÇÃO","CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Repara e une as pontas duplas, recuperando a resistência e o aspecto saudável dos fios."
   },
 
@@ -114,6 +131,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/bendito-loiro-shampoo.png",
+    groups: ["LOIROS ILUMINADOS","RECONSTRUÇÃO"],
+
     description: "Reconstrução para cabelos descoloridos. Limpa suavemente enquanto repõe massa e combate o emborrachamento."
   },
   {
@@ -125,6 +144,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/bendito-loiro-condicionador.png",
+    groups: ["LOIROS ILUMINADOS","RECONSTRUÇÃO"],
+
     description: "Sela as cutículas e devolve a emoliência aos fios loiros, combatendo a porosidade e o frizz.",
     imageClassName: "p-2"
   },
@@ -137,6 +158,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/bendito-loiro-mascara.png",
+    groups: ["LOIROS ILUMINADOS","RECONSTRUÇÃO"],
+
     description: "Regeneração intensiva com Vinagre Balsâmico e Complexo de Proteínas. Recupera a resistência e o brilho dos loiros."
   },
   {
@@ -148,6 +171,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/bendito-loiro-fluido.png",
+    groups: ["LOIROS ILUMINADOS","RECONSTRUÇÃO"],
+
     description: "Protetor térmico e solar que blinda os fios contra danos, reduz o frizz e previne o amarelamento."
   },
   {
@@ -159,6 +184,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/bendito-loiro-proteina.png",
+    groups: ["LOIROS ILUMINADOS","RECONSTRUÇÃO"],
+
     description: "Reposição de massa proteica para cabelos extremamente danificados. Devolve a elasticidade e força."
   },
 
@@ -172,6 +199,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/cachos-sim-shampoo-300ml.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Low Poo. Limpeza suave com Óleo de Coco e Colágeno, preservando a hidratação natural dos cachos."
   },
   {
@@ -179,11 +208,13 @@ export const products: Product[] = [
     name: "Shampoo Cachos Sim",
     brand: "HASKELL",
     collection: "Cachos Sim",
-    size: "1L",
-    price: 37.95,
+    size: "500ml",
+    price: 26.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
-    description: "Versão 1L. Limpeza nutritiva ideal para cabelos cacheados e crespos, livre de sulfatos."
+    image: "/cachos-sim-shampoo-500ml.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
+    description: "Limpeza nutritiva ideal para cabelos cacheados e crespos, livre de sulfatos."
   },
   {
     id: 16,
@@ -194,6 +225,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/cachos-sim-condicionador-300ml.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Nutre e define os cachos, facilitando o desembaraço e combatendo o frizz."
   },
   {
@@ -201,11 +234,13 @@ export const products: Product[] = [
     name: "Condicionador Cachos Sim",
     brand: "HASKELL",
     collection: "Cachos Sim",
-    size: "1L",
-    price: 37.95,
+    size: "500ml",
+    price: 26.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
-    description: "Versão 1L. Condicionamento profundo para cachos macios e definidos por mais tempo."
+    image: "/cachos-sim-condicionador-500ml.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
+    description: "Condicionamento profundo para cachos macios e definidos por mais tempo."
   },
   {
     id: 18,
@@ -216,6 +251,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/cachos-sim-mascara-300g.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Hidratação e nutrição intensa. Recupera a elasticidade e memoriza a forma dos cachos."
   },
   {
@@ -227,6 +264,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Leave-in",
     image: "/cachos-sim-leave-in-300ml.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Finalizador que ativa e define os cachos, com proteção térmica e efeito memória."
   },
   {
@@ -238,6 +277,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/cachos-sim-gel-creme-240g.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Textura inovadora que une a definição do gel com a nutrição do creme. Cachos definidos sem rigidez."
   },
 
@@ -251,6 +292,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/murumuru-shampoo-300ml.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Nutrição prolongada para cabelos secos. Limpa enquanto repõe nutrientes essenciais."
   },
   {
@@ -262,6 +305,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/murumuru-condicionador-300ml.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Sela as cutículas e devolve a maciez e o brilho aos cabelos ressecados."
   },
   {
@@ -273,6 +318,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/murumuru-mascara-300g.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Manteiga hidratante de alta performance. Penetra profundamente na fibra para nutrir e recuperar a elasticidade."
   },
   {
@@ -284,6 +331,8 @@ export const products: Product[] = [
     price: 37.95,
     category: "Máscara",
     image: "/murumuru-mascara-900g.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Versão 900g. Tratamento de choque para cabelos muito secos e sem vida."
   },
   {
@@ -295,6 +344,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Leave-in",
     image: "/murumuru-leave-in-150g.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Protege contra o ressecamento, facilita o pentear e controla o volume e o frizz."
   },
   {
@@ -306,6 +357,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/murumuru-nectar-35ml.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Óleo nutritivo concentrado. Pode ser usado puro ou misturado à máscara para potencializar a nutrição."
   },
 
@@ -319,6 +372,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/pos-progressiva-shampoo-300ml.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Prolonga o efeito liso. Limpeza suave com Mix de Óleos que mantém os fios alinhados."
   },
   {
@@ -330,6 +385,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/pos-progressiva-condicionador-300ml.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Hidrata e reduz o frizz, mantendo o cabelo liso e disciplinado por mais tempo."
   },
   {
@@ -341,6 +398,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/pos-progressiva-mascara-300g.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Tratamento intensivo que repara os danos da química e preserva o alisamento."
   },
   {
@@ -352,6 +411,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/pos-progressiva-fluido-120ml.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Leave-in com proteção térmica. Desembaraça, dá brilho e mantém o efeito liso."
   },
   // LOLA
@@ -364,6 +425,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/ela-e-carioca-condicionador-500g.png",
+    groups: ["HIDRATAÇÃO","PROTEÇÃO UNIVERSAL"],
+
     description: "Nutrição e hidratação profunda para todos os tipos de cabelo. Protege contra danos climáticos e restaura a maciez."
   },
   {
@@ -375,6 +438,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/meu-cacho-minha-vida-condicionador-500g.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Desembaraça e define os cachos, proporcionando emoliência e movimento natural."
   },
   {
@@ -386,6 +451,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Condicionador",
     image: "/morte-subita-condicionador-250ml.png",
+    groups: ["RECONSTRUÇÃO","HIDRATAÇÃO"],
+
     description: "Tratamento diário para cabelos sedentos de vida. Restaura a barreira de hidratação natural e dá suavidade."
   },
   {
@@ -397,6 +464,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/papo-reto-condicionador-270ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Reparação molecular que combate o frizz e o ressecamento. Ideal para cabelos quimicamente tratados."
   },
   {
@@ -408,6 +477,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Condicionador",
     image: "/camomila-condicionador-250ml.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Ilumina e realça a cor dos cabelos loiros naturais ou tingidos. Com óleo essencial de Limão Siciliano e Camomila."
   },
   {
@@ -419,6 +490,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/ondulados-condicionador-500g.png",
+    groups: ["ONDULADOS"],
+
     description: "Define as ondas e controla o frizz, proporcionando brilho e leveza."
   },
   {
@@ -430,6 +503,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/comigo-ninguem-pode-co-wash-450g.png",
+    groups: ["LOW POO/NO POO"],
+
     description: "Limpeza suave e condicionamento em um só passo. Ideal para técnicas No Poo e Co-Wash."
   },
   {
@@ -441,6 +516,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/plot-twist-creme-buriti-480g.png",
+    groups: ["CACHOS PERFEITOS"],
+
     description: "Ativador de cachos com óleo de Buriti. Nutre e define, proporcionando brilho intenso."
   },
   {
@@ -452,6 +529,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/ela-e-carioca-creme-pentear-480g.png",
+    groups: ["HIDRATAÇÃO","PROTEÇÃO UNIVERSAL"],
+
     description: "Finalizador 3 em 1: modelador, protetor térmico e hidratante. Controla o frizz e define."
   },
   {
@@ -463,6 +542,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/milagre-creme-pentear-450g.png",
+    groups: ["HIDRATAÇÃO"],
+
     description: "Creme de pentear multifuncional que desembaraça, hidrata e dá brilho. Pode ser usado como condicionador."
   },
   {
@@ -474,6 +555,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/plot-twist-creme-guava-480g.png",
+    groups: ["CACHOS PERFEITOS"],
+
     description: "Modelador de cachos com extrato de Goiaba. Define e retém a umidade, combatendo o frizz."
   },
   {
@@ -485,6 +568,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/ondulados-creme-texturizador-500g.png",
+    groups: ["ONDULADOS"],
+
     description: "Texturizador para ondas definidas e com movimento. Controla o volume sem pesar."
   },
   {
@@ -496,6 +581,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/transicao-creme-texturizador-500ml.png",
+    groups: ["TRANSIÇÃO CAPILAR"],
+
     description: "Estimula a formação de cachos em cabelos em transição. Disfarça a diferença de texturas."
   },
   {
@@ -507,6 +594,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Leave-in",
     image: "/danos-vorazes-leave-in-200ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Finalizador de reparação imediata. Sela as cutículas, dá brilho intenso e controla o frizz."
   },
   {
@@ -518,6 +607,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Styling",
     image: "/plot-twist-nut-gel-230g.png",
+    groups: ["CACHOS PERFEITOS"],
+
     description: "Gel nutritivo para alta definição. Fixa os cachos sem ressecar."
   },
   {
@@ -530,6 +621,8 @@ export const products: Product[] = [
     category: "Máscara",
     image: "/morte-subita-mascara-450g.png",
     featured: true,
+    groups: ["RECONSTRUÇÃO","HIDRATAÇÃO"],
+
     description: "Tratamento de reparação total e instantânea. Recupera cabelos danificados e quimicamente tratados em uma aplicação."
   },
   {
@@ -541,6 +634,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/danos-vorazes-mascara-450g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Reparação intensiva com Cannabinoid Active System (CBA) e Hair Kombucha. Devolve a vitalidade e saúde aos fios."
   },
   {
@@ -552,6 +647,8 @@ export const products: Product[] = [
     price: 12.95,
     category: "Máscara",
     image: "/dream-cream-mascara-200g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Máscara super hidratante para cabelos secos e rebeldes. Recupera a fibra capilar e controla o volume."
   },
   {
@@ -563,6 +660,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ela-e-carioca-mascara-450g.png",
+    groups: ["HIDRATAÇÃO","PROTEÇÃO UNIVERSAL"],
+
     description: "Hidronutrição profunda. Repõe a umidade e nutrientes perdidos, deixando os cabelos macios e sedosos."
   },
   {
@@ -574,6 +673,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/camomila-mascara-230g.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Restaura e ilumina cabelos loiros. Com infusão de Camomila e Limão Siciliano."
   },
   {
@@ -585,6 +686,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/densidade-mascara-230g.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Restaura a densidade de cabelos finos e fracos. Fortalece a fibra e previne a quebra."
   },
   {
@@ -596,6 +699,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/xapadinha-mascara-disciplinante-100g.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Alinhamento imediato dos fios. Reduz o frizz em até 40% e proporciona brilho espelhado."
   },
   {
@@ -607,6 +712,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/papo-reto-mascara-fluida-270ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Restauração molecular ultra potente. Repara danos extremos e fortalece a fibra capilar."
   },
   {
@@ -618,6 +725,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/meu-cacho-minha-vida-mascara-450g.png",
+    groups: ["CACHOS PERFEITOS","HIDRATAÇÃO"],
+
     description: "Hidratação profunda para cachos. Penetra na fibra capilar, devolvendo o balanço e a definição."
   },
   {
@@ -629,6 +738,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ghee-hidratacao-mascara-350g.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","HIDRATAÇÃO"],
+
     description: "Hidratação com Banana e Aloe Vera. Repõe a água dos fios, deixando-os macios e brilhantes."
   },
   {
@@ -640,6 +751,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/ghee-hidratacao-mascara-100g.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","HIDRATAÇÃO"],
+
     description: "Versão 100g da Máscara de Hidratação Be(m)dita Ghee."
   },
   {
@@ -651,6 +764,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/loira-de-farmacia-mascara-230g.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Matiza e neutraliza os tons amarelados e alaranjados dos cabelos loiros e descoloridos."
   },
   {
@@ -662,6 +777,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ghee-nutricao-mascara-350g.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","NUTRIÇÃO"],
+
     description: "Nutrição com Abacaxi e Manteiga de Bacuri. Repõe os lipídios e combate o ressecamento."
   },
   {
@@ -673,6 +790,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/ghee-nutricao-mascara-100g.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","NUTRIÇÃO"],
+
     description: "Versão 100g da Máscara de Nutrição Be(m)dita Ghee."
   },
   {
@@ -684,6 +803,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/ghee-reconstrucao-mascara-100g.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","RECONSTRUÇÃO"],
+
     description: "Versão 100g da Máscara de Reconstrução Be(m)dita Ghee."
   },
   {
@@ -695,6 +816,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ghee-reconstrucao-mascara-350g.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","RECONSTRUÇÃO"],
+
     description: "Reconstrução com Papaia e Queratina Vegetal. Restaura a força e a resistência dos fios quebradiços."
   },
   {
@@ -705,7 +828,9 @@ export const products: Product[] = [
     size: "230g",
     price: 12.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/argan-oil-mascara-230g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Reconstrução rica em Óleo de Argan. Preenche as áreas danificadas da cutícula capilar."
   },
   {
@@ -716,7 +841,9 @@ export const products: Product[] = [
     size: "230g",
     price: 18.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/tarja-preta-mascara-230g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Máscara restauradora intensiva com Queratina Vegetal. Repara danos profundos e devolve a elasticidade."
   },
   {
@@ -727,7 +854,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 15.95,
     category: "Styling",
-    image: "/placeholder.svg",
+    image: "/umidificador-que-sabia-demais-250g.png",
+    groups: ["HIDRATAÇÃO"],
+
     description: "Umidificador de cachos que define e controla o frizz sem pesar. Ideal para day after."
   },
   {
@@ -739,6 +868,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/papo-reto-oleo-50ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Óleo multifuncional com proteção térmica. Sela as pontas, dá brilho e controla o frizz."
   },
   {
@@ -749,7 +880,9 @@ export const products: Product[] = [
     size: "50ml",
     price: 18.95,
     category: "Tratamento",
-    image: "/placeholder.svg",
+    image: "/pinga-acai-pracaxi-oleo-50ml.png",
+    groups: ["NUTRIÇÃO"],
+
     description: "Óleo de tratamento pré e pós shampoo. Nutre, protege a cor e previne o desbotamento."
   },
   {
@@ -760,7 +893,9 @@ export const products: Product[] = [
     size: "50ml",
     price: 15.95,
     category: "Tratamento",
-    image: "/placeholder.svg",
+    image: "/argan-oil-50ml.png",
+    groups: ["NUTRIÇÃO"],
+
     description: "Óleo finalizador rico em Argan. Hidrata, dá brilho e controla o frizz."
   },
   {
@@ -772,6 +907,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/xapadinha-oleo-disciplinante-50ml.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Óleo disciplinante com proteção térmica. Garante brilho espelhado e controle do frizz por 24h."
   },
   {
@@ -783,6 +920,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/ghee-hidratacao-oleo-50ml.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO"],
+
     description: "Óleo hidratante bifásico. Pode ser usado como pré-shampoo ou finalizador para maciez extra."
   },
   {
@@ -794,6 +933,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/camomila-oleo-50ml.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Óleo iluminador para loiros. Realça o brilho e protege contra o calor do secador."
   },
   {
@@ -805,6 +946,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/ghee-nutricao-oleo-50ml.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","NUTRIÇÃO"],
+
     description: "Óleo nutritivo para cabelos porosos. Repõe lipídios e devolve a vitalidade."
   },
   {
@@ -816,6 +959,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/ghee-reconstrucao-oleo-50ml.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","RECONSTRUÇÃO"],
+
     description: "Óleo reconstrutor para cabelos quebradiços. Fortalece e protege contra a quebra."
   },
   {
@@ -827,6 +972,8 @@ export const products: Product[] = [
     price: 12.95,
     category: "Tratamento",
     image: "/ela-e-carioca-proteina-90ml.png",
+    groups: ["HIDRATAÇÃO","PROTEÇÃO UNIVERSAL"],
+
     description: "Proteína concentrada para reposição de massa. Fortalece e encorpa os fios finos."
   },
   {
@@ -838,6 +985,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/plot-twist-reativador-guava-280ml.png",
+    groups: ["CACHOS PERFEITOS"],
+
     description: "Spray reativador para o day after. Revitaliza os cachos, reduz o frizz e perfuma."
   },
   {
@@ -848,7 +997,9 @@ export const products: Product[] = [
     size: "100g",
     price: 12.95,
     category: "Tratamento",
-    image: "/placeholder.svg",
+    image: "/vintage-girls-redutor-volume-100g.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Creme alisante e redutor de volume. Alinha os fios e reduz o frizz com fórmula suave."
   },
   {
@@ -860,6 +1011,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/danos-vorazes-booster-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Booster de reparação imediata. Recupera a estrutura do fio danificado em segundos."
   },
   {
@@ -870,7 +1023,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/dream-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Shampoo super hidratante para cabelos secos e rebeldes. Limpa suavemente e acalma os fios."
   },
   {
@@ -882,6 +1037,8 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/ela-e-carioca-shampoo-500ml.png",
+    groups: ["HIDRATAÇÃO","PROTEÇÃO UNIVERSAL"],
+
     description: "Shampoo nutritivo que limpa sem agredir. Prepara os fios para o tratamento hidronutritivo."
   },
   {
@@ -893,6 +1050,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/papo-reto-shampoo-270ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Shampoo de limpeza profunda e reparação molecular. Remove impurezas e fortalece."
   },
   {
@@ -904,6 +1063,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/camomila-shampoo-250ml.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Shampoo iluminador para loiros. Realça os reflexos dourados e dá brilho."
   },
   {
@@ -915,6 +1076,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Shampoo",
     image: "/densidade-shampoo-250ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Shampoo restaurador de densidade. Fortalece a raiz e encorpa os fios finos."
   },
   {
@@ -926,6 +1089,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/danos-vorazes-shampoo-fortificante-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Shampoo de reparação suave. Limpa e inicia o processo de reconstrução dos fios danificados."
   },
   {
@@ -937,6 +1102,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/ghee-hidratacao-shampoo-250ml.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO"],
+
     description: "Shampoo de hidratação. Limpa suavemente e repõe a umidade natural dos fios."
   },
   {
@@ -948,6 +1115,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Shampoo",
     image: "/morte-subita-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO","HIDRATAÇÃO"],
+
     description: "Shampoo esfoliante e hidratante. Remove resíduos e prepara o cabelo para a máscara."
   },
   {
@@ -959,6 +1128,8 @@ export const products: Product[] = [
     price: 15.95,
     category: "Shampoo",
     image: "/loira-de-farmacia-shampoo-250ml.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Shampoo matizador violeta. Neutraliza tons amarelados e limpa sem ressecar."
   },
   {
@@ -970,6 +1141,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/ghee-nutricao-shampoo-250ml.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","NUTRIÇÃO"],
+
     description: "Shampoo nutritivo. Limpa e devolve os lipídios essenciais para a saúde capilar."
   },
   {
@@ -981,6 +1154,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/ghee-reconstrucao-shampoo-250ml.png",
+    groups: ["CRONOGRAMA CAPILAR COMPLETO","RECONSTRUÇÃO"],
+
     description: "Shampoo reconstrutor. Fortalece a fibra capilar durante a limpeza."
   },
   {
@@ -991,7 +1166,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 12.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/argan-pracaxi-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Shampoo reparador com Óleo de Argan. Limpa e auxilia na reconstrução dos fios."
   },
   {
@@ -1002,7 +1179,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 15.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/rapunzel-shampoo-250ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Shampoo fortificante que estimula o crescimento e reduz a queda de cabelo."
   },
   {
@@ -1014,6 +1193,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/plot-twist-shampoo-sem-enxague-200ml.png",
+    groups: ["CACHOS PERFEITOS"],
+
     description: "Shampoo a seco em espuma. Limpa e revitaliza os cachos sem precisar de água."
   },
   {
@@ -1025,6 +1206,8 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/morte-subita-shampoo-solido-100g.png",
+    groups: ["RECONSTRUÇÃO","HIDRATAÇÃO"],
+
     description: "Shampoo em barra esfoliante. Prático, sustentável e com alto poder de limpeza e hidratação.",
     imageClassName: "p-0"
   },
@@ -1034,9 +1217,10 @@ export const products: Product[] = [
     name: "Lyra",
     brand: "EUDORA",
     collection: "Perfumes",
+    size: "75ml",
     price: 39.90,
     category: "Perfume",
-    image: "/placeholder.svg",
+    image: "/lyra-desodorante-colonia-75ml.png",
     description: "Fragrância exuberante e marcante. Notas de frutas vermelhas e flores brancas, ideal para mulheres que brilham."
   },
   {
@@ -1044,50 +1228,55 @@ export const products: Product[] = [
     name: "La Victorie Intense",
     brand: "EUDORA",
     collection: "Perfumes",
+    size: "75ml",
     price: 39.90,
     category: "Perfume",
-    image: "/placeholder.svg",
+    image: "/la-victorie-intense-perfume-75ml-v2.png",
     description: "Eau de Parfum intenso e sofisticado. Combina a força da flor de Tuberosa com a doçura do Caramelo."
   },
   {
     id: 94,
-    name: "Imensi",
+    name: "Imensi Infinite",
     brand: "EUDORA",
     collection: "Perfumes",
+    size: "75ml",
     price: 39.90,
     category: "Perfume",
-    image: "/placeholder.svg",
+    image: "/imensi-infinite-75ml.png",
     description: "Inspirado na imensidão do deserto. Fragrância floral oriental com notas de Flor de Laranjeira e Âmbar."
   },
   {
     id: 95,
-    name: "Diva",
+    name: "Diva Fabulosa",
     brand: "EUDORA",
     collection: "Perfumes",
+    size: "100ml",
     price: 39.90,
     category: "Perfume",
-    image: "/placeholder.svg",
+    image: "/diva-fabulosa-100ml.png",
     description: "Para a mulher que é protagonista da sua vida. Notas de Ameixa Negra e Pêra, com um toque de Baunilha."
   },
   {
     id: 96,
-    name: "Eudora Roxo",
+    name: "Eudora Eau de Parfum",
     brand: "EUDORA",
     collection: "Perfumes",
+    size: "75ml",
     price: 39.90,
     category: "Perfume",
-    image: "/placeholder.svg",
+    image: "/eudora-eau-de-parfum-75ml.png",
     description: "O clássico Eau de Parfum da marca. Chipre Amadeirado marcante, com notas de flores e madeiras nobres."
   },
   {
     id: 97,
-    name: "Club 6",
+    name: "Club 6 Intenso",
     brand: "EUDORA",
     collection: "Perfumes",
+    size: "95ml",
     price: 39.90,
     category: "Perfume",
-    image: "/placeholder.svg",
-    description: "Fragrância masculina magnética e fascinante. Harmoniza o frescor de notas cítricas com o fundo amadeirado."
+    image: "/club-6-intenso-95ml.png",
+    description: "Para o homem que sabe o que quer. Fragrância Fougère Amadeirada com notas de Cedro e Sândalo."
   },
   {
     id: 98,
@@ -1097,7 +1286,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-reconstroi-fios-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Reconstrução total para cabelos danificados. Enriquecido com Óleo de Argan e Queratina, recupera 1 ano de danos em 2 semanas."
   },
   {
@@ -1108,7 +1299,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-reconstroi-fios-condicionador-200ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Desembaraça e reconstrói os fios. Hidratação intensa que acaba com a sensação de cabelos ásperos e porosos."
   },
   {
@@ -1119,7 +1312,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-reconstroi-fios-mascara-250g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Tratamento intensivo que oferece o dobro de força aos fios e combate as pontas duplas."
   },
   {
@@ -1130,7 +1325,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-glow-expert-shampoo-250ml.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Limpa sem ressecar e prepara os fios para um brilho espelhado. Com Flor das Geleiras e GlossFix."
   },
   {
@@ -1141,7 +1338,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-glow-expert-condicionador-200ml.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Sela as cutículas e garante brilho intenso por até 72 horas. Devolve a maciez e vitalidade."
   },
   {
@@ -1152,7 +1351,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-glow-expert-mascara-250g.png",
+    groups: ["LOIROS ILUMINADOS"],
+
     description: "Cria uma película que uniformiza a fibra capilar, proporcionando fios polidos e com brilho extremo."
   },
   {
@@ -1163,7 +1364,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-hair-plastia-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Plástica capilar que corrige lesões do fio. Com Bio Hialurônico, deixa o cabelo mais encorpado e macio."
   },
   {
@@ -1174,7 +1377,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-hair-plastia-condicionador-200ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Hidratação tridimensional que age em todas as camadas do fio. Elimina a porosidade e retém a água."
   },
   {
@@ -1185,7 +1390,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-hair-plastia-mascara-250g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Repõe a massa capilar e deixa os fios mais densos e resistentes. Resultado de salão em casa."
   },
   {
@@ -1196,7 +1403,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-acelera-crescimento-shampoo-250ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Estimula o crescimento de novos fios e reduz a queda. Com Prebiótico e Biotina."
   },
   {
@@ -1207,7 +1416,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-acelera-crescimento-condicionador-200ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Fortalece a fibra capilar e previne a quebra, facilitando o crescimento saudável."
   },
   {
@@ -1218,7 +1429,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-acelera-crescimento-mascara-250g.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Ação antiquebra imediata. Prolonga a vida dos fios e garante crescimento de até 3cm em 2 meses."
   },
   {
@@ -1229,7 +1442,9 @@ export const products: Product[] = [
     size: "65ml",
     price: 21.95,
     category: "Tratamento",
-    image: "/placeholder.svg",
+    image: "/siage-acelera-crescimento-tonico-65ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Age diretamente no bulbo capilar, ativando o metabolismo e estimulando o crescimento."
   },
   {
@@ -1240,7 +1455,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-liso-intenso-shampoo-250ml.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Limpeza que alinha os fios. Fórmula com Creatina que bloqueia o frizz e prolonga o liso."
   },
   {
@@ -1251,7 +1468,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-liso-intenso-condicionador-200ml.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Desembaraça e hidrata sem pesar. Mantém os cabelos lisos e disciplinados por mais tempo."
   },
   {
@@ -1262,7 +1481,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-liso-intenso-mascara-250g.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+
     description: "Liso perfeito e hidratado. Reduz a porosidade e as pontas duplas, com proteção térmica."
   },
   {
@@ -1273,7 +1494,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-cauterizacao-fios-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Cauteriza a fibra capilar desde a primeira lavagem. Restaura a textura e elimina as pontas duplas."
   },
   {
@@ -1284,7 +1507,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-cauterizacao-fios-condicionador-200ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Sela as cutículas e preenche as áreas fragilizadas. Cabelos mais fortes e macios."
   },
   {
@@ -1295,7 +1520,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-cauterizacao-fios-mascara-250g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Reparação profunda com Aminoácidos e Colágeno. Cicatriza os danos e devolve a elasticidade."
   },
   {
@@ -1306,7 +1533,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-nutri-rose-shampoo-250ml.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Nutrição e reparação da raiz às pontas. Com Elixir de Rosas e Argila Vermelha, não pesa na raiz."
   },
   {
@@ -1317,7 +1546,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-nutri-rose-condicionador-200ml.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Sela as cutículas e previne a tesoura. Repara as pontas duplas e deixa o cabelo macio."
   },
   {
@@ -1328,7 +1559,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-nutri-rose-mascara-250g.png",
+    groups: ["HIDRATAÇÃO","NUTRIÇÃO"],
+
     description: "Nutrição profunda com efeito anti-tesoura. Repara instantaneamente a fibra danificada."
   },
   {
@@ -1339,7 +1572,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-hidratacao-micelar-shampoo-250ml.png",
+    groups: ["HIDRATAÇÃO"],
+
     description: "Limpeza inteligente que remove impurezas sem ressecar. Com Ativos Micelares e Algas Marinhas."
   },
   {
@@ -1350,7 +1585,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-hidratacao-micelar-condicionador-200ml.png",
+    groups: ["HIDRATAÇÃO"],
+
     description: "Hidratação balanceada. Desembaraça e deixa os fios soltos e com movimento."
   },
   {
@@ -1361,7 +1598,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-hidratacao-micelar-mascara-250g.png",
+    groups: ["HIDRATAÇÃO"],
+
     description: "Recupera a hidratação dos fios em 1 minuto. Cabelos 3x mais macios e soltos."
   },
   {
@@ -1372,7 +1611,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-cica-therapy-shampoo-250ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Cicatrização dos danos capilares. Limpa suavemente e recupera a saúde dos fios."
   },
   {
@@ -1383,7 +1624,9 @@ export const products: Product[] = [
     size: "200ml",
     price: 18.95,
     category: "Condicionador",
-    image: "/placeholder.svg",
+    image: "/siage-cica-therapy-condicionador-200ml.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Sela as cutículas e mantém a hidratação. Cabelos fortes, macios e resistentes."
   },
   {
@@ -1394,7 +1637,9 @@ export const products: Product[] = [
     size: "250g",
     price: 21.95,
     category: "Máscara",
-    image: "/placeholder.svg",
+    image: "/siage-cica-therapy-mascara-250g.png",
+    groups: ["RECONSTRUÇÃO"],
+
     description: "Terapia capilar duradoura. Cicatriza as áreas danificadas e restaura a massa perdida."
   },
   {
@@ -1405,7 +1650,9 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-men-shampoo-250ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Limpeza refrescante e eficaz para o cabelo masculino. Controla a oleosidade e a caspa."
   },
   {
@@ -1416,7 +1663,9 @@ export const products: Product[] = [
     size: "100ml",
     price: 24.95,
     category: "Tratamento",
-    image: "/placeholder.svg",
+    image: "/siage-men-tonico-100ml.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Combate a queda e estimula o crescimento de novos fios. Fortalece a raiz."
   },
   {
@@ -1427,7 +1676,9 @@ export const products: Product[] = [
     size: "90g",
     price: 18.95,
     category: "Styling",
-    image: "/placeholder.svg",
+    image: "/siage-men-pomada-90g.png",
+    groups: ["CRESCIMENTO/FORTALECIMENTO"],
+
     description: "Alta fixação e efeito matte. Modela os fios sem deixar resíduos."
   },
   {
@@ -1438,8 +1689,11 @@ export const products: Product[] = [
     size: "250ml",
     price: 18.95,
     category: "Shampoo",
-    image: "/placeholder.svg",
+    image: "/siage-remove-oleosidade-shampoo-250ml.png",
+    groups: ["CONTROLE DE OLEOSIDADE"],
+
     description: "Controla a oleosidade por até 8 horas. Limpa profundamente sem ressecar as pontas."
   },
+
 ];
 

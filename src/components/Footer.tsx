@@ -42,7 +42,7 @@ const Footer = () => {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="https://instagram.com/aquariseshop"
+                  href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-white transition-transform hover:scale-110"
@@ -114,7 +114,7 @@ const Footer = () => {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>Suíça</span>
+                  <span>Chemin de Montétan 7, 1004 Lausanne, Suisse</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Mail className="h-4 w-4 mt-0.5 flex-shrink-0" />
@@ -124,7 +124,7 @@ const Footer = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>+41 XXX XXX XXX</span>
+                  <span>+41 76 683 05 15</span>
                 </li>
               </ul>
             </div>

@@ -54,7 +54,7 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-0">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -66,12 +66,31 @@ const Header = () => {
               <Menu className="h-6 w-6 text-foreground" />
             </button>
             <div className="flex flex-col">
-              <h1 className="gradient-text text-2xl font-bold font-heading">
-                Aquarise
-              </h1>
-              <span className="hidden text-xs text-muted-foreground sm:block">
+              <a href="/" aria-label="Home">
+                <div
+                  className="gradient-primary h-28 w-96"
+                  style={{
+                    maskImage: "url(/logo-aquarise.png)",
+                    maskSize: "contain",
+                    maskRepeat: "no-repeat",
+                    maskPosition: "left center",
+                    WebkitMaskImage: "url(/logo-aquarise.png)",
+                    WebkitMaskSize: "contain",
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskPosition: "left center",
+                  }}
+                  role="img"
+                  aria-label="Aquarise"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden text-xs text-muted-foreground sm:block hover:text-primary transition-colors -mt-6 ml-2 relative z-10"
+              >
                 @aquariseshop
-              </span>
+              </a>
             </div>
           </div>
 
@@ -119,7 +138,7 @@ const Header = () => {
 
             <Button variant="ghost" size="icon" asChild>
               <a
-                href="https://wa.me/5511999999999" // Placeholder number
+                href="https://wa.me/41766830515"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -137,7 +156,7 @@ const Header = () => {
 
             <Button variant="ghost" size="icon" asChild>
               <a
-                href="https://instagram.com/aquariseshop"
+                href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -232,8 +251,22 @@ const Header = () => {
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <SheetContent side="left" className="w-[280px] sm:w-[350px]">
           <SheetHeader>
-            <SheetTitle className="gradient-text text-2xl font-bold font-heading">
-              Aquarise
+            <SheetTitle>
+              <div
+                className="gradient-primary h-24 w-72"
+                style={{
+                  maskImage: "url(/logo-aquarise.png)",
+                  maskSize: "contain",
+                  maskRepeat: "no-repeat",
+                  maskPosition: "left center",
+                  WebkitMaskImage: "url(/logo-aquarise.png)",
+                  WebkitMaskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  WebkitMaskPosition: "left center",
+                }}
+                role="img"
+                aria-label="Aquarise"
+              />
             </SheetTitle>
           </SheetHeader>
 
@@ -312,7 +345,7 @@ const Header = () => {
 
             <div className="mt-8 border-t border-border pt-6">
               <a
-                href="https://instagram.com/aquariseshop"
+                href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"

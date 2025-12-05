@@ -1,55 +1,139 @@
-import { Waves, Sparkles, Heart, Droplets } from "lucide-react";
+import {
+  Waves,
+  Sparkles,
+  ShieldPlus,
+  Droplets,
+  Leaf,
+  TrendingUp,
+  Wind,
+  Activity,
+  RefreshCw,
+  Feather,
+  Droplet,
+  Umbrella,
+  Calendar
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   {
     name: "Cachos Perfeitos",
+    id: "CACHOS PERFEITOS",
     icon: Waves,
     gradient: "from-primary to-secondary",
   },
   {
     name: "Loiros Iluminados",
+    id: "LOIROS ILUMINADOS",
     icon: Sparkles,
     gradient: "from-secondary to-accent",
   },
   {
     name: "Reconstrução",
-    icon: Heart,
+    id: "RECONSTRUÇÃO",
+    icon: ShieldPlus,
     gradient: "from-accent to-primary",
   },
   {
     name: "Hidratação",
+    id: "HIDRATAÇÃO",
     icon: Droplets,
     gradient: "from-primary via-secondary to-accent",
+  },
+  {
+    name: "Nutrição",
+    id: "NUTRIÇÃO",
+    icon: Leaf,
+    gradient: "from-green-400 to-emerald-600",
+  },
+  {
+    name: "Crescimento & Fortalecimento",
+    id: "CRESCIMENTO/FORTALECIMENTO",
+    icon: TrendingUp,
+    gradient: "from-blue-400 to-indigo-600",
+  },
+  {
+    name: "Alisamento & Frizz",
+    id: "ALISAMENTO/CONTROLE DE FRIZZ",
+    icon: Wind,
+    gradient: "from-purple-400 to-pink-600",
+  },
+  {
+    name: "Ondulados",
+    id: "ONDULADOS",
+    icon: Activity,
+    gradient: "from-orange-400 to-red-600",
+  },
+  {
+    name: "Transição Capilar",
+    id: "TRANSIÇÃO CAPILAR",
+    icon: RefreshCw,
+    gradient: "from-teal-400 to-cyan-600",
+  },
+  {
+    name: "Low Poo / No Poo",
+    id: "LOW POO/NO POO",
+    icon: Feather,
+    gradient: "from-lime-400 to-green-600",
+  },
+  {
+    name: "Controle de Oleosidade",
+    id: "CONTROLE DE OLEOSIDADE",
+    icon: Droplet,
+    gradient: "from-cyan-400 to-blue-600",
+  },
+  {
+    name: "Proteção Universal",
+    id: "PROTEÇÃO UNIVERSAL",
+    icon: Umbrella,
+    gradient: "from-yellow-400 to-orange-600",
+  },
+  {
+    name: "Cronograma Capilar",
+    id: "CRONOGRAMA CAPILAR COMPLETO",
+    icon: Calendar,
+    gradient: "from-rose-400 to-pink-600",
   },
 ];
 
 const Categories = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (groupId: string) => {
+    // Navigate to home with group query param
+    navigate(`/?group=${encodeURIComponent(groupId)}`);
+
+    // Scroll to product grid
+    const productGrid = document.getElementById("product-grid");
+    if (productGrid) {
+      productGrid.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-12 lg:py-16 bg-surface/50">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl font-bold font-heading lg:text-4xl">
-          Explore por Categoria
+        <h2 className="mb-8 text-center text-3xl font-bold font-heading lg:text-4xl animate-fade-in">
+          Explore por Objetivo
         </h2>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* Horizontal scroll for mobile */}
+        <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible scrollbar-hide">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (
               <div
                 key={index}
-                className="group animate-slide-up card-shadow hover:card-shadow-hover cursor-pointer rounded-xl bg-surface p-6 text-center transition-all hover:-translate-y-2"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => handleCategoryClick(category.id)}
+                className="min-w-[160px] flex-shrink-0 snap-center group animate-slide-up card-shadow hover:card-shadow-hover cursor-pointer rounded-xl bg-surface p-4 lg:p-6 text-center transition-all hover:-translate-y-2 border border-border/50 hover:border-primary/20"
+                style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div
-                  className={`mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${category.gradient} shadow-lg animate-wave-gradient`}
-                  style={{ 
-                    backgroundSize: '200% 200%',
-                    animationDelay: `${index * 0.3}s`
-                  }}
+                  className={`mx-auto mb-3 flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-full bg-gradient-to-br ${category.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}
                 >
-                  <Icon className="h-10 w-10 text-white" />
+                  <Icon className="h-7 w-7 lg:h-8 lg:w-8 text-white" />
                 </div>
-                <h3 className="font-semibold text-foreground">
+                <h3 className="text-sm lg:text-base font-semibold text-foreground line-clamp-2">
                   {category.name}
                 </h3>
               </div>

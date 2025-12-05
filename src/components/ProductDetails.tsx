@@ -22,15 +22,40 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
 
     if (!product) return null;
 
+    const handleWhatsAppClick = () => {
+        const phoneNumber = "+41766830515"; // Clean number without spaces
+        const productUrl = `${window.location.origin}/?product=${product.id}`;
+        const message = `${t("whatsapp.message")}${product.name} (${productUrl})`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappUrl, "_blank");
+    };
+
     return (
         <Dialog open={open} onOpenChange={onOpenChange}>
             <DialogContent className="sm:max-w-[600px] overflow-y-auto max-h-[90vh]">
                 <DialogHeader>
                     <div className="flex items-start justify-between">
-                        <div>
+                        <div className="space-y-2">
+                            {/* Tags Row (Brand + Groups) */}
+                            <div className="flex flex-wrap gap-2">
+                                <span className="inline-flex items-center rounded-full border border-primary/50 px-2.5 py-0.5 text-xs font-semibold text-primary uppercase tracking-wide">
+                                    {product.brand}
+                                </span>
+                                {product.groups?.map((group) => (
+                                    <span
+                                        key={group}
+                                        className="inline-flex items-center rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-semibold text-secondary"
+                                    >
+                                        {group}
+                                    </span>
+                                ))}
+                            </div>
+
                             <DialogTitle className="text-2xl font-bold">{product.name}</DialogTitle>
-                            <DialogDescription className="text-lg text-primary font-semibold">
-                                {product.brand} - {product.collection}
+                            <DialogDescription className="text-lg text-muted-foreground font-medium">
+                                {product.collection}
                             </DialogDescription>
                         </div>
                         <Button
@@ -64,10 +89,24 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
 
                     <div className="flex flex-col gap-4">
                         <div>
-                            <h4 className="font-semibold mb-1">{t("products.description", "Descrição")}</h4>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
-                                {t(`product.${product.id}.description`, product.description)}
-                            </p>
+                            <h4 className="font-semibold mb-3 flex items-center gap-2">
+                                {t("products.description", "Descrição")}
+                            </h4>
+                            <div className="space-y-2">
+                                {t(`product.${product.id}.description`, product.description)
+                                    .split('.')
+                                    .filter(sentence => sentence.trim().length > 0)
+                                    .map((sentence, index) => (
+                                        <div
+                                            key={index}
+                                            className="bg-surface border border-border/50 rounded-xl p-3 text-sm text-muted-foreground shadow-sm relative"
+                                        >
+                                            <div className="absolute -left-1.5 top-1/2 -translate-y-1/2 w-3 h-3 bg-surface border-l border-b border-border/50 rotate-45"></div>
+                                            {sentence.trim()}.
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </div>
 
                         <div className="flex items-center justify-between mt-auto pt-4 border-t">
@@ -84,6 +123,27 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
                                 </div>
                             )}
                         </div>
+
+                        {/* WhatsApp Button */}
+                        <Button
+                            onClick={handleWhatsAppClick}
+                            className="w-full mt-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold h-12 text-base shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                fill="none"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="mr-2 h-6 w-6"
+                            >
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            {t("whatsapp.button", "Comprar no WhatsApp")}
+                        </Button>
                     </div>
                 </div>
             </DialogContent>
