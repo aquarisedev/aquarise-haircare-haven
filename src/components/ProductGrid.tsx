@@ -38,7 +38,20 @@ const ProductCollectionSection = ({
         {collection !== "Outros" ? collection : t("products.collection")}
       </h4>
 
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {/* Mobile: Horizontal Scroll (All Products) */}
+      <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory -mx-4 px-4 scrollbar-hide sm:hidden">
+        {products.map((product) => (
+          <div key={product.id} className="min-w-[280px] snap-center">
+            <ProductCard
+              {...product}
+              onClick={() => onProductClick(product)}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: Grid (Visible Products) */}
+      <div className="hidden sm:grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {visibleProducts.map((product) => (
           <div key={product.id} className="min-w-0">
             <ProductCard
@@ -49,8 +62,8 @@ const ProductCollectionSection = ({
         ))}
       </div>
 
-      {/* Show More / Show Less Buttons */}
-      <div className="mt-6 flex justify-center gap-4">
+      {/* Show More / Show Less Buttons (Desktop Only) */}
+      <div className="hidden sm:flex mt-6 justify-center gap-4">
         {hasMore && (
           <Button
             variant="outline"

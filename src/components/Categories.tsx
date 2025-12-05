@@ -14,90 +14,92 @@ import {
   Calendar
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
-const categories = [
-  {
-    name: "Cachos Perfeitos",
-    id: "CACHOS PERFEITOS",
-    icon: Waves,
-    gradient: "from-primary to-secondary",
-  },
-  {
-    name: "Loiros Iluminados",
-    id: "LOIROS ILUMINADOS",
-    icon: Sparkles,
-    gradient: "from-secondary to-accent",
-  },
-  {
-    name: "Reconstrução",
-    id: "RECONSTRUÇÃO",
-    icon: ShieldPlus,
-    gradient: "from-accent to-primary",
-  },
-  {
-    name: "Hidratação",
-    id: "HIDRATAÇÃO",
-    icon: Droplets,
-    gradient: "from-primary via-secondary to-accent",
-  },
-  {
-    name: "Nutrição",
-    id: "NUTRIÇÃO",
-    icon: Leaf,
-    gradient: "from-green-400 to-emerald-600",
-  },
-  {
-    name: "Crescimento & Fortalecimento",
-    id: "CRESCIMENTO/FORTALECIMENTO",
-    icon: TrendingUp,
-    gradient: "from-blue-400 to-indigo-600",
-  },
-  {
-    name: "Alisamento & Frizz",
-    id: "ALISAMENTO/CONTROLE DE FRIZZ",
-    icon: Wind,
-    gradient: "from-purple-400 to-pink-600",
-  },
-  {
-    name: "Ondulados",
-    id: "ONDULADOS",
-    icon: Activity,
-    gradient: "from-orange-400 to-red-600",
-  },
-  {
-    name: "Transição Capilar",
-    id: "TRANSIÇÃO CAPILAR",
-    icon: RefreshCw,
-    gradient: "from-teal-400 to-cyan-600",
-  },
-  {
-    name: "Low Poo / No Poo",
-    id: "LOW POO/NO POO",
-    icon: Feather,
-    gradient: "from-lime-400 to-green-600",
-  },
-  {
-    name: "Controle de Oleosidade",
-    id: "CONTROLE DE OLEOSIDADE",
-    icon: Droplet,
-    gradient: "from-cyan-400 to-blue-600",
-  },
-  {
-    name: "Proteção Universal",
-    id: "PROTEÇÃO UNIVERSAL",
-    icon: Umbrella,
-    gradient: "from-yellow-400 to-orange-600",
-  },
-  {
-    name: "Cronograma Capilar",
-    id: "CRONOGRAMA CAPILAR COMPLETO",
-    icon: Calendar,
-    gradient: "from-rose-400 to-pink-600",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Categories = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
+  const categories = [
+    {
+      name: t("categories.cachos"),
+      id: "CACHOS PERFEITOS",
+      icon: Waves,
+      gradient: "from-primary to-secondary",
+    },
+    {
+      name: t("categories.loiros"),
+      id: "LOIROS ILUMINADOS",
+      icon: Sparkles,
+      gradient: "from-secondary to-accent",
+    },
+    {
+      name: t("categories.reconstrucao"),
+      id: "RECONSTRUÇÃO",
+      icon: ShieldPlus,
+      gradient: "from-accent to-primary",
+    },
+    {
+      name: t("categories.hidratacao"),
+      id: "HIDRATAÇÃO",
+      icon: Droplets,
+      gradient: "from-primary via-secondary to-accent",
+    },
+    {
+      name: t("categories.nutricao"),
+      id: "NUTRIÇÃO",
+      icon: Leaf,
+      gradient: "from-green-400 to-emerald-600",
+    },
+    {
+      name: t("categories.crescimento"),
+      id: "CRESCIMENTO/FORTALECIMENTO",
+      icon: TrendingUp,
+      gradient: "from-blue-400 to-indigo-600",
+    },
+    {
+      name: t("categories.alisamento"),
+      id: "ALISAMENTO/CONTROLE DE FRIZZ",
+      icon: Wind,
+      gradient: "from-purple-400 to-pink-600",
+    },
+    {
+      name: t("categories.ondulados"),
+      id: "ONDULADOS",
+      icon: Activity,
+      gradient: "from-orange-400 to-red-600",
+    },
+    {
+      name: t("categories.transicao"),
+      id: "TRANSIÇÃO CAPILAR",
+      icon: RefreshCw,
+      gradient: "from-teal-400 to-cyan-600",
+    },
+    {
+      name: t("categories.lowpoo"),
+      id: "LOW POO/NO POO",
+      icon: Feather,
+      gradient: "from-lime-400 to-green-600",
+    },
+    {
+      name: t("categories.oleosidade"),
+      id: "CONTROLE DE OLEOSIDADE",
+      icon: Droplet,
+      gradient: "from-cyan-400 to-blue-600",
+    },
+    {
+      name: t("categories.protecao"),
+      id: "PROTEÇÃO UNIVERSAL",
+      icon: Umbrella,
+      gradient: "from-yellow-400 to-orange-600",
+    },
+    {
+      name: t("categories.cronograma"),
+      id: "CRONOGRAMA CAPILAR COMPLETO",
+      icon: Calendar,
+      gradient: "from-rose-400 to-pink-600",
+    },
+  ];
 
   const handleCategoryClick = (groupId: string) => {
     // Navigate to home with group query param
@@ -114,7 +116,7 @@ const Categories = () => {
     <section className="py-12 lg:py-16 bg-surface/50">
       <div className="container mx-auto px-4">
         <h2 className="mb-8 text-center text-3xl font-bold font-heading lg:text-4xl animate-fade-in">
-          Explore por Objetivo
+          {t("categories.title")}
         </h2>
 
         {/* Horizontal scroll for mobile */}
