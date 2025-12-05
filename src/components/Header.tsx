@@ -68,7 +68,7 @@ const Header = () => {
             <div className="flex flex-col">
               <a href="/" aria-label="Home">
                 <div
-                  className="gradient-primary h-28 w-96"
+                  className="gradient-primary h-16 w-48 sm:h-20 sm:w-64 lg:h-28 lg:w-96"
                   style={{
                     maskImage: "url(/logo-aquarise.png)",
                     maskSize: "contain",
@@ -253,7 +253,7 @@ const Header = () => {
           <SheetHeader>
             <SheetTitle>
               <div
-                className="gradient-primary h-24 w-72"
+                className="gradient-primary h-16 w-56"
                 style={{
                   maskImage: "url(/logo-aquarise.png)",
                   maskSize: "contain",
