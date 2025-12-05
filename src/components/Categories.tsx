@@ -120,7 +120,7 @@ const Categories = () => {
         </h2>
 
         {/* Horizontal scroll for mobile */}
-        <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible scrollbar-hide">
+        <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible scrollbar-hide overscroll-x-contain">
           {categories.map((category, index) => {
             const Icon = category.icon;
             return (

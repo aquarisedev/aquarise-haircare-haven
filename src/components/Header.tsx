@@ -227,22 +227,7 @@ const Header = () => {
                 EUDORA
               </button>
             </li>
-            <li>
-              <a
-                href="#sobre"
-                className="text-foreground transition-colors hover:text-primary"
-              >
-                {t("nav.about")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contato"
-                className="text-foreground transition-colors hover:text-primary"
-              >
-                {t("nav.contact")}
-              </a>
-            </li>
+
           </ul>
         </div>
       </nav>
@@ -323,24 +308,7 @@ const Header = () => {
                   <span className="font-medium">EUDORA</span>
                 </button>
               </li>
-              <li>
-                <a
-                  href="#sobre"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
-                >
-                  <span className="font-medium">{t("nav.about")}</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#contato"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
-                >
-                  <span className="font-medium">{t("nav.contact")}</span>
-                </a>
-              </li>
+
             </ul>
 
             <div className="mt-8 border-t border-border pt-6">

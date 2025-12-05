@@ -9,19 +9,24 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Aquarise Brand Colors */
-    --primary: 262 44% 71%; /* #A593D4 - roxo/lilás */
+    --primary: 262 44% 71%;
+    /* #A593D4 - roxo/lilás */
     --primary-foreground: 0 0% 100%;
-    
-    --secondary: 185 57% 63%; /* #6BCFD8 - azul turquesa */
+
+    --secondary: 185 57% 63%;
+    /* #6BCFD8 - azul turquesa */
     --secondary-foreground: 0 0% 100%;
-    
-    --accent: 153 59% 75%; /* #9FE2BF - verde água */
+
+    --accent: 153 59% 75%;
+    /* #9FE2BF - verde água */
     --accent-foreground: 262 44% 20%;
-    
-    --background: 349 38% 93%; /* #F5E6E8 - rosa suave */
+
+    --background: 349 38% 93%;
+    /* #F5E6E8 - rosa suave */
     --foreground: 262 44% 20%;
-    
-    --surface: 0 0% 100%; /* branco */
+
+    --surface: 0 0% 100%;
+    /* branco */
     --surface-foreground: 262 44% 20%;
 
     --card: 0 0% 100%;
@@ -46,7 +51,7 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(262, 44%, 60%), hsl(185, 57%, 63%));
     --gradient-hero: linear-gradient(180deg, hsl(262, 44%, 95%), hsl(262, 44%, 85%), hsl(0, 0%, 100%));
     --gradient-accent: linear-gradient(135deg, hsl(262, 44%, 71%), hsl(262, 44%, 55%), hsl(262, 44%, 65%));
-    
+
     /* Shadows */
     --shadow-card: 0 2px 8px hsl(262 44% 71% / 0.08);
     --shadow-card-hover: 0 8px 24px hsl(262 44% 71% / 0.15);
@@ -59,16 +64,16 @@ All colors MUST be HSL.
   .dark {
     --primary: 262 44% 71%;
     --primary-foreground: 262 44% 10%;
-    
+
     --secondary: 185 57% 63%;
     --secondary-foreground: 185 57% 10%;
-    
+
     --accent: 153 59% 75%;
     --accent-foreground: 153 59% 10%;
-    
+
     --background: 262 44% 10%;
     --foreground: 0 0% 98%;
-    
+
     --surface: 262 40% 15%;
     --surface-foreground: 0 0% 98%;
 
@@ -96,10 +101,15 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
@@ -136,18 +146,24 @@ All colors MUST be HSL.
   }
 
   @keyframes wave-gradient {
-    0%, 100% {
+
+    0%,
+    100% {
       background-position: 0% 50%;
     }
+
     50% {
       background-position: 100% 50%;
     }
   }
 
   @keyframes wave-gradient-hero {
-    0%, 100% {
+
+    0%,
+    100% {
       background-position: 0% 0%;
     }
+
     50% {
       background-position: 100% 100%;
     }
@@ -156,7 +172,7 @@ All colors MUST be HSL.
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;

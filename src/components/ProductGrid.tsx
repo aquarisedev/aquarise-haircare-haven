@@ -39,7 +39,7 @@ const ProductCollectionSection = ({
       </h4>
 
       {/* Mobile: Horizontal Scroll (All Products) */}
-      <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory -mx-4 px-4 scrollbar-hide sm:hidden">
+      <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory -mx-4 px-4 scrollbar-hide sm:hidden overscroll-x-contain">
         {products.map((product) => (
           <div key={product.id} className="min-w-[280px] snap-center">
             <ProductCard
