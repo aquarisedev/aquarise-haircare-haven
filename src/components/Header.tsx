@@ -195,14 +195,7 @@ const Header = () => {
                 {t("nav.home")}
               </a>
             </li>
-            <li>
-              <a
-                href="#produtos"
-                className="text-foreground transition-colors hover:text-primary"
-              >
-                {t("nav.products")}
-              </a>
-            </li>
+
             <li>
               <button
                 onClick={() => navigate("/?search=HASKELL#produtos")}
@@ -266,15 +259,7 @@ const Header = () => {
                   <span className="font-medium">{t("nav.home")}</span>
                 </a>
               </li>
-              <li>
-                <a
-                  href="/#produtos"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
-                >
-                  <span className="font-medium">{t("nav.products")}</span>
-                </a>
-              </li>
+
               <li>
                 <button
                   onClick={() => {

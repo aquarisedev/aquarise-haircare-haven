@@ -35,18 +35,18 @@ const Footer = () => {
               <h4 className="mb-4 font-semibold text-foreground">Produtos</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#haskell" className="hover:text-primary transition-colors">
+                  <a href="/?search=HASKELL" className="hover:text-primary transition-colors">
                     HASKELL
                   </a>
                 </li>
                 <li>
-                  <a href="#lola" className="hover:text-primary transition-colors">
+                  <a href="/?search=LOLA" className="hover:text-primary transition-colors">
                     LOLA
                   </a>
                 </li>
                 <li>
-                  <a href="#novidades" className="hover:text-primary transition-colors">
-                    Novidades
+                  <a href="/?search=EUDORA" className="hover:text-primary transition-colors">
+                    EUDORA
                   </a>
                 </li>
                 <li>

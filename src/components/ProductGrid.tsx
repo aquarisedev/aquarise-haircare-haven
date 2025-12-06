@@ -173,28 +173,15 @@ const ProductGrid = () => {
     <section id="product-grid" className="py-16 lg:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold font-heading lg:text-4xl">
-            {searchQuery
-              ? t("search.results", "Resultados da Busca")
-              : groupParam
-                ? groupParam
-                : t("products.featured")}
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            {searchQuery
-              ? `${filteredProducts.length} ${t("search.found", "produtos encontrados para")} "${searchQuery}"`
-              : groupParam
-                ? `${filteredProducts.length} produtos encontrados nesta categoria`
-                : t("products.subtitle")}
-          </p>
-
-          {groupParam && (
-            <button
-              onClick={handleClearFilter}
-              className="mt-4 text-sm text-primary hover:underline font-medium"
-            >
-              Limpar Filtro
-            </button>
+          {!searchQuery && !groupParam && (
+            <>
+              <h2 className="mb-4 text-3xl font-bold font-heading lg:text-4xl">
+                {t("products.featured")}
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                {t("products.subtitle")}
+              </p>
+            </>
           )}
         </div>
 
@@ -259,7 +246,7 @@ const ProductGrid = () => {
         open={!!selectedProduct}
         onOpenChange={(open) => !open && handleCloseModal()}
       />
-    </section>
+    </section >
   );
 };
 
