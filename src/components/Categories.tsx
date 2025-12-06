@@ -11,7 +11,9 @@ import {
   Feather,
   Droplet,
   Umbrella,
-  Calendar
+  Calendar,
+  User,
+  SprayCan
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -31,73 +33,85 @@ const Categories = () => {
       name: t("categories.loiros"),
       id: "LOIROS ILUMINADOS",
       icon: Sparkles,
-      gradient: "from-secondary to-accent",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.reconstrucao"),
       id: "RECONSTRUÇÃO",
       icon: ShieldPlus,
-      gradient: "from-accent to-primary",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.hidratacao"),
       id: "HIDRATAÇÃO",
       icon: Droplets,
-      gradient: "from-primary via-secondary to-accent",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.nutricao"),
       id: "NUTRIÇÃO",
       icon: Leaf,
-      gradient: "from-green-400 to-emerald-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.crescimento"),
       id: "CRESCIMENTO/FORTALECIMENTO",
       icon: TrendingUp,
-      gradient: "from-blue-400 to-indigo-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.alisamento"),
       id: "ALISAMENTO/CONTROLE DE FRIZZ",
       icon: Wind,
-      gradient: "from-purple-400 to-pink-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.ondulados"),
       id: "ONDULADOS",
       icon: Activity,
-      gradient: "from-orange-400 to-red-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.transicao"),
       id: "TRANSIÇÃO CAPILAR",
       icon: RefreshCw,
-      gradient: "from-teal-400 to-cyan-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.lowpoo"),
       id: "LOW POO/NO POO",
       icon: Feather,
-      gradient: "from-lime-400 to-green-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.oleosidade"),
       id: "CONTROLE DE OLEOSIDADE",
       icon: Droplet,
-      gradient: "from-cyan-400 to-blue-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.protecao"),
       id: "PROTEÇÃO UNIVERSAL",
       icon: Umbrella,
-      gradient: "from-yellow-400 to-orange-600",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.cronograma"),
       id: "CRONOGRAMA CAPILAR COMPLETO",
       icon: Calendar,
-      gradient: "from-rose-400 to-pink-600",
+      gradient: "from-primary to-secondary",
+    },
+    {
+      name: t("categories.masculino"),
+      id: "CABELOS MASCULINOS",
+      icon: User,
+      gradient: "from-primary to-secondary",
+    },
+    {
+      name: t("categories.perfumes"),
+      id: "PERFUMES",
+      icon: SprayCan,
+      gradient: "from-primary to-secondary",
     },
   ];
 
