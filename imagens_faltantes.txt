@@ -1,0 +1,95 @@
+LISTA DE IMAGENS FALTANTES (ORGANIZADA)
+
+Por favor, adicione os arquivos com EXATAMENTE estes nomes na pasta 'public'.
+
+================================================================================
+EMPRESA: EUDORA
+================================================================================
+
+--- Linha: Instance ---
+Produto: Body Splash Instance Karité
+Arquivo: /instance-karite-body-splash.png
+
+Produto: Body Splash Instance Baunilha
+Arquivo: /instance-baunilha-body-splash.png
+
+Produto: Hidratante Instance Frutas Vermelhas
+Arquivo: /instance-frutas-vermelhas-hidratante.png
+
+Produto: Esfoliante Instance Frutas Vermelhas
+Arquivo: /instance-frutas-vermelhas-esfoliante.png
+
+
+--- Linha: La Victorie ---
+Produto: Creme Acetinado La Victorie Intense
+Arquivo: /la-victorie-intense-creme-acetinado.png
+
+
+--- Linha: Nina Skin / Nina Secrets ---
+Produto: Máscara Esfoliante Nina Skin
+Arquivo: /nina-skin-esfoliante.png
+
+Produto: Gel de Limpeza Nina Secrets
+Arquivo: /nina-secrets-gel-limpeza.png
+
+
+--- Linha: Siàge Pro Cronology Curvas ---
+Produto: Shampoo Siàge Pro Cronology Curvas
+Arquivo: /siage-pro-cronology-curvas-shampoo.png
+
+Produto: Condicionador Siàge Pro Cronology Curvas
+Arquivo: /siage-pro-cronology-curvas-condicionador.png
+
+
+--- Linha: Siàge Reconstrói os Fios ---
+Produto: Óleo de Argan Siàge Reconstrói
+Arquivo: /siage-reconstroi-fios-oleo-argan.png
+
+Produto: Queratina Líquida Siàge Reconstrói
+Arquivo: /siage-reconstroi-fios-queratina.png
+
+
+--- Linha: Siàge Glow Expert ---
+Produto: Balm Siàge Glow Expert
+Arquivo: /siage-glow-expert-balm.png
+
+
+--- Linha: Siàge Liso Intenso ---
+Produto: Selante Siàge Liso Intenso
+Arquivo: /siage-liso-intenso-selante.png
+
+
+================================================================================
+EMPRESA: O BOTICÁRIO
+================================================================================
+
+--- Linha: Cuide-se Bem ---
+Produto: Body Splash Amoruda
+Arquivo: /cuide-se-bem-amoruda-body-splash.png
+
+Produto: Body Splash Pêssegura
+Arquivo: /cuide-se-bem-pessegura-body-splash.png
+
+Produto: Hidratante Amoruda
+Arquivo: /cuide-se-bem-amoruda-hidratante.png
+
+Produto: Hidratante Cereja Livre
+Arquivo: /cuide-se-bem-cereja-livre-hidratante.png
+
+Produto: Hidratante Deleite
+Arquivo: /cuide-se-bem-deleite-hidratante.png
+
+Produto: Hidratante Nuvem
+Arquivo: /cuide-se-bem-nuvem-hidratante.png
+
+Produto: Hidratante Pêssegura
+Arquivo: /cuide-se-bem-pessegura-hidratante.png
+
+Produto: Hidratante Morango e Leite
+Arquivo: /cuide-se-bem-morango-leite-hidratante.png
+
+Produto: Hidratante Doçura na Pêssegura
+Arquivo: /cuide-se-bem-docura-pessegura-hidratante.png
+
+Produto: Hidratante Nuvem de Algodão
+Arquivo: /cuide-se-bem-nuvem-algodao-hidratante.png

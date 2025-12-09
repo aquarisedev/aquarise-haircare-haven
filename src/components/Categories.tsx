@@ -108,6 +108,24 @@ const Categories = () => {
       gradient: "from-primary to-secondary",
     },
     {
+      name: "O Boticário",
+      id: "BOTICARIO",
+      icon: Leaf,
+      gradient: "from-green-400 to-green-600",
+    },
+    {
+      name: "Corpo e Banho",
+      id: "CORPO E BANHO",
+      icon: Droplets,
+      gradient: "from-pink-400 to-rose-400",
+    },
+    {
+      name: "Skincare",
+      id: "SKINCARE",
+      icon: Sparkles,
+      gradient: "from-purple-400 to-indigo-400",
+    },
+    {
       name: t("categories.perfumes"),
       id: "PERFUMES",
       icon: SprayCan,

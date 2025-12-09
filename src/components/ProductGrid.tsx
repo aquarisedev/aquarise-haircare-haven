@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 import { Button } from "./ui/button";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, SlidersHorizontal, AlignRight } from "lucide-react";
 
 const ProductCollectionSection = ({
   collection,
@@ -172,9 +172,21 @@ const ProductGrid = () => {
   return (
     <section id="product-grid" className="py-16 lg:py-20">
       <div className="container mx-auto px-4">
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           {!searchQuery && !groupParam && (
             <>
+              {/* Filter Bar mimicking O Boticário */}
+              <div className="flex border-y border-border mb-8 sticky top-[60px] bg-background z-20">
+                <button className="flex-1 py-4 flex items-center justify-center gap-2 border-r border-border hover:bg-muted/50 transition-colors uppercase text-sm font-bold tracking-wider">
+                  <SlidersHorizontal className="w-4 h-4" />
+                  <span>{t("filters.title", "FILTROS")}</span>
+                </button>
+                <button className="flex-1 py-4 flex items-center justify-center gap-2 hover:bg-muted/50 transition-colors uppercase text-sm font-bold tracking-wider">
+                  <span>{t("filters.orderBy", "ORDENAR POR")}</span>
+                  <AlignRight className="w-4 h-4" />
+                </button>
+              </div>
+
               <h2 className="mb-4 text-3xl font-bold font-heading lg:text-4xl">
                 {t("products.featured")}
               </h2>

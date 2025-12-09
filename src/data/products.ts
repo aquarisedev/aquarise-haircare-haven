@@ -1,7 +1,7 @@
 export interface Product {
   id: number;
   name: string;
-  brand: "HASKELL" | "LOLA" | "EUDORA";
+  brand: "HASKELL" | "LOLA" | "EUDORA" | "BOTICARIO";
   collection?: string;
   size?: string;
   price: number;
@@ -1766,6 +1766,283 @@ export const products: Product[] = [
     image: "/diva-fabulosa-100ml.png",
     groups: ["PERFUMES"],
     description: "Desperte a diva que existe em você. Notas frutais e amadeiradas para mulheres poderosas."
+  },
+  // BOTICÁRIO (Novos Produtos)
+  {
+    id: 136,
+    name: "Body Splash Instance Karité",
+    brand: "EUDORA",
+    collection: "Instance",
+    size: "200ml",
+    price: 28.90,
+    category: "Body Splash",
+    image: "/instance-karite-body-splash.png",
+    groups: ["CORPO E BANHO"],
+    description: "Spray perfumado desodorante corporal com karité. Proporciona hidratação e fragrância leve para uso diário."
+  },
+  {
+    id: 137,
+    name: "Body Splash Instance Baunilha",
+    brand: "EUDORA",
+    collection: "Instance",
+    size: "200ml",
+    price: 28.90,
+    category: "Body Splash",
+    image: "/instance-baunilha-body-splash.png",
+    groups: ["CORPO E BANHO"],
+    description: "Spray perfumado desodorante corporal com fragrância de baunilha. Proporciona hidratação e fragrância leve para uso diário."
+  },
+  {
+    id: 138,
+    name: "Body Splash Amoruda",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Body Splash",
+    image: "/cuide-se-bem-amoruda-body-splash.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Spray perfumado com fragrância amoruda. Linha de cuidados corporais com aromas frutados e doces."
+  },
+  {
+    id: 139,
+    name: "Body Splash Pêssegura",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Body Splash",
+    image: "/cuide-se-bem-pessegura-body-splash.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Spray perfumado com fragrância de pêssego. Linha de cuidados corporais com aromas frutados."
+  },
+  {
+    id: 140,
+    name: "Creme Acetinado La Victorie Intense",
+    brand: "EUDORA",
+    collection: "La Victorie",
+    size: "250g",
+    price: 36.90,
+    category: "Hidratante",
+    image: "/la-victorie-intense-creme-acetinado.png",
+    groups: ["CORPO E BANHO"],
+    description: "Creme acetinado hidratante desodorante corporal. Toque acetinado e hidratação intensa por até 48h com fragrância floral amadeirada."
+  },
+  {
+    id: 141,
+    name: "Hidratante Amoruda",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-amoruda-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância amoruda. Proporciona hidratação suave e aroma agradável."
+  },
+  {
+    id: 142,
+    name: "Hidratante Cereja Livre",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-cereja-livre-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância de cereja. Linha de cuidados corporais com aromas frutados."
+  },
+  {
+    id: 143,
+    name: "Hidratante Deleite",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-deleite-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância deliciosa. Proporciona hidratação e aroma envolvente."
+  },
+  {
+    id: 144,
+    name: "Hidratante Nuvem",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-nuvem-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância leve e delicada, como uma nuvem. Proporciona hidratação suave."
+  },
+  {
+    id: 145,
+    name: "Hidratante Pêssegura",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-pessegura-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância de pêssego. Proporciona hidratação intensa e aroma frutado."
+  },
+  {
+    id: 146,
+    name: "Hidratante Morango e Leite",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-morango-leite-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância de morango e leite. Combinação doce e cremosa."
+  },
+  {
+    id: 147,
+    name: "Hidratante Doçura na Pêssegura",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-docura-pessegura-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância de pêssego adoçado. Proporciona hidratação e aroma envolvente."
+  },
+  {
+    id: 148,
+    name: "Hidratante Nuvem de Algodão",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.90,
+    category: "Hidratante",
+    image: "/cuide-se-bem-nuvem-algodao-hidratante.png",
+    groups: ["CORPO E BANHO", "BOTICARIO"],
+    description: "Creme hidratante corporal com fragrância leve de algodão. Proporciona hidratação suave e aroma delicado."
+  },
+  {
+    id: 149,
+    name: "Hidratante Instance Frutas Vermelhas",
+    brand: "EUDORA",
+    collection: "Instance",
+    size: "200ml",
+    price: 28.90,
+    category: "Hidratante",
+    image: "/instance-frutas-vermelhas-hidratante.png",
+    groups: ["CORPO E BANHO"],
+    description: "Creme hidratante corporal com fragrância de frutas vermelhas. Proporciona hidratação e aroma frutado."
+  },
+  {
+    id: 150,
+    name: "Esfoliante Instance Frutas Vermelhas",
+    brand: "EUDORA",
+    collection: "Instance",
+    size: "200ml",
+    price: 28.90,
+    category: "Esfoliante",
+    image: "/instance-frutas-vermelhas-esfoliante.png",
+    groups: ["CORPO E BANHO"],
+    description: "Esfoliante corporal com fragrância de frutas vermelhas. Remove células mortas e deixa a pele suave e hidratada."
+  },
+  {
+    id: 151,
+    name: "Máscara Esfoliante Nina Skin",
+    brand: "EUDORA",
+    collection: "Nina Skin",
+    size: "75ml",
+    price: 25.90,
+    category: "Skincare",
+    image: "/nina-skin-esfoliante.png",
+    groups: ["SKINCARE"],
+    description: "Máscara esfoliante com enzimas naturais. Remove impurezas e células mortas de forma suave, deixando a pele renovada e luminosa."
+  },
+  {
+    id: 152,
+    name: "Gel de Limpeza Nina Secrets",
+    brand: "EUDORA",
+    collection: "Nina Secrets",
+    size: "150ml",
+    price: 26.90,
+    category: "Skincare",
+    image: "/nina-secrets-gel-limpeza.png",
+    groups: ["SKINCARE"],
+    description: "Gel de limpeza facial. Remove impurezas e deixa a pele limpa e fresca."
+  },
+  {
+    id: 153,
+    name: "Shampoo Siàge Pro Cronology Curvas",
+    brand: "EUDORA",
+    collection: "Siàge Pro Cronology Curvas",
+    size: "250ml",
+    price: 29.90,
+    category: "Shampoo",
+    image: "/siage-pro-cronology-curvas-shampoo.png",
+    groups: ["CACHOS PERFEITOS"],
+    description: "Shampoo específico para cabelos cacheados e crespos. Define e realça as curvas naturais."
+  },
+  {
+    id: 154,
+    name: "Condicionador Siàge Pro Cronology Curvas",
+    brand: "EUDORA",
+    collection: "Siàge Pro Cronology Curvas",
+    size: "200ml",
+    price: 26.90,
+    category: "Condicionador",
+    image: "/siage-pro-cronology-curvas-condicionador.png",
+    groups: ["CACHOS PERFEITOS"],
+    description: "Condicionador que define e realça as curvas naturais dos cabelos cacheados."
+  },
+  {
+    id: 155,
+    name: "Óleo de Argan Siàge Reconstrói",
+    brand: "EUDORA",
+    collection: "Siàge Reconstrói os Fios",
+    size: "50ml",
+    price: 21.95,
+    category: "Tratamento",
+    image: "/siage-reconstroi-fios-oleo-argan.png",
+    groups: ["RECONSTRUÇÃO"],
+    description: "Óleo de Argan reparador. Repõe proteínas, perfuma e protege do calor."
+  },
+  {
+    id: 156,
+    name: "Queratina Líquida Siàge Reconstrói",
+    brand: "EUDORA",
+    collection: "Siàge Reconstrói os Fios",
+    size: "100ml",
+    price: 29.90,
+    category: "Tratamento",
+    image: "/siage-reconstroi-fios-queratina.png",
+    groups: ["RECONSTRUÇÃO"],
+    description: "Queratina líquida para cauterização. Repõe proteínas e reconstrói a fibra capilar danificada."
+  },
+  {
+    id: 157,
+    name: "Balm Siàge Glow Expert",
+    brand: "EUDORA",
+    collection: "Siàge Glow Expert",
+    size: "200ml",
+    price: 28.90,
+    category: "Tratamento",
+    image: "/siage-glow-expert-balm.png",
+    groups: ["LOIROS ILUMINADOS"],
+    description: "Balm finalizador que proporciona brilho e luminosidade instantâneos aos fios."
+  },
+  {
+    id: 158,
+    name: "Selante Siàge Liso Intenso",
+    brand: "EUDORA",
+    collection: "Siàge Liso Intenso",
+    size: "100ml",
+    price: 28.90,
+    category: "Tratamento",
+    image: "/siage-liso-intenso-selante.png",
+    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
+    description: "Selante finalizador com proteção térmica. Deixa o cabelo liso, brilhante e sem frizz."
   },
 ];
 

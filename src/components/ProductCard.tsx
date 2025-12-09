@@ -46,21 +46,25 @@ const ProductCard = ({
           </div>
         )}
         {featured && (
-          <Badge className="absolute left-3 top-3 bg-secondary text-white">
-            {t("products.featured_badge", "Destaque")}
-          </Badge>
+          <div className="absolute left-0 top-3 flex flex-col gap-1">
+            <span className="bg-[#1e3a8a] text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider shadow-sm">
+              30% OFF
+            </span>
+            <span className="bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 uppercase tracking-wider shadow-sm">
+              {t("products.featured_badge", "BEST SELLER")}
+            </span>
+          </div>
         )}
       </div>
 
       {/* Content */}
       <div className="p-4 flex flex-col flex-1">
         <div className="mb-2">
-          <Badge
-            variant="outline"
-            className="border-primary text-primary text-xs"
+          <span
+            className="text-xs font-semibold text-muted-foreground uppercase tracking-wide"
           >
             {brand}
-          </Badge>
+          </span>
         </div>
 
         <h3 className="mb-2 line-clamp-2 font-semibold text-foreground min-h-[3rem]">
