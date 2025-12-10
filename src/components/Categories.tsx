@@ -23,6 +23,7 @@ const Categories = () => {
   const { t } = useTranslation();
 
   const categories = [
+
     {
       name: t("categories.cachos"),
       id: "CACHOS PERFEITOS",
@@ -78,52 +79,34 @@ const Categories = () => {
       gradient: "from-primary to-secondary",
     },
     {
-      name: t("categories.lowpoo"),
-      id: "LOW POO/NO POO",
-      icon: Feather,
-      gradient: "from-primary to-secondary",
-    },
-    {
-      name: t("categories.oleosidade"),
-      id: "CONTROLE DE OLEOSIDADE",
-      icon: Droplet,
-      gradient: "from-primary to-secondary",
-    },
-    {
-      name: t("categories.protecao"),
-      id: "PROTEÇÃO UNIVERSAL",
-      icon: Umbrella,
-      gradient: "from-primary to-secondary",
-    },
-    {
       name: t("categories.cronograma"),
       id: "CRONOGRAMA CAPILAR COMPLETO",
       icon: Calendar,
       gradient: "from-primary to-secondary",
     },
     {
-      name: t("categories.masculino"),
-      id: "CABELOS MASCULINOS",
-      icon: User,
+      name: "Finalizadores",
+      id: "FINALIZADORES",
+      icon: Sparkles,
       gradient: "from-primary to-secondary",
     },
     {
-      name: "O Boticário",
-      id: "BOTICARIO",
-      icon: Leaf,
-      gradient: "from-green-400 to-green-600",
+      name: "Óleos",
+      id: "OLEOS",
+      icon: Droplet,
+      gradient: "from-primary to-secondary",
     },
     {
       name: "Corpo e Banho",
       id: "CORPO E BANHO",
       icon: Droplets,
-      gradient: "from-pink-400 to-rose-400",
+      gradient: "from-primary to-secondary",
     },
     {
       name: "Skincare",
       id: "SKINCARE",
       icon: Sparkles,
-      gradient: "from-purple-400 to-indigo-400",
+      gradient: "from-primary to-secondary",
     },
     {
       name: t("categories.perfumes"),

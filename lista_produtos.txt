@@ -1,5 +1,9 @@
 LISTA DE PRODUTOS (FORNECEDOR - NOME)
 
+EUDORA - Balm Siàge Glow Expert
+EUDORA - Body Splash Instance Baunilha
+EUDORA - Body Splash Instance Karité
+EUDORA - Club 6 Intenso
 EUDORA - Club 6 Intenso
 EUDORA - Condicionador Siàge Acelera o Crescimento
 EUDORA - Condicionador Siàge Cauterização dos Fios
@@ -9,12 +13,23 @@ EUDORA - Condicionador Siàge Hair-Plastia
 EUDORA - Condicionador Siàge Hidratação Micelar
 EUDORA - Condicionador Siàge Liso Intenso
 EUDORA - Condicionador Siàge Nutri Rosé
+EUDORA - Condicionador Siàge Pro Cronology Curvas
 EUDORA - Condicionador Siàge Reconstrói os Fios
+EUDORA - Creme Acetinado La Victorie Intense
 EUDORA - Diva Fabulosa
+EUDORA - Diva Fabulosa
+EUDORA - Esfoliante Instance Frutas Vermelhas
 EUDORA - Eudora Eau de Parfum
+EUDORA - Eudora Eau de Parfum
+EUDORA - Gel de Limpeza Nina Secrets
+EUDORA - Hidratante Instance Frutas Vermelhas
+EUDORA - Imensi Infinite
 EUDORA - Imensi Infinite
 EUDORA - La Victorie Intense
+EUDORA - La Victorie Intense
 EUDORA - Lyra
+EUDORA - Lyra
+EUDORA - Máscara Esfoliante Nina Skin
 EUDORA - Máscara Siàge Acelera o Crescimento
 EUDORA - Máscara Siàge Cauterização dos Fios
 EUDORA - Máscara Siàge Cica-Therapy
@@ -25,6 +40,8 @@ EUDORA - Máscara Siàge Liso Intenso
 EUDORA - Máscara Siàge Nutri Rosé
 EUDORA - Máscara Siàge Reconstrói os Fios
 EUDORA - Pomada Modeladora Siàge Men
+EUDORA - Queratina Líquida Siàge Reconstrói
+EUDORA - Selante Siàge Liso Intenso
 EUDORA - Shampoo Siàge Acelera o Crescimento
 EUDORA - Shampoo Siàge Cauterização dos Fios
 EUDORA - Shampoo Siàge Cica-Therapy
@@ -34,10 +51,12 @@ EUDORA - Shampoo Siàge Hidratação Micelar
 EUDORA - Shampoo Siàge Liso Intenso
 EUDORA - Shampoo Siàge Men
 EUDORA - Shampoo Siàge Nutri Rosé
+EUDORA - Shampoo Siàge Pro Cronology Curvas
 EUDORA - Shampoo Siàge Reconstrói os Fios
 EUDORA - Shampoo Siàge Remove a Oleosidade
 EUDORA - Tônico Siàge Acelera o Crescimento
 EUDORA - Tônico Siàge Men
+EUDORA - Óleo de Argan Siàge Reconstrói
 HASKELL - Complexo Fortalecedor Cavalo Forte
 HASKELL - Condicionador Bendito Loiro
 HASKELL - Condicionador Cachos Sim
@@ -49,8 +68,8 @@ HASKELL - Fluido Bendito Loiro
 HASKELL - Fluido Pós Progressiva
 HASKELL - Gel Crème Cachos Sim
 HASKELL - Leave-in Cavalo Forte
-HASKELL - Leave-in en Crème Murumuru
 HASKELL - Leave-in Memorizer Cachos Sim
+HASKELL - Leave-in en Crème Murumuru
 HASKELL - Máscara Bendito Loiro
 HASKELL - Máscara Cachos Sim
 HASKELL - Máscara Cavalo Forte
@@ -76,11 +95,11 @@ LOLA - Condicionador Ondulados Lola
 LOLA - Condicionador Papo Reto
 LOLA - Condicionador/Co Wash Comigo Ninguém Pode
 LOLA - Creme Buriti Ativador de Cachos Plot Twist
-LOLA - Creme de Pentear Ela é Carioca
-LOLA - Creme de Pentear Milagre
 LOLA - Creme Modelador Guava Plot Twist
 LOLA - Creme Texturizador Ondulados Lola
 LOLA - Creme Texturizador Transição
+LOLA - Creme de Pentear Ela é Carioca
+LOLA - Creme de Pentear Milagre
 LOLA - Finalizador Leave In Danos Vorazes
 LOLA - Gel Nut Plot Twist
 LOLA - Máscara Camomila
@@ -102,14 +121,6 @@ LOLA - Máscara Recons. Papaia/Queratina Be(m)dita Ghee
 LOLA - Máscara Reconst. Argan Oil
 LOLA - Máscara Restauradora Tarja Preta
 LOLA - O Umidificador Que Sabia Demais
-LOLA - Óleo Açaí/Pracaxi Pinga
-LOLA - Óleo Argan/Pracaxi
-LOLA - Óleo Disciplinante Xapadinha
-LOLA - Óleo Hidr. Ban/Aloe Vera Be(m)dita Ghee
-LOLA - Óleo Iluminador Camomila
-LOLA - Óleo Nutri. Abacaxi/Mant. Bacuri Be(m)dita Ghee
-LOLA - Óleo Papo Reto
-LOLA - Óleo Reconst. Papaia/Queratina Be(m)dita Ghee
 LOLA - Proteína Ela é Carioca
 LOLA - Reativador de Cachos Guava Plot Twist
 LOLA - Redutor Volume Vintage Girls
@@ -129,3 +140,11 @@ LOLA - Shampoo Reconstrutor Argan/Pracaxi
 LOLA - Shampoo Rejuvenescedor Rapunzel
 LOLA - Shampoo S/ Enxágue Plot Twist
 LOLA - Shampoo Sólido Morte Súbita
+LOLA - Óleo Argan/Pracaxi
+LOLA - Óleo Açaí/Pracaxi Pinga
+LOLA - Óleo Disciplinante Xapadinha
+LOLA - Óleo Hidr. Ban/Aloe Vera Be(m)dita Ghee
+LOLA - Óleo Iluminador Camomila
+LOLA - Óleo Nutri. Abacaxi/Mant. Bacuri Be(m)dita Ghee
+LOLA - Óleo Papo Reto
+LOLA - Óleo Reconst. Papaia/Queratina Be(m)dita Ghee
