@@ -50,6 +50,11 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
+                  <a href="/?search=GOLDSPELL" className="hover:text-primary transition-colors">
+                    GOLDSPELL
+                  </a>
+                </li>
+                <li>
                   <a href="#promocoes" className="hover:text-primary transition-colors">
                     Promoções
                   </a>

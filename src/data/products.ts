@@ -29,20 +29,6 @@ export const products: Product[] = [
     description: "Fortalece e restaura profundamente os fios, auxiliando no crescimento saudável. Com Biotina, Pantenol e Queratina, aumenta a elasticidade e o brilho."
   },
   {
-    id: 2,
-    name: "Shampoo Cavalo Forte",
-    brand: "HASKELL",
-    collection: "Cavalo Forte",
-    size: "1L",
-    price: 37.95,
-    category: "Shampoo",
-    image: "/cavalo-forte-shampoo-1l.png",
-
-    groups: [],
-
-    description: "Versão de 1L do Shampoo Cavalo Forte. Limpeza fortalecedora que estimula o crescimento e recupera o brilho dos fios."
-  },
-  {
     id: 3,
     name: "Condicionador Cavalo Forte",
     brand: "HASKELL",
@@ -69,20 +55,6 @@ export const products: Product[] = [
     groups: ["CRESCIMENTO/FORTALECIMENTO", "CACHOS PERFEITOS"],
 
     description: "Tratamento profundo que reconstrói a fibra capilar, proporcionando força, brilho e crescimento acelerado."
-  },
-  {
-    id: 5,
-    name: "Máscara Cavalo Forte",
-    brand: "HASKELL",
-    collection: "Cavalo Forte",
-    size: "900g",
-    price: 37.95,
-    category: "Máscara",
-    image: "/cavalo-forte-mascara-900g.png",
-    featured: true,
-    groups: [],
-
-    description: "Versão profissional de 900g. Hidratação e reconstrução intensa para cabelos fracos e com dificuldade de crescimento."
   },
   {
     id: 6,
@@ -211,20 +183,6 @@ export const products: Product[] = [
     description: "Low Poo. Limpeza suave com Óleo de Coco e Colágeno, preservando a hidratação natural dos cachos."
   },
   {
-    id: 15,
-    name: "Shampoo Cachos Sim",
-    brand: "HASKELL",
-    collection: "Cachos Sim",
-    size: "500ml",
-    price: 26.95,
-    category: "Shampoo",
-    image: "/cachos-sim-shampoo-500ml.png",
-
-    groups: [],
-
-    description: "Limpeza nutritiva ideal para cabelos cacheados e crespos, livre de sulfatos."
-  },
-  {
     id: 16,
     name: "Condicionador Cachos Sim",
     brand: "HASKELL",
@@ -237,20 +195,6 @@ export const products: Product[] = [
     groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
 
     description: "Nutre e define os cachos, facilitando o desembaraço e combatendo o frizz."
-  },
-  {
-    id: 17,
-    name: "Condicionador Cachos Sim",
-    brand: "HASKELL",
-    collection: "Cachos Sim",
-    size: "500ml",
-    price: 26.95,
-    category: "Condicionador",
-    image: "/cachos-sim-condicionador-500ml.png",
-
-    groups: [],
-
-    description: "Condicionamento profundo para cachos macios e definidos por mais tempo."
   },
   {
     id: 18,
@@ -335,20 +279,6 @@ export const products: Product[] = [
     groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
 
     description: "Manteiga hidratante de alta performance. Penetra profundamente na fibra para nutrir e recuperar a elasticidade."
-  },
-  {
-    id: 24,
-    name: "Máscara Murumuru",
-    brand: "HASKELL",
-    collection: "Murumuru",
-    size: "900g",
-    price: 37.95,
-    category: "Máscara",
-    image: "/murumuru-mascara-900g.png",
-
-    groups: [],
-
-    description: "Versão 900g. Tratamento de choque para cabelos muito secos e sem vida."
   },
   {
     id: 25,
@@ -785,20 +715,6 @@ export const products: Product[] = [
     description: "Hidratação com Banana e Aloe Vera. Repõe a água dos fios, deixando-os macios e brilhantes."
   },
   {
-    id: 56,
-    name: "Máscara Hidrat. Ban/Aloe Vera Be(m)dita Ghee",
-    brand: "LOLA",
-    collection: "Be(m)dita Ghee",
-    size: "100g",
-    price: 15.95,
-    category: "Máscara",
-    image: "/ghee-hidratacao-mascara-100g.png",
-
-    groups: [],
-
-    description: "Versão 100g da Máscara de Hidratação Be(m)dita Ghee."
-  },
-  {
     id: 57,
     name: "Máscara Matizadora Loira de Farmácia",
     brand: "LOLA",
@@ -827,20 +743,6 @@ export const products: Product[] = [
     description: "Nutrição com Abacaxi e Manteiga de Bacuri. Repõe os lipídios e combate o ressecamento."
   },
   {
-    id: 59,
-    name: "Máscara Nutri. Abacaxi/Mant. Bacuri Be(m)dita Ghee",
-    brand: "LOLA",
-    collection: "Be(m)dita Ghee",
-    size: "100g",
-    price: 15.95,
-    category: "Máscara",
-    image: "/ghee-nutricao-mascara-100g.png",
-
-    groups: [],
-
-    description: "Versão 100g da Máscara de Nutrição Be(m)dita Ghee."
-  },
-  {
     id: 60,
     name: "Máscara Recons. Papaia/Queratina Be(m)dita Ghee",
     brand: "LOLA",
@@ -853,20 +755,6 @@ export const products: Product[] = [
     groups: ["CRONOGRAMA CAPILAR", "RECONSTRUÇÃO"],
 
     description: "Versão 100g da Máscara de Reconstrução Be(m)dita Ghee."
-  },
-  {
-    id: 61,
-    name: "Máscara Recons. Papaia/Queratina Be(m)dita Ghee",
-    brand: "LOLA",
-    collection: "Be(m)dita Ghee",
-    size: "350g",
-    price: 21.95,
-    category: "Máscara",
-    image: "/ghee-reconstrucao-mascara-350g.png",
-
-    groups: [],
-
-    description: "Reconstrução com Papaia e Queratina Vegetal. Restaura a força e a resistência dos fios quebradiços."
   },
   {
     id: 62,
@@ -1707,34 +1595,6 @@ export const products: Product[] = [
     groups: [],
 
     description: "Controla a oleosidade por até 8 horas. Limpa profundamente sem ressecar as pontas."
-  },
-  {
-    id: 130,
-    name: "Club 6 Intenso",
-    brand: "EUDORA",
-    collection: "Club 6",
-    size: "95ml",
-    price: 49.95,
-    category: "Perfume",
-    image: "/club-6-intenso-95ml.png",
-
-    groups: ["PERFUMARIA"],
-
-    description: "Fragrância masculina intensa e sofisticada, com notas de cedro e sândalo."
-  },
-  {
-    id: 134,
-    name: "Lyra",
-    brand: "EUDORA",
-    collection: "Lyra",
-    size: "75ml",
-    price: 59.95,
-    category: "Perfume",
-    image: "/lyra-desodorante-colonia-75ml.png",
-
-    groups: ["PERFUMARIA"],
-
-    description: "Brilhe como uma joia. Combinação exuberante de frutas vermelhas e flores intensas."
   },
   {
     id: 136,

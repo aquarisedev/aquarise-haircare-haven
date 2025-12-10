@@ -17,13 +17,13 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
 
 const Categories = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
   const categories = [
-
     {
       name: t("categories.cachos"),
       id: "CACHOS PERFEITOS",
@@ -117,15 +117,51 @@ const Categories = () => {
   ];
 
   const handleCategoryClick = (groupId: string) => {
-    // Navigate to home with group query param
     navigate(`/?group=${encodeURIComponent(groupId)}`);
-
-    // Scroll to product grid
     const productGrid = document.getElementById("product-grid");
     if (productGrid) {
       productGrid.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Carousel State
+  const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2);
+      } else {
+        setItemsPerPage(4);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const totalPages = Math.ceil(categories.length / itemsPerPage);
+
+  // Auto-scroll every 20s (20000ms)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, 20000);
+    return () => clearInterval(interval);
+  }, [totalPages]);
+
+  const handlePageChange = (pageIndex: number) => {
+    setCurrentPage(pageIndex);
+  };
+
+  const visibleCategories = categories.slice(
+    currentPage * itemsPerPage,
+    (currentPage + 1) * itemsPerPage
+  );
 
   return (
     <section className="py-12 lg:py-16 bg-surface/50">
@@ -134,28 +170,44 @@ const Categories = () => {
           {t("categories.title")}
         </h2>
 
-        {/* Horizontal scroll for mobile */}
-        <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-6 lg:overflow-visible scrollbar-hide overscroll-x-contain">
-          {categories.map((category, index) => {
-            const Icon = category.icon;
-            return (
-              <div
-                key={index}
-                onClick={() => handleCategoryClick(category.id)}
-                className="min-w-[160px] flex-shrink-0 snap-center group animate-slide-up card-shadow hover:card-shadow-hover cursor-pointer rounded-xl bg-surface p-4 lg:p-6 text-center transition-all hover:-translate-y-2 border border-border/50 hover:border-primary/20"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
+        {/* Carousel Content */}
+        <div className="relative min-h-[160px]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 transition-all duration-500">
+            {visibleCategories.map((category) => {
+              const Icon = category.icon;
+              return (
                 <div
-                  className={`mx-auto mb-3 flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-full bg-gradient-to-br ${category.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                  key={category.id}
+                  onClick={() => handleCategoryClick(category.id)}
+                  className="group animate-fade-in card-shadow hover:card-shadow-hover cursor-pointer rounded-xl bg-surface p-4 lg:p-6 text-center transition-all hover:-translate-y-2 border border-border/50 hover:border-primary/20"
                 >
-                  <Icon className="h-7 w-7 lg:h-8 lg:w-8 text-white" />
+                  <div
+                    className={`mx-auto mb-3 flex h-14 w-14 lg:h-16 lg:w-16 items-center justify-center rounded-full bg-gradient-to-br ${category.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                  >
+                    <Icon className="h-7 w-7 lg:h-8 lg:w-8 text-white" />
+                  </div>
+                  <h3 className="text-sm lg:text-base font-semibold text-foreground line-clamp-2">
+                    {category.name}
+                  </h3>
                 </div>
-                <h3 className="text-sm lg:text-base font-semibold text-foreground line-clamp-2">
-                  {category.name}
-                </h3>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className="mt-8 flex justify-center gap-2">
+          {Array.from({ length: totalPages }).map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => handlePageChange(idx)}
+              className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${currentPage === idx
+                  ? "bg-primary w-6"
+                  : "bg-border hover:bg-primary/50"
+                }`}
+              aria-label={`Go to page ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

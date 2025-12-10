@@ -244,6 +244,30 @@ const Header = () => {
                 EUDORA
               </button>
             </li>
+            <li className="relative group">
+              <button
+                className="text-foreground transition-colors hover:text-primary flex items-center gap-1"
+                onClick={() => navigate("/?search=GOLDSPELL#produtos")}
+              >
+                GOLDSPELL
+              </button>
+              <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+                <div className="bg-surface border border-border rounded-lg shadow-lg py-2 min-w-[150px]">
+                  <button
+                    onClick={() => navigate("/?collection=Acid Gold#produtos")}
+                    className="block w-full text-left px-4 py-2 hover:bg-muted text-sm"
+                  >
+                    Acid Gold
+                  </button>
+                  <button
+                    onClick={() => navigate("/?collection=Poderosa#produtos")}
+                    className="block w-full text-left px-4 py-2 hover:bg-muted text-sm"
+                  >
+                    Poderosa
+                  </button>
+                </div>
+              </div>
+            </li>
 
           </ul>
         </div>
@@ -316,6 +340,39 @@ const Header = () => {
                 >
                   <span className="font-medium">EUDORA</span>
                 </button>
+              </li>
+              <li>
+                <div className="px-4 py-3">
+                  <button
+                    onClick={() => {
+                      navigate("/?search=GOLDSPELL#produtos");
+                      setMobileMenuOpen(false);
+                    }}
+                    className="flex w-full items-center gap-3 text-foreground transition-colors hover:text-primary mb-2"
+                  >
+                    <span className="font-medium">GOLDSPELL</span>
+                  </button>
+                  <div className="pl-4 border-l border-border/50 space-y-2 mt-2">
+                    <button
+                      onClick={() => {
+                        navigate("/?collection=Acid Gold#produtos");
+                        setMobileMenuOpen(false);
+                      }}
+                      className="block text-sm text-muted-foreground hover:text-foreground"
+                    >
+                      Acid Gold
+                    </button>
+                    <button
+                      onClick={() => {
+                        navigate("/?collection=Poderosa#produtos");
+                        setMobileMenuOpen(false);
+                      }}
+                      className="block text-sm text-muted-foreground hover:text-foreground"
+                    >
+                      Poderosa
+                    </button>
+                  </div>
+                </div>
               </li>
               <li>
                 <button
