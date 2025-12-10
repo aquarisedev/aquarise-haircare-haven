@@ -37,6 +37,8 @@ const ProductCard = ({
           <img
             src={image}
             alt={name}
+            loading="lazy"
+            decoding="async"
             className={`h-full w-full object-contain transition-transform duration-500 group-hover:scale-110 mix-blend-multiply ${imageClassName || "p-6"}`}
           />
         ) : (

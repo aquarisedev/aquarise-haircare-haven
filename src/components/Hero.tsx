@@ -12,6 +12,7 @@ const Hero = () => {
         <img
           src={heroImage}
           alt={t("hero.image_alt")}
+          fetchPriority="high"
           className="w-full h-full object-cover object-center"
         />
         {/* Dark Overlay */}
