@@ -352,17 +352,7 @@ const Header = () => {
                   <span className="font-medium">GOLDSPELL</span>
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => {
-                    navigate("/?group=BOTICARIO");
-                    setMobileMenuOpen(false);
-                  }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
-                >
-                  <span className="font-medium">O BOTICÁRIO</span>
-                </button>
-              </li>
+
 
             </ul>
 
