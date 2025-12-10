@@ -342,37 +342,15 @@ const Header = () => {
                 </button>
               </li>
               <li>
-                <div className="px-4 py-3">
-                  <button
-                    onClick={() => {
-                      navigate("/?search=GOLDSPELL#produtos");
-                      setMobileMenuOpen(false);
-                    }}
-                    className="flex w-full items-center gap-3 text-foreground transition-colors hover:text-primary mb-2"
-                  >
-                    <span className="font-medium">GOLDSPELL</span>
-                  </button>
-                  <div className="pl-4 border-l border-border/50 space-y-2 mt-2">
-                    <button
-                      onClick={() => {
-                        navigate("/?collection=Acid Gold#produtos");
-                        setMobileMenuOpen(false);
-                      }}
-                      className="block text-sm text-muted-foreground hover:text-foreground"
-                    >
-                      Acid Gold
-                    </button>
-                    <button
-                      onClick={() => {
-                        navigate("/?collection=Poderosa#produtos");
-                        setMobileMenuOpen(false);
-                      }}
-                      className="block text-sm text-muted-foreground hover:text-foreground"
-                    >
-                      Poderosa
-                    </button>
-                  </div>
-                </div>
+                <button
+                  onClick={() => {
+                    navigate("/?search=GOLDSPELL#produtos");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">GOLDSPELL</span>
+                </button>
               </li>
               <li>
                 <button
