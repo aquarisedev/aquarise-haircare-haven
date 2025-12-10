@@ -1780,72 +1780,72 @@ export const products: Product[] = [
   },
   {
     id: 159,
-    name: "Shapoo - acidgold",
+    name: "Shampoo Acid Gold",
     brand: "GOLDSPELL",
     collection: "Acid Gold",
-    size: "Standard",
-    price: 0,
-    category: "Tratamento",
-    image: "/placeholder.png",
+    size: "250ml",
+    price: 89.90,
+    category: "Shampoo",
+    image: "/images/products/goldspell/kit-acid-gold.png",
 
     groups: ["RECONSTRUÇÃO"],
 
-    description: "Produto da linha Goldspell."
+    description: "Shampoo reconstrutor da linha Acid Gold. Limpeza suave e reparação para cabelos danificados."
   },
   {
     id: 160,
-    name: "Condicionador - acidgold",
+    name: "Condicionador Acid Gold",
     brand: "GOLDSPELL",
     collection: "Acid Gold",
-    size: "Standard",
-    price: 0,
-    category: "Tratamento",
-    image: "/placeholder.png",
+    size: "250ml",
+    price: 89.90,
+    category: "Condicionador",
+    image: "/images/products/goldspell/kit-acid-gold.png",
 
     groups: ["RECONSTRUÇÃO"],
 
-    description: "Produto da linha Goldspell."
+    description: "Condicionador reconstrutor Acid Gold. Sela as cutículas e devolve o brilho e a maciez."
   },
   {
     id: 161,
-    name: "Mascara - acidgold",
+    name: "Máscara Capilar Acid Gold",
     brand: "GOLDSPELL",
     collection: "Acid Gold",
-    size: "Standard",
-    price: 0,
-    category: "Tratamento",
-    image: "",
+    size: "250ml",
+    price: 99.90,
+    category: "Máscara",
+    image: "/images/products/goldspell/mascara-acid-gold.png",
 
     groups: ["RECONSTRUÇÃO"],
 
-    description: "Produto da linha Goldspell."
+    description: "Máscara capilar de alta performance. Reconstrução profunda e brilho espelhado."
   },
   {
     id: 162,
-    name: "Shapoo - Poderosa",
+    name: "Shampoo Poderoso",
     brand: "GOLDSPELL",
     collection: "Poderosa",
-    size: "Standard",
-    price: 0,
-    category: "Tratamento",
-    image: "",
+    size: "250ml",
+    price: 89.90,
+    category: "Shampoo",
+    image: "/images/products/goldspell/shampoo-poderoso.png",
 
-    groups: ["RECONSTRUÇÃO"],
+    groups: ["RECONSTRUÇÃO", "CRESCIMENTO/FORTALECIMENTO"],
 
-    description: "Produto da linha Goldspell."
+    description: "Shampoo Poderoso. Fortalece os fios e estimula o crescimento saudável."
   },
   {
     id: 163,
-    name: "condicionador - Poderosa",
+    name: "Condicionador Poderoso",
     brand: "GOLDSPELL",
     collection: "Poderosa",
-    size: "Standard",
-    price: 0,
-    category: "Tratamento",
-    image: "",
+    size: "250ml",
+    price: 89.90,
+    category: "Condicionador",
+    image: "/images/products/goldspell/kit-poderoso.png",
 
-    groups: ["RECONSTRUÇÃO"],
+    groups: ["RECONSTRUÇÃO", "CRESCIMENTO/FORTALECIMENTO"],
 
-    description: "Produto da linha Goldspell."
+    description: "Condicionador Poderoso. Desembaraça, hidrata e previne a quebra."
   },
 ];

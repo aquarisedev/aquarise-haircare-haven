@@ -69,7 +69,7 @@ const ProductCard = ({
           </span>
         </div>
 
-        <h3 className="mb-2 line-clamp-2 font-semibold text-foreground min-h-[3rem]">
+        <h3 className={`mb-2 line-clamp-2 font-semibold text-foreground min-h-[3rem] ${brand === 'GOLDSPELL' ? "font-['Playfair_Display'] tracking-wide text-[1.1rem]" : ""}`}>
           {name}
         </h3>
 

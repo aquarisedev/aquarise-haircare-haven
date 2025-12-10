@@ -53,7 +53,7 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
                                 ))}
                             </div>
 
-                            <DialogTitle className="text-2xl font-bold">{product.name}</DialogTitle>
+                            <DialogTitle className={`text-2xl font-bold ${product.brand === 'GOLDSPELL' ? "font-['Playfair_Display'] tracking-wide" : ""}`}>{product.name}</DialogTitle>
                             <DialogDescription className="text-lg text-muted-foreground font-medium">
                                 {product.collection}
                             </DialogDescription>
