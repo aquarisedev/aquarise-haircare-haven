@@ -11,6 +11,8 @@ export interface Product {
   description: string;
   imageClassName?: string;
   groups?: string[];
+  originalPriceDisplay?: number; // For "De R$ XX" display (fake original price for promo)
+  isChristmasPromo?: boolean;
 }
 
 export const products: Product[] = [
@@ -20,7 +22,7 @@ export const products: Product[] = [
     brand: "HASKELL",
     collection: "Cavalo Forte",
     size: "300ml",
-    price: 21.95,
+    price: 27.9,
     category: "Shampoo",
     image: "/cavalo-forte-shampoo.png",
 
@@ -82,6 +84,8 @@ export const products: Product[] = [
 
     groups: ["OLEOS"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 28.9,
     description: "Concentrado de vitaminas que potencializa a hidratação e o fortalecimento quando adicionado à máscara."
   },
   {
@@ -132,7 +136,7 @@ export const products: Product[] = [
     brand: "HASKELL",
     collection: "Bendito Loiro",
     size: "300g",
-    price: 21.95,
+    price: 27.9,
     category: "Máscara",
     image: "/bendito-loiro-mascara.png",
 
@@ -244,7 +248,7 @@ export const products: Product[] = [
     brand: "HASKELL",
     collection: "Murumuru",
     size: "300ml",
-    price: 21.95,
+    price: 26.9,
     category: "Shampoo",
     image: "/murumuru-shampoo-300ml.png",
 
@@ -286,7 +290,7 @@ export const products: Product[] = [
     brand: "HASKELL",
     collection: "Murumuru",
     size: "150g",
-    price: 21.95,
+    price: 24.9,
     category: "Leave-in",
     image: "/murumuru-leave-in-150g.png",
 
@@ -370,7 +374,7 @@ export const products: Product[] = [
     brand: "LOLA",
     collection: "Ela é Carioca",
     size: "500g",
-    price: 21.95,
+    price: 26.9,
     category: "Condicionador",
     image: "/ela-e-carioca-condicionador-500g.png",
 
@@ -404,6 +408,8 @@ export const products: Product[] = [
 
     groups: ["HIDRATAÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 26.9,
     description: "Tratamento diário para cabelos sedentos de vida. Restaura a barreira de hidratação natural e dá suavidade."
   },
   {
@@ -418,8 +424,11 @@ export const products: Product[] = [
 
     groups: ["RECONSTRUÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 27.9,
     description: "Reparação molecular que combate o frizz e o ressecamento. Ideal para cabelos quimicamente tratados."
   },
+
   {
     id: 35,
     name: "Condicionador Camomila",
@@ -432,6 +441,8 @@ export const products: Product[] = [
 
     groups: ["LOIROS ILUMINADOS"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 28.9,
     description: "Ilumina e realça a cor dos cabelos loiros naturais ou tingidos. Com óleo essencial de Limão Siciliano e Camomila."
   },
   {
@@ -558,6 +569,8 @@ export const products: Product[] = [
 
     groups: ["ONDULADOS", "CACHOS PERFEITOS", "FINALIZADORES"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 25.9,
     description: "Finalizador de reparação imediata. Sela as cutículas, dá brilho intenso e controla o frizz."
   },
   {
@@ -572,6 +585,8 @@ export const products: Product[] = [
 
     groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 26.9,
     description: "Gel nutritivo para alta definição. Fixa os cachos sem ressecar."
   },
   {
@@ -586,6 +601,8 @@ export const products: Product[] = [
     featured: true,
     groups: ["HIDRATAÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 27.9,
     description: "Tratamento de reparação total e instantânea. Recupera cabelos danificados e quimicamente tratados em uma aplicação."
   },
   {
@@ -600,6 +617,8 @@ export const products: Product[] = [
 
     groups: ["ONDULADOS", "CACHOS PERFEITOS"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 28.9,
     description: "Reparação intensiva com Cannabinoid Active System (CBA) e Hair Kombucha. Devolve a vitalidade e saúde aos fios."
   },
   {
@@ -614,6 +633,8 @@ export const products: Product[] = [
 
     groups: ["HIDRATAÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 25.9,
     description: "Máscara super hidratante para cabelos secos e rebeldes. Recupera a fibra capilar e controla o volume."
   },
   {
@@ -642,6 +663,8 @@ export const products: Product[] = [
 
     groups: ["LOIROS ILUMINADOS"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 27.9,
     description: "Restaura e ilumina cabelos loiros. Com infusão de Camomila e Limão Siciliano."
   },
   {
@@ -656,6 +679,8 @@ export const products: Product[] = [
 
     groups: ["ALISAMENTO/CONTROLE DE FRIZZ", "CRESCIMENTO/FORTALECIMENTO", "RECONSTRUÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 28.9,
     description: "Restaura a densidade de cabelos finos e fracos. Fortalece a fibra e previne a quebra."
   },
   {
@@ -670,6 +695,8 @@ export const products: Product[] = [
 
     groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 25.9,
     description: "Alinhamento imediato dos fios. Reduz o frizz em até 40% e proporciona brilho espelhado."
   },
   {
@@ -684,6 +711,8 @@ export const products: Product[] = [
 
     groups: ["RECONSTRUÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 26.9,
     description: "Restauração molecular ultra potente. Repara danos extremos e fortalece a fibra capilar."
   },
   {
@@ -698,6 +727,8 @@ export const products: Product[] = [
 
     groups: [],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 27.9,
     description: "Hidratação profunda para cachos. Penetra na fibra capilar, devolvendo o balanço e a definição."
   },
   {
@@ -838,6 +869,8 @@ export const products: Product[] = [
 
     groups: ["OLEOS"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 28.9,
     description: "Óleo finalizador rico em Argan. Hidrata, dá brilho e controla o frizz."
   },
   {
@@ -880,6 +913,8 @@ export const products: Product[] = [
 
     groups: ["OLEOS"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 27.9,
     description: "Óleo iluminador para loiros. Realça o brilho e protege contra o calor do secador."
   },
   {
@@ -1182,7 +1217,7 @@ export const products: Product[] = [
     brand: "EUDORA",
     collection: "Perfumes",
     size: "75ml",
-    price: 39.9,
+    price: 49.9,
     category: "Perfume",
     image: "/lyra-desodorante-colonia-75ml.png",
 
@@ -1205,26 +1240,12 @@ export const products: Product[] = [
     description: "Eau de Parfum intenso e sofisticado. Combina a força da flor de Tuberosa com a doçura do Caramelo."
   },
   {
-    id: 96,
-    name: "Eudora Eau de Parfum",
-    brand: "EUDORA",
-    collection: "Perfumes",
-    size: "75ml",
-    price: 39.9,
-    category: "Perfume",
-    image: "/eudora-eau-de-parfum-75ml.png",
-
-    groups: [],
-
-    description: "O clássico Eau de Parfum da marca. Chipre Amadeirado marcante, com notas de flores e madeiras nobres."
-  },
-  {
     id: 97,
     name: "Club 6 Intenso",
     brand: "EUDORA",
     collection: "Perfumes",
     size: "95ml",
-    price: 39.9,
+    price: 49.9,
     category: "Perfume",
     image: "/club-6-intenso-95ml.png",
 
@@ -1244,6 +1265,8 @@ export const products: Product[] = [
 
     groups: ["RECONSTRUÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 27.9,
     description: "Reconstrução total para cabelos danificados. Enriquecido com Óleo de Argan e Queratina, recupera 1 ano de danos em 2 semanas."
   },
   {
@@ -1258,6 +1281,8 @@ export const products: Product[] = [
 
     groups: ["RECONSTRUÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 28.9,
     description: "Desembaraça e reconstrói os fios. Hidratação intensa que acaba com a sensação de cabelos ásperos e porosos."
   },
   {
@@ -1328,6 +1353,8 @@ export const products: Product[] = [
 
     groups: ["HIDRATAÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 25.9,
     description: "Plástica capilar que corrige lesões do fio. Com Bio Hialurônico, deixa o cabelo mais encorpado e macio."
   },
   {
@@ -1510,6 +1537,8 @@ export const products: Product[] = [
 
     groups: ["HIDRATAÇÃO"],
 
+    isChristmasPromo: true,
+    originalPriceDisplay: 25.9,
     description: "Limpeza inteligente que remove impurezas sem ressecar. Com Ativos Micelares e Algas Marinhas."
   },
   {
@@ -1602,7 +1631,7 @@ export const products: Product[] = [
     brand: "EUDORA",
     collection: "Instance",
     size: "200ml",
-    price: 28.9,
+    price: 34.9,
     category: "Body Splash",
     image: "/instance-karite-body-splash.png",
 
@@ -1658,7 +1687,7 @@ export const products: Product[] = [
     brand: "EUDORA",
     collection: "Instance",
     size: "200ml",
-    price: 28.9,
+    price: 34.9,
     category: "Esfoliante",
     image: "/instance-frutas-vermelhas-esfoliante.png",
 
@@ -1756,9 +1785,9 @@ export const products: Product[] = [
     brand: "EUDORA",
     collection: "Siàge Glow Expert",
     size: "200ml",
-    price: 28.9,
+    price: 39.9,
     category: "Tratamento",
-    image: "/siage-glow-expert-balm.png",
+    image: "/images/products/eudora/siage-glow-expert-balm-100ml.png",
 
     groups: ["NUTRIÇÃO", "FINALIZADORES"],
 
@@ -1770,9 +1799,9 @@ export const products: Product[] = [
     brand: "EUDORA",
     collection: "Siàge Liso Intenso",
     size: "100ml",
-    price: 28.9,
+    price: 39.9,
     category: "Tratamento",
-    image: "/siage-liso-intenso-selante.png",
+    image: "/images/products/eudora/siage-liso-intenso-selante-100ml.png",
 
     groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
 
@@ -1784,7 +1813,7 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Acid Gold",
     size: "250ml",
-    price: 89.90,
+    price: 89.9,
     category: "Shampoo",
     image: "/images/products/goldspell/kit-acid-gold.png",
 
@@ -1798,7 +1827,7 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Acid Gold",
     size: "250ml",
-    price: 89.90,
+    price: 21.95,
     category: "Condicionador",
     image: "/images/products/goldspell/kit-acid-gold.png",
 
@@ -1812,7 +1841,7 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Acid Gold",
     size: "250ml",
-    price: 99.90,
+    price: 21.95,
     category: "Máscara",
     image: "/images/products/goldspell/mascara-acid-gold.png",
 
@@ -1826,7 +1855,7 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Poderosa",
     size: "250ml",
-    price: 89.90,
+    price: 21.95,
     category: "Shampoo",
     image: "/images/products/goldspell/shampoo-poderoso.png",
 
@@ -1840,7 +1869,7 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Poderosa",
     size: "250ml",
-    price: 89.90,
+    price: 21.95,
     category: "Condicionador",
     image: "/images/products/goldspell/kit-poderoso.png",
 

@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-hair-afro.jpg";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   return (
     <section className="relative w-full h-[500px] lg:h-[600px] overflow-hidden">
@@ -30,9 +32,10 @@ const Hero = () => {
 
         <div className="flex flex-col gap-4 sm:flex-row">
           <Button
-            className="bg-white text-primary hover:bg-gray-100 border-none font-semibold px-8 py-6 rounded-full text-lg shadow-lg transition-transform hover:scale-105"
+            onClick={() => navigate("/promocao-natal")}
+            className="bg-red-600 text-white hover:bg-red-700 border-2 border-white/20 font-bold px-8 py-6 rounded-full text-lg shadow-xl transition-transform hover:scale-105 animate-pulse"
           >
-            {t("hero.cta_new")}
+            🎅 {t("hero.promo_button")}
           </Button>
         </div>
       </div>

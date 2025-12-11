@@ -116,6 +116,11 @@ export default {
             backgroundPosition: "100% 50%",
           },
         },
+        "christmas-flash": {
+          "0%, 100%": { borderColor: "#ef4444" }, // red-500
+          "33%": { borderColor: "#22c55e" },     // green-500
+          "66%": { borderColor: "#eab308" },     // yellow-500
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -124,6 +129,7 @@ export default {
         "scale-in": "scale-in 0.3s ease-out",
         "slide-up": "slide-up 0.5s ease-out",
         "wave-gradient": "wave-gradient 3s ease-in-out infinite",
+        "christmas-flash": "christmas-flash 1s infinite",
       },
     },
   },

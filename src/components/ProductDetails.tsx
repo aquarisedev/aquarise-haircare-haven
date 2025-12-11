@@ -43,17 +43,40 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
                                 <span className="inline-flex items-center rounded-full border border-primary/50 px-2.5 py-0.5 text-xs font-semibold text-primary uppercase tracking-wide">
                                     {product.brand}
                                 </span>
-                                {product.groups?.map((group) => (
-                                    <span
-                                        key={group}
-                                        className="inline-flex items-center rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-semibold text-secondary"
-                                    >
-                                        {group}
-                                    </span>
-                                ))}
+                                {product.groups?.map((group) => {
+                                    const getGroupTranslation = (groupName: string) => {
+                                        const map: Record<string, string> = {
+                                            "NUTRIÇÃO": "groups.nutricao",
+                                            "HIDRATAÇÃO": "groups.hidratacao",
+                                            "RECONSTRUÇÃO": "groups.reconstrucao",
+                                            "CACHOS PERFEITOS": "groups.cachos_perfeitos",
+                                            "CRESCIMENTO/FORTALECIMENTO": "groups.crescimento_fortalecimento",
+                                            "ALISAMENTO/CONTROLE DE FRIZZ": "groups.alisamento_controle_frizz",
+                                            "LOIROS ILUMINADOS": "groups.loiros_iluminados",
+                                            "FINALIZADORES": "groups.finalizadores",
+                                            "OLEOS": "groups.oleos",
+                                            "ONDULADOS": "groups.ondulados",
+                                            "TRANSIÇÃO CAPILAR": "groups.transicao_capilar",
+                                            "CRONOGRAMA CAPILAR": "groups.cronograma_capilar",
+                                            "CORPO E BANHO": "groups.corpo_banho",
+                                            "SKINCARE": "groups.skincare",
+                                            "PERFUMARIA": "groups.perfumaria"
+                                        };
+                                        return map[groupName] ? t(map[groupName]) : groupName;
+                                    };
+
+                                    return (
+                                        <span
+                                            key={group}
+                                            className="inline-flex items-center rounded-full bg-secondary/10 px-2.5 py-0.5 text-xs font-semibold text-secondary"
+                                        >
+                                            {getGroupTranslation(group)}
+                                        </span>
+                                    );
+                                })}
                             </div>
 
-                            <DialogTitle className={`text-2xl font-bold ${product.brand === 'GOLDSPELL' ? "font-['Playfair_Display'] tracking-wide" : ""}`}>{product.name}</DialogTitle>
+                            <DialogTitle className={`text-2xl font-bold ${product.brand === 'GOLDSPELL' ? "font-['Playfair_Display'] tracking-wide" : "font-heading"}`}>{product.name}</DialogTitle>
                             <DialogDescription className="text-lg text-muted-foreground font-medium">
                                 {product.collection}
                             </DialogDescription>
@@ -61,6 +84,7 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
                         <Button
                             variant="ghost"
                             size="icon"
+                            className="absolute right-12 top-4"
                             onClick={() => {
                                 navigator.clipboard.writeText(window.location.href);
                                 toast.success(t("product.linkCopied", "Link copiado!"));

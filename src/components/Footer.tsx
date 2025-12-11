@@ -69,22 +69,22 @@ const Footer = () => {
               </h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="#contato" className="hover:text-primary transition-colors">
+                  <a href="#contato" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">
                     Contato
                   </a>
                 </li>
                 <li>
-                  <a href="#faq" className="hover:text-primary transition-colors">
+                  <a href="#faq" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">
                     FAQ
                   </a>
                 </li>
                 <li>
-                  <a href="#entregas" className="hover:text-primary transition-colors">
+                  <a href="#entregas" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">
                     Entregas
                   </a>
                 </li>
                 <li>
-                  <a href="#trocas" className="hover:text-primary transition-colors">
+                  <a href="#trocas" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">
                     Trocas e Devoluções
                   </a>
                 </li>
@@ -118,7 +118,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-border py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Aquarise. Desenvolvido com ♥ pela NeoVertex & Luazulcommunity</p>
+          <p>© 2025 Aquarise. Desenvolvido pela NeoVertex</p>
         </div>
       </div>
     </footer>
