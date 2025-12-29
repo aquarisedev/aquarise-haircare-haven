@@ -31,12 +31,12 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col gap-4 sm:flex-row">
-          <Button
-            onClick={() => navigate("/promocao-natal")}
-            className="bg-red-600 text-white hover:bg-red-700 border-2 border-white/20 font-bold px-8 py-6 rounded-full text-lg shadow-xl transition-transform hover:scale-105 animate-pulse"
+          <a
+            href="#product-grid"
+            className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary/90 font-bold px-8 py-4 rounded-full text-lg shadow-xl transition-transform hover:scale-105"
           >
-            🎅 {t("hero.promo_button")}
-          </Button>
+            {t("products.viewAll")}
+          </a>
         </div>
       </div>
     </section>
