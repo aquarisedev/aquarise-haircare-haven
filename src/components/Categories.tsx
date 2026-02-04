@@ -49,6 +49,12 @@ const Categories = () => {
       gradient: "from-primary to-secondary",
     },
     {
+      name: t("categories.hidratacao_corporal"),
+      id: "HIDRATAÇÃO CORPORAL",
+      icon: Droplet,
+      gradient: "from-primary to-secondary",
+    },
+    {
       name: t("categories.nutricao"),
       id: "NUTRIÇÃO",
       icon: Leaf,
@@ -110,7 +116,7 @@ const Categories = () => {
     },
     {
       name: t("categories.perfumes"),
-      id: "PERFUMES",
+      id: "PERFUMARIA",
       icon: SprayCan,
       gradient: "from-primary to-secondary",
     },
@@ -124,7 +130,7 @@ const Categories = () => {
     }
   };
 
-  // Carousel State
+  // Estado do Carrossel
   const [currentPage, setCurrentPage] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(4);
 
@@ -146,13 +152,13 @@ const Categories = () => {
 
   const totalPages = Math.ceil(categories.length / itemsPerPage);
 
-  // Auto-scroll every 20s (20000ms)
+  // Auto-scroll a cada 20s (20000ms)
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
     }, 20000);
     return () => clearInterval(interval);
-  }, [totalPages, currentPage]); // Reset timer on page change (manual or auto)
+  }, [totalPages, currentPage]); // Reiniciar timer ao mudar de página (manual ou automático)
 
   const handlePageChange = (pageIndex: number) => {
     setCurrentPage(pageIndex);
@@ -163,7 +169,7 @@ const Categories = () => {
     (currentPage + 1) * itemsPerPage
   );
 
-  // Swipe processing
+  // Processamento de swipe
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
@@ -186,11 +192,11 @@ const Categories = () => {
     const isRightSwipe = distance < -minSwipeDistance;
 
     if (isLeftSwipe) {
-      // Next page
+      // Próxima página
       setCurrentPage((prev) => (prev + 1) % totalPages);
     }
     if (isRightSwipe) {
-      // Prev page (handle wrapping correctly)
+      // Página anterior (lidar com o loop corretamente)
       setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
     }
   };

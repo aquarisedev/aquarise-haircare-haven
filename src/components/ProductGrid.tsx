@@ -17,7 +17,7 @@ const ProductCollectionSection = ({
   onProductClick: (product: Product) => void;
 }) => {
   const { t } = useTranslation();
-  // Initial visible count: 4 (1 row on desktop)
+  // Contagem inicial visível: 4 (1 linha no desktop)
   const [visibleCount, setVisibleCount] = useState(4);
 
   const handleShowMore = () => {
@@ -96,9 +96,10 @@ const ProductGrid = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const searchQuery = searchParams.get("search")?.toLowerCase() || "";
   const groupParam = searchParams.get("group");
+  const brandParam = searchParams.get("brand");
   const productIdParam = searchParams.get("product");
 
-  // Sync URL with selected product
+  // Sincronizar URL com produto selecionado
   useEffect(() => {
     if (productIdParam) {
       const product = products.find((p) => p.id === Number(productIdParam));
@@ -136,7 +137,7 @@ const ProductGrid = () => {
     });
   };
 
-  // Filter products based on search query OR group
+  // Filtrar produtos baseado na consulta de busca OU grupo
   let filteredProducts = products;
 
   if (searchQuery) {
@@ -145,15 +146,19 @@ const ProductGrid = () => {
       product.brand.toLowerCase().includes(searchQuery) ||
       product.collection?.toLowerCase().includes(searchQuery)
     );
+  } else if (brandParam) {
+    filteredProducts = products.filter((product) =>
+      product.brand === brandParam
+    );
   } else if (groupParam) {
     filteredProducts = products.filter((product) =>
       product.groups?.includes(groupParam)
     );
   }
 
-  // Group products by Brand and then by Collection (only if no search query)
-  // We apply grouping to the filtered list (which might be all products or just a specific category)
-  const groupedProducts = !searchQuery
+  // Agrupar produtos por Marca e depois por Coleção (apenas se não houver consulta de busca OU se houver filtro de marca)
+  // Aplicamos o agrupamento à lista filtrada (que pode ser todos os produtos ou apenas uma categoria específica)
+  const groupedProducts = (!searchQuery || brandParam)
     ? filteredProducts.reduce((acc, product) => {
       const brand = product.brand;
       const collection = product.collection || "Outros";
@@ -173,7 +178,7 @@ const ProductGrid = () => {
     <section id="product-grid" className="py-16 lg:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-8 text-center">
-          {!searchQuery && !groupParam && (
+          {!searchQuery && !groupParam && !brandParam && (
             <>
               {/* Filter Bar mimicking O Boticário */}
               <div className="flex border-y border-border mb-8 sticky top-[60px] bg-background z-20">
@@ -197,8 +202,9 @@ const ProductGrid = () => {
           )}
         </div>
 
-        {searchQuery ? (
-          // Search Results View (Flat Grid)
+        {/* Se tiver brandParam, queremos a visualização agrupada, então tratamos como !searchQuery */}
+        {searchQuery && !brandParam ? (
+          // Visualização de Resultados de Busca (Grade Plana)
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredProducts.map((product) => (
               <ProductCard
@@ -216,7 +222,7 @@ const ProductGrid = () => {
             )}
           </div>
         ) : (
-          // Default Grouped View (Brand -> Collection)
+          // Visualização Agrupada Padrão (Marca -> Coleção)
           Object.entries(groupedProducts).length > 0 ? (
             Object.entries(groupedProducts).map(([brand, collections]) => (
               <div key={brand} id={brand.toLowerCase()} className="mb-16">

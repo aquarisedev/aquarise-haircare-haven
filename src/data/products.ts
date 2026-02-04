@@ -1,7 +1,7 @@
 export interface Product {
   id: number;
   name: string;
-  brand: "HASKELL" | "LOLA" | "EUDORA" | "BOTICARIO" | "GOLDSPELL";
+  brand: "HASKELL" | "LOLA" | "EUDORA" | "BOTICARIO" | "GOLDSPELL" | "NATURA";
   collection?: string;
   size?: string;
   price: number;
@@ -9,6 +9,7 @@ export interface Product {
   image: string;
   featured?: boolean;
   description: string;
+  usage?: string;
   imageClassName?: string;
   groups?: string[];
 }
@@ -23,9 +24,10 @@ export const products: Product[] = [
     price: 27.9,
     category: "Shampoo",
     image: "/cavalo-forte-shampoo.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO", "CACHOS PERFEITOS"],
-
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO",
+      "CACHOS PERFEITOS"
+    ],
     description: "Fortalece e restaura profundamente os fios, auxiliando no crescimento saudável. Com Biotina, Pantenol e Queratina, aumenta a elasticidade e o brilho."
   },
   {
@@ -37,10 +39,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/cavalo-forte-condicionador.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO", "CACHOS PERFEITOS"],
-
-    description: "Desembaraça e sela as cutículas, proporcionando força e brilho. Auxilia no combate à quebra e pontas duplas."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 4,
@@ -51,10 +55,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/cavalo-forte-mascara-300g.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO", "CACHOS PERFEITOS"],
-
-    description: "Tratamento profundo que reconstrói a fibra capilar, proporcionando força, brilho e crescimento acelerado."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Máscara fortalecedora para cabelos fracos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 6,
@@ -65,10 +71,13 @@ export const products: Product[] = [
     price: 21.95,
     category: "Leave-in",
     image: "/cavalo-forte-leave-in.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO", "CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Finalizador sem enxágue que protege os fios, facilita o pentear e reforça a estrutura capilar."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO",
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Seus cabelos são lisos ou alisados e precisam de ajuda na hora de controlar o frizz? O \r\n\r\n\r\nLeave-In Capilar Selante Finalizador Siàge Liso Intenso ajuda a desembaraçar os fios enquanto bloqueia o efeito arrepiado, deixando seus cabelos 2x mais lisos. \r\n\r\n\r\nComo o Leave-In Capilar Selante Finalizador Siàge Liso Intenso age?\r\n\r\n\r\nPossui ação selante para que seus cabelos ganhem um efeito de liso prolongado. A Creatina e o complexo Liss Effect reduzem a porosidade do fio, suavizam ondas indesejadas e controlam o frizz. Seus fios ganham aparência de liso natural. \r\n\r\n\r\nQuais são os benefícios?\r\n\r\n\r\n-Hidratação: sua ação seladora trata os fios sem deixá-los com aspecto pesado. Seus cabelos ficam macios e cheios de brilho, com efeito de liso natural da raiz às pontas.\r\n\r\n\r\n-Elimina pontas duplas: o produto recupera o dano e reduz em até 88% o surgimento das pontas danificadas e quebradiças\r\n\r\n\r\n-Fortalecimento dos fios: o leave-in reduz a porosidade e o frizz, devolvendo a saúde e a força dos fios.\r\n\r\nO que diz o especialista:\r\n\r\n\"Se o seu cabelo é liso ou alisado e está ressecado, sem brilho e com frizz, ele precisa de HIDRATAÇÃO. Use este leave-in selante para manter a umidade dentro dos fios , com uma ação que bloqueia o efeito arrepiado e reduz a porosidade.” Especialista em cabelo de Eudora",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 7,
@@ -79,24 +88,11 @@ export const products: Product[] = [
     price: 12.95,
     category: "Tratamento",
     image: "/cavalo-forte-complexo-fortalecedor.png",
-
-    groups: ["OLEOS"],
-
-    description: "Concentrado de vitaminas que potencializa a hidratação e o fortalecimento quando adicionado à máscara."
-  },
-  {
-    id: 8,
-    name: "Selante de Pontas Cavalo Forte",
-    brand: "HASKELL",
-    collection: "Cavalo Forte",
-    size: "35ml",
-    price: 21.95,
-    category: "Tratamento",
-    image: "/cavalo-forte-selante-pontas.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO", "CACHOS PERFEITOS"],
-
-    description: "Repara e une as pontas duplas, recuperando a resistência e o aspecto saudável dos fios."
+    groups: [
+      "OLEOS"
+    ],
+    description: "Óleo selador de pontas para proteção dos fios",
+    usage: "Aplicar nas pontas dos cabelos"
   },
   {
     id: 9,
@@ -107,24 +103,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/bendito-loiro-shampoo.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Reconstrução para cabelos descoloridos. Limpa suavemente enquanto repõe massa e combate o emborrachamento."
-  },
-  {
-    id: 10,
-    name: "Condicionador Bendito Loiro",
-    brand: "HASKELL",
-    collection: "Bendito Loiro",
-    size: "300ml",
-    price: 21.95,
-    category: "Condicionador",
-    image: "/bendito-loiro-condicionador.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Sela as cutículas e devolve a emoliência aos fios loiros, combatendo a porosidade e o frizz."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "Prepara o cabelo para o tratamento intensivo. Possui pH equilibrado e evita a alta rigidez característica de shampoo.\r\n    • Ideal para recuperar os cabelos descoloridos;\r\n    • A linha possui ação antiemborrachamento e antiporosidade, protegendo os fios de danos futuros;\r\n    • Sua formulação conta com complexo de proteínas e vinagre balsâmico que, juntos, promovem a regeneração capilar de maneira intensiva, repondo a massa proteica nos fios.\r\nDireção olfativa: floral frutal",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Bendito Loiro."
   },
   {
     id: 11,
@@ -135,10 +118,11 @@ export const products: Product[] = [
     price: 27.9,
     category: "Máscara",
     image: "/bendito-loiro-mascara.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Regeneração intensiva com Vinagre Balsâmico e Complexo de Proteínas. Recupera a resistência e o brilho dos loiros."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "Máscara fortalecedora para cabelos fracos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 12,
@@ -149,10 +133,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/bendito-loiro-fluido.png",
-
-    groups: ["LOIROS ILUMINADOS", "FINALIZADORES"],
-
-    description: "Protetor térmico e solar que blinda os fios contra danos, reduz o frizz e previne o amarelamento."
+    groups: [
+      "LOIROS ILUMINADOS",
+      "FINALIZADORES"
+    ],
+    description: "Óleo selador de pontas para proteção dos fios",
+    usage: "Aplicar nas pontas dos cabelos"
   },
   {
     id: 13,
@@ -163,10 +149,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/bendito-loiro-proteina.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Reposição de massa proteica para cabelos extremamente danificados. Devolve a elasticidade e força."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "Óleo selador de pontas para proteção dos fios",
+    usage: "Aplicar nas pontas dos cabelos"
   },
   {
     id: 14,
@@ -177,10 +164,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/cachos-sim-shampoo-300ml.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Low Poo. Limpeza suave com Óleo de Coco e Colágeno, preservando a hidratação natural dos cachos."
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Prepara o cabelo para o tratamento intensivo. Possui pH equilibrado e evita a alta rigidez característica de shampoo.\r\n    • Ideal para recuperar os cabelos descoloridos;\r\n    • A linha possui ação antiemborrachamento e antiporosidade, protegendo os fios de danos futuros;\r\n    • Sua formulação conta com complexo de proteínas e vinagre balsâmico que, juntos, promovem a regeneração capilar de maneira intensiva, repondo a massa proteica nos fios.\r\nDireção olfativa: floral frutal",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Bendito Loiro."
   },
   {
     id: 16,
@@ -191,10 +180,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/cachos-sim-condicionador-300ml.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Nutre e define os cachos, facilitando o desembaraço e combatendo o frizz."
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 18,
@@ -205,10 +196,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/cachos-sim-mascara-300g.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Hidratação e nutrição intensa. Recupera a elasticidade e memoriza a forma dos cachos."
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Máscara para definição e hidratação de cachos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 19,
@@ -219,10 +212,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Leave-in",
     image: "/cachos-sim-leave-in-300ml.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Finalizador que ativa e define os cachos, com proteção térmica e efeito memória."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Seus cabelos são lisos ou alisados e precisam de ajuda na hora de controlar o frizz? O \r\n\r\n\r\nLeave-In Capilar Selante Finalizador Siàge Liso Intenso ajuda a desembaraçar os fios enquanto bloqueia o efeito arrepiado, deixando seus cabelos 2x mais lisos. \r\n\r\n\r\nComo o Leave-In Capilar Selante Finalizador Siàge Liso Intenso age?\r\n\r\n\r\nPossui ação selante para que seus cabelos ganhem um efeito de liso prolongado. A Creatina e o complexo Liss Effect reduzem a porosidade do fio, suavizam ondas indesejadas e controlam o frizz. Seus fios ganham aparência de liso natural. \r\n\r\n\r\nQuais são os benefícios?\r\n\r\n\r\n-Hidratação: sua ação seladora trata os fios sem deixá-los com aspecto pesado. Seus cabelos ficam macios e cheios de brilho, com efeito de liso natural da raiz às pontas.\r\n\r\n\r\n-Elimina pontas duplas: o produto recupera o dano e reduz em até 88% o surgimento das pontas danificadas e quebradiças\r\n\r\n\r\n-Fortalecimento dos fios: o leave-in reduz a porosidade e o frizz, devolvendo a saúde e a força dos fios.\r\n\r\nO que diz o especialista:\r\n\r\n\"Se o seu cabelo é liso ou alisado e está ressecado, sem brilho e com frizz, ele precisa de HIDRATAÇÃO. Use este leave-in selante para manter a umidade dentro dos fios , com uma ação que bloqueia o efeito arrepiado e reduz a porosidade.” Especialista em cabelo de Eudora",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 20,
@@ -233,10 +228,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/cachos-sim-gel-creme-240g.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Textura inovadora que une a definição do gel com a nutrição do creme. Cachos definidos sem rigidez."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Creme em gel para definição de cachos",
+    usage: "Aplicar nos fios úmidos e modelar"
   },
   {
     id: 21,
@@ -247,10 +244,12 @@ export const products: Product[] = [
     price: 26.9,
     category: "Shampoo",
     image: "/murumuru-shampoo-300ml.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Nutrição prolongada para cabelos secos. Limpa enquanto repõe nutrientes essenciais."
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Prepara o cabelo para o tratamento intensivo. Possui pH equilibrado e evita a alta rigidez característica de shampoo.\r\n    • Ideal para recuperar os cabelos descoloridos;\r\n    • A linha possui ação antiemborrachamento e antiporosidade, protegendo os fios de danos futuros;\r\n    • Sua formulação conta com complexo de proteínas e vinagre balsâmico que, juntos, promovem a regeneração capilar de maneira intensiva, repondo a massa proteica nos fios.\r\nDireção olfativa: floral frutal",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Bendito Loiro."
   },
   {
     id: 22,
@@ -261,10 +260,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/murumuru-condicionador-300ml.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Sela as cutículas e devolve a maciez e o brilho aos cabelos ressecados."
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 23,
@@ -275,24 +276,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/murumuru-mascara-300g.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Manteiga hidratante de alta performance. Penetra profundamente na fibra para nutrir e recuperar a elasticidade."
-  },
-  {
-    id: 25,
-    name: "Leave-in en Crème Murumuru",
-    brand: "HASKELL",
-    collection: "Murumuru",
-    size: "150g",
-    price: 24.9,
-    category: "Leave-in",
-    image: "/murumuru-leave-in-150g.png",
-
-    groups: ["NUTRIÇÃO", "CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Protege contra o ressecamento, facilita o pentear e controla o volume e o frizz."
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Manteiga nutritiva com murumuru para hidratação profunda",
+    usage: "Aplicar na fibra capilar, deixar agir e enxaguar"
   },
   {
     id: 26,
@@ -303,24 +292,10 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/murumuru-nectar-35ml.png",
-
-    groups: ["OLEOS"],
-
+    groups: [
+      "OLEOS"
+    ],
     description: "Óleo nutritivo concentrado. Pode ser usado puro ou misturado à máscara para potencializar a nutrição."
-  },
-  {
-    id: 27,
-    name: "Shampoo Pós Progressiva",
-    brand: "HASKELL",
-    collection: "Pós Progressiva",
-    size: "300ml",
-    price: 21.95,
-    category: "Shampoo",
-    image: "/pos-progressiva-shampoo-300ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Prolonga o efeito liso. Limpeza suave com Mix de Óleos que mantém os fios alinhados."
   },
   {
     id: 28,
@@ -331,10 +306,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/pos-progressiva-condicionador-300ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Hidrata e reduz o frizz, mantendo o cabelo liso e disciplinado por mais tempo."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 29,
@@ -345,10 +321,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/pos-progressiva-mascara-300g.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Tratamento intensivo que repara os danos da química e preserva o alisamento."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ"
+    ],
+    description: "Máscara para cabelos lisos pós-progressiva",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 30,
@@ -359,10 +336,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/pos-progressiva-fluido-120ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ", "FINALIZADORES"],
-
-    description: "Leave-in com proteção térmica. Desembaraça, dá brilho e mantém o efeito liso."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ",
+      "FINALIZADORES"
+    ],
+    description: "Indicação: cabelos quimicamente alisados\r\nProlonga o efeito liso dos cabelos, diminui o frizz e aumenta a resistência do fio.\r\n    • Desenvolvida, especialmente, para os cabelos com alisamentos químicos;\r\n    • Essa linha prolonga o efeito da escova progressiva e mantém os cabelos com brilho e saudáveis da raiz às pontas;\r\n    • A Tâmara da Índia, associada ao Lisselini, age na restauração da fibra capilar, reforçando a sua estrutura interna, além de alinhar o fio e combater o frizz.\r\nDireção olfativa: floral frutal gourmand\r\nEspecificações:\r\npH 3.5\r\nsem parabenos| sem corantes\r\nproteção térmica | proteção solar\r\nsem enxágue",
+    usage: "agite antes de usar. Nos cabelos limpos e úmidos, borrife o Fluido Alinhador em todo o comprimento dos fios e espalhe uniformemente pelos cabelos. Finalize como desejar. Sem enxágue. Potencialize os resultados utilizando toda a linha Pós Progressiva."
   },
   {
     id: 31,
@@ -373,10 +352,13 @@ export const products: Product[] = [
     price: 26.9,
     category: "Condicionador",
     image: "/ela-e-carioca-condicionador-500g.png",
-
-    groups: ["NUTRIÇÃO", "HIDRATAÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Nutrição e hidratação profunda para todos os tipos de cabelo. Protege contra danos climáticos e restaura a maciez."
+    groups: [
+      "NUTRIÇÃO",
+      "HIDRATAÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 32,
@@ -387,10 +369,9 @@ export const products: Product[] = [
     price: 21.95,
     category: "Condicionador",
     image: "/meu-cacho-minha-vida-condicionador-500g.png",
-
     groups: [],
-
-    description: "Desembaraça e define os cachos, proporcionando emoliência e movimento natural."
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 33,
@@ -401,10 +382,11 @@ export const products: Product[] = [
     price: 15.95,
     category: "Condicionador",
     image: "/morte-subita-condicionador-250ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Tratamento diário para cabelos sedentos de vida. Restaura a barreira de hidratação natural e dá suavidade."
+    groups: [
+      "HIDRATAÇÃO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 34,
@@ -415,12 +397,12 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/papo-reto-condicionador-270ml.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Reparação molecular que combate o frizz e o ressecamento. Ideal para cabelos quimicamente tratados."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
-
   {
     id: 35,
     name: "Condicionador Camomila",
@@ -430,38 +412,11 @@ export const products: Product[] = [
     price: 15.95,
     category: "Condicionador",
     image: "/camomila-condicionador-250ml.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Ilumina e realça a cor dos cabelos loiros naturais ou tingidos. Com óleo essencial de Limão Siciliano e Camomila."
-  },
-  {
-    id: 36,
-    name: "Condicionador Ondulados Lola",
-    brand: "LOLA",
-    collection: "Ondulados",
-    size: "500g",
-    price: 21.95,
-    category: "Condicionador",
-    image: "/ondulados-condicionador-500g.png",
-
-    groups: ["ONDULADOS"],
-
-    description: "Define as ondas e controla o frizz, proporcionando brilho e leveza."
-  },
-  {
-    id: 37,
-    name: "Condicionador/Co Wash Comigo Ninguém Pode",
-    brand: "LOLA",
-    collection: "Comigo Ninguém Pode",
-    size: "450g",
-    price: 21.95,
-    category: "Condicionador",
-    image: "/comigo-ninguem-pode-co-wash-450g.png",
-
-    groups: ["ONDULADOS", "ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Limpeza suave e condicionamento em um só passo. Ideal para técnicas No Poo e Co-Wash."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 38,
@@ -472,10 +427,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/plot-twist-creme-buriti-480g.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Ativador de cachos com óleo de Buriti. Nutre e define, proporcionando brilho intenso."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Gel nutritivo para definição de cachos",
+    usage: "Aplicar nos fios úmidos e modelar"
   },
   {
     id: 39,
@@ -486,10 +443,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/ela-e-carioca-creme-pentear-480g.png",
-
-    groups: ["FINALIZADORES"],
-
-    description: "Finalizador 3 em 1: modelador, protetor térmico e hidratante. Controla o frizz e define."
+    groups: [
+      "FINALIZADORES"
+    ],
+    description: "Meu ativo patenteado para estimular o crescimentoé perfeito e vai ajudar seu cabelo a crescer mais forte e resistente. Além disso sou feito com Água de Rosas, Alecrim e Cera de Rosas, nutrientes poderosos que vão cuidar do interior do seu fio. Tudo que você precisa para esse momento. Fórmula vegana, dermatologicamente testada e que protege seus fios do calor do secador.",
+    usage: "Divida o seu cabelo úmido (não molhado) em seis seções iguais, depois generosamente aplique o Creme Multi Texturas em cada seção. A quantidade certinha vai variar de acordo com a necessidade do seu fio. Finalize como de costume, preferencialmente modelando com as mãos de baixo para cima para estimular os cachos, deixando secar naturalmente ou usando o difusor."
   },
   {
     id: 40,
@@ -500,10 +458,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/milagre-creme-pentear-450g.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Creme de pentear multifuncional que desembaraça, hidrata e dá brilho. Pode ser usado como condicionador."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Meu ativo patenteado para estimular o crescimentoé perfeito e vai ajudar seu cabelo a crescer mais forte e resistente. Além disso sou feito com Água de Rosas, Alecrim e Cera de Rosas, nutrientes poderosos que vão cuidar do interior do seu fio. Tudo que você precisa para esse momento. Fórmula vegana, dermatologicamente testada e que protege seus fios do calor do secador.",
+    usage: "Divida o seu cabelo úmido (não molhado) em seis seções iguais, depois generosamente aplique o Creme Multi Texturas em cada seção. A quantidade certinha vai variar de acordo com a necessidade do seu fio. Finalize como de costume, preferencialmente modelando com as mãos de baixo para cima para estimular os cachos, deixando secar naturalmente ou usando o difusor."
   },
   {
     id: 41,
@@ -514,24 +474,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/plot-twist-creme-guava-480g.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Modelador de cachos com extrato de Goiaba. Define e retém a umidade, combatendo o frizz."
-  },
-  {
-    id: 42,
-    name: "Creme Texturizador Ondulados Lola",
-    brand: "LOLA",
-    collection: "Ondulados",
-    size: "500g",
-    price: 21.95,
-    category: "Styling",
-    image: "/ondulados-creme-texturizador-500g.png",
-
-    groups: ["ONDULADOS", "FINALIZADORES"],
-
-    description: "Texturizador para ondas definidas e com movimento. Controla o volume sem pesar."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Creme modelador para definição de cachos",
+    usage: "Aplicar nos fios úmidos e modelar"
   },
   {
     id: 43,
@@ -542,24 +490,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/transicao-creme-texturizador-500ml.png",
-
-    groups: ["TRANSIÇÃO CAPILAR", "FINALIZADORES"],
-
-    description: "Estimula a formação de cachos em cabelos em transição. Disfarça a diferença de texturas."
-  },
-  {
-    id: 44,
-    name: "Finalizador Leave In Danos Vorazes",
-    brand: "LOLA",
-    collection: "Danos Vorazes",
-    size: "200ml",
-    price: 15.95,
-    category: "Leave-in",
-    image: "/danos-vorazes-leave-in-200ml.png",
-
-    groups: ["ONDULADOS", "CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Finalizador de reparação imediata. Sela as cutículas, dá brilho intenso e controla o frizz."
+    groups: [
+      "TRANSIÇÃO CAPILAR",
+      "FINALIZADORES"
+    ],
+    description: "Meu ativo patenteado para estimular o crescimentoé perfeito e vai ajudar seu cabelo a crescer mais forte e resistente. Além disso sou feito com Água de Rosas, Alecrim e Cera de Rosas, nutrientes poderosos que vão cuidar do interior do seu fio. Tudo que você precisa para esse momento. Fórmula vegana, dermatologicamente testada e que protege seus fios do calor do secador.",
+    usage: "Divida o seu cabelo úmido (não molhado) em seis seções iguais, depois generosamente aplique o Creme Multi Texturas em cada seção. A quantidade certinha vai variar de acordo com a necessidade do seu fio. Finalize como de costume, preferencialmente modelando com as mãos de baixo para cima para estimular os cachos, deixando secar naturalmente ou usando o difusor."
   },
   {
     id: 45,
@@ -570,10 +506,12 @@ export const products: Product[] = [
     price: 18.95,
     category: "Styling",
     image: "/plot-twist-nut-gel-230g.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Gel nutritivo para alta definição. Fixa os cachos sem ressecar."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Gel nutritivo para definição de cachos",
+    usage: "Aplicar nos fios úmidos e modelar"
   },
   {
     id: 46,
@@ -585,37 +523,10 @@ export const products: Product[] = [
     category: "Máscara",
     image: "/morte-subita-mascara-450g.png",
     featured: true,
-    groups: ["HIDRATAÇÃO"],
-
+    groups: [
+      "HIDRATAÇÃO"
+    ],
     description: "Tratamento de reparação total e instantânea. Recupera cabelos danificados e quimicamente tratados em uma aplicação."
-  },
-  {
-    id: 47,
-    name: "Máscara Danos Vorazes",
-    brand: "LOLA",
-    collection: "Danos Vorazes",
-    size: "450g",
-    price: 18.95,
-    category: "Máscara",
-    image: "/danos-vorazes-mascara-450g.png",
-
-    groups: ["ONDULADOS", "CACHOS PERFEITOS"],
-
-    description: "Reparação intensiva com Cannabinoid Active System (CBA) e Hair Kombucha. Devolve a vitalidade e saúde aos fios."
-  },
-  {
-    id: 48,
-    name: "Máscara Dream Cream",
-    brand: "LOLA",
-    collection: "Dream Cream",
-    size: "200g",
-    price: 12.95,
-    category: "Máscara",
-    image: "/dream-cream-mascara-200g.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Máscara super hidratante para cabelos secos e rebeldes. Recupera a fibra capilar e controla o volume."
   },
   {
     id: 49,
@@ -626,10 +537,13 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ela-e-carioca-mascara-450g.png",
-
-    groups: ["NUTRIÇÃO", "HIDRATAÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Hidronutrição profunda. Repõe a umidade e nutrientes perdidos, deixando os cabelos macios e sedosos."
+    groups: [
+      "NUTRIÇÃO",
+      "HIDRATAÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Máscara de tratamento para cabelos crespos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 50,
@@ -640,38 +554,11 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/camomila-mascara-230g.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Restaura e ilumina cabelos loiros. Com infusão de Camomila e Limão Siciliano."
-  },
-  {
-    id: 51,
-    name: "Máscara Densidade",
-    brand: "LOLA",
-    collection: "Densidade",
-    size: "230g",
-    price: 15.95,
-    category: "Máscara",
-    image: "/densidade-mascara-230g.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ", "CRESCIMENTO/FORTALECIMENTO", "RECONSTRUÇÃO"],
-
-    description: "Restaura a densidade de cabelos finos e fracos. Fortalece a fibra e previne a quebra."
-  },
-  {
-    id: 52,
-    name: "Máscara Disciplinante Xapadinha",
-    brand: "LOLA",
-    collection: "Xapadinha",
-    size: "100g",
-    price: 15.95,
-    category: "Máscara",
-    image: "/xapadinha-mascara-disciplinante-100g.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Alinhamento imediato dos fios. Reduz o frizz em até 40% e proporciona brilho espelhado."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "Máscara com camomila para restauração",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 53,
@@ -682,10 +569,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/papo-reto-mascara-fluida-270ml.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Restauração molecular ultra potente. Repara danos extremos e fortalece a fibra capilar."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "Máscara de tratamento para cabelos lisos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 54,
@@ -696,10 +584,9 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/meu-cacho-minha-vida-mascara-450g.png",
-
     groups: [],
-
-    description: "Hidratação profunda para cachos. Penetra na fibra capilar, devolvendo o balanço e a definição."
+    description: "Máscara hidratante para cabelos cacheados",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 55,
@@ -710,10 +597,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ghee-hidratacao-mascara-350g.png",
-
-    groups: ["CRONOGRAMA CAPILAR", "HIDRATAÇÃO"],
-
-    description: "Hidratação com Banana e Aloe Vera. Repõe a água dos fios, deixando-os macios e brilhantes."
+    groups: [
+      "CRONOGRAMA CAPILAR",
+      "HIDRATAÇÃO"
+    ],
+    description: "Máscara de tratamento para cabelos lisos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 57,
@@ -724,10 +613,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Máscara",
     image: "/loira-de-farmacia-mascara-230g.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Matiza e neutraliza os tons amarelados e alaranjados dos cabelos loiros e descoloridos."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "Máscara matizadora para cabelos loiros",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 58,
@@ -738,10 +628,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/ghee-nutricao-mascara-350g.png",
-
-    groups: ["CRONOGRAMA CAPILAR", "NUTRIÇÃO"],
-
-    description: "Nutrição com Abacaxi e Manteiga de Bacuri. Repõe os lipídios e combate o ressecamento."
+    groups: [
+      "CRONOGRAMA CAPILAR",
+      "NUTRIÇÃO"
+    ],
+    description: "Máscara de tratamento para cabelos lisos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 60,
@@ -752,52 +644,12 @@ export const products: Product[] = [
     price: 15.95,
     category: "Máscara",
     image: "/ghee-reconstrucao-mascara-100g.png",
-
-    groups: ["CRONOGRAMA CAPILAR", "RECONSTRUÇÃO"],
-
-    description: "Versão 100g da Máscara de Reconstrução Be(m)dita Ghee."
-  },
-  {
-    id: 62,
-    name: "Máscara Reconst. Argan Oil",
-    brand: "LOLA",
-    collection: "Argan Oil",
-    size: "230g",
-    price: 12.95,
-    category: "Máscara",
-    image: "/argan-oil-mascara-230g.png",
-
-    groups: ["RECONSTRUÇÃO", "OLEOS"],
-
-    description: "Reconstrução rica em Óleo de Argan. Preenche as áreas danificadas da cutícula capilar."
-  },
-  {
-    id: 63,
-    name: "Máscara Restauradora Tarja Preta",
-    brand: "LOLA",
-    collection: "Tarja Preta",
-    size: "230g",
-    price: 18.95,
-    category: "Máscara",
-    image: "/tarja-preta-mascara-230g.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Máscara restauradora intensiva com Queratina Vegetal. Repara danos profundos e devolve a elasticidade."
-  },
-  {
-    id: 64,
-    name: "O Umidificador Que Sabia Demais",
-    brand: "LOLA",
-    collection: "Lola",
-    size: "250ml",
-    price: 15.95,
-    category: "Styling",
-    image: "/umidificador-que-sabia-demais-250g.png",
-
-    groups: ["TRANSIÇÃO CAPILAR", "FINALIZADORES"],
-
-    description: "Umidificador de cachos que define e controla o frizz sem pesar. Ideal para day after."
+    groups: [
+      "CRONOGRAMA CAPILAR",
+      "RECONSTRUÇÃO"
+    ],
+    description: "Máscara de tratamento para cabelos lisos",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 65,
@@ -808,52 +660,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/papo-reto-oleo-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo multifuncional com proteção térmica. Sela as pontas, dá brilho e controla o frizz."
-  },
-  {
-    id: 66,
-    name: "Óleo Açaí/Pracaxi Pinga",
-    brand: "LOLA",
-    collection: "Pinga",
-    size: "50ml",
-    price: 18.95,
-    category: "Tratamento",
-    image: "/pinga-acai-pracaxi-oleo-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo de tratamento pré e pós shampoo. Nutre, protege a cor e previne o desbotamento."
-  },
-  {
-    id: 67,
-    name: "Óleo Argan/Pracaxi",
-    brand: "LOLA",
-    collection: "Lola",
-    size: "50ml",
-    price: 15.95,
-    category: "Tratamento",
-    image: "/argan-oil-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo finalizador rico em Argan. Hidrata, dá brilho e controla o frizz."
-  },
-  {
-    id: 68,
-    name: "Óleo Disciplinante Xapadinha",
-    brand: "LOLA",
-    collection: "Xapadinha",
-    size: "50ml",
-    price: 21.95,
-    category: "Tratamento",
-    image: "/xapadinha-oleo-disciplinante-50ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ", "OLEOS"],
-
-    description: "Óleo disciplinante com proteção térmica. Garante brilho espelhado e controle do frizz por 24h."
+    groups: [
+      "OLEOS"
+    ],
+    description: "Óleo para cabelos lisos com proteção térmica",
+    usage: "Usar como pré-shampoo ou finalização"
   },
   {
     id: 69,
@@ -864,10 +675,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/ghee-hidratacao-oleo-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo hidratante bifásico. Pode ser usado como pré-shampoo ou finalizador para maciez extra."
+    groups: [
+      "OLEOS"
+    ],
+    description: "Óleo para cabelos lisos com proteção térmica",
+    usage: "Usar como pré-shampoo ou finalização"
   },
   {
     id: 70,
@@ -878,10 +690,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/camomila-oleo-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo iluminador para loiros. Realça o brilho e protege contra o calor do secador."
+    groups: [
+      "OLEOS"
+    ],
+    description: "Óleo com camomila para hidratação",
+    usage: "Usar como pré-shampoo ou finalização"
   },
   {
     id: 71,
@@ -892,10 +705,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/ghee-nutricao-oleo-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo nutritivo para cabelos porosos. Repõe lipídios e devolve a vitalidade."
+    groups: [
+      "OLEOS"
+    ],
+    description: "Óleo para cabelos lisos com proteção térmica",
+    usage: "Usar como pré-shampoo ou finalização"
   },
   {
     id: 72,
@@ -906,10 +720,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Tratamento",
     image: "/ghee-reconstrucao-oleo-50ml.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo reconstrutor para cabelos quebradiços. Fortalece e protege contra a quebra."
+    groups: [
+      "OLEOS"
+    ],
+    description: "Óleo para cabelos lisos com proteção térmica",
+    usage: "Usar como pré-shampoo ou finalização"
   },
   {
     id: 73,
@@ -920,10 +735,13 @@ export const products: Product[] = [
     price: 12.95,
     category: "Tratamento",
     image: "/ela-e-carioca-proteina-90ml.png",
-
-    groups: ["NUTRIÇÃO", "HIDRATAÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Proteína concentrada para reposição de massa. Fortalece e encorpa os fios finos."
+    groups: [
+      "NUTRIÇÃO",
+      "HIDRATAÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Proteína para fortalecimento de fios",
+    usage: "Aplicar nos fios e deixar agir"
   },
   {
     id: 74,
@@ -934,52 +752,12 @@ export const products: Product[] = [
     price: 21.95,
     category: "Styling",
     image: "/plot-twist-reativador-guava-280ml.png",
-
-    groups: ["CACHOS PERFEITOS", "FINALIZADORES"],
-
-    description: "Spray reativador para o day after. Revitaliza os cachos, reduz o frizz e perfuma."
-  },
-  {
-    id: 75,
-    name: "Redutor Volume Vintage Girls",
-    brand: "LOLA",
-    collection: "Vintage Girls",
-    size: "100g",
-    price: 12.95,
-    category: "Tratamento",
-    image: "/vintage-girls-redutor-volume-100g.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Creme alisante e redutor de volume. Alinha os fios e reduz o frizz com fórmula suave."
-  },
-  {
-    id: 76,
-    name: "Reparador/Booster Danos Vorazes",
-    brand: "LOLA",
-    collection: "Danos Vorazes",
-    size: "250ml",
-    price: 18.95,
-    category: "Tratamento",
-    image: "/danos-vorazes-booster-250ml.png",
-
-    groups: ["ONDULADOS", "CACHOS PERFEITOS"],
-
-    description: "Booster de reparação imediata. Recupera a estrutura do fio danificado em segundos."
-  },
-  {
-    id: 77,
-    name: "Shampoo Dream",
-    brand: "LOLA",
-    collection: "Dream",
-    size: "250ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/dream-shampoo-250ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Shampoo super hidratante para cabelos secos e rebeldes. Limpa suavemente e acalma os fios."
+    groups: [
+      "CACHOS PERFEITOS",
+      "FINALIZADORES"
+    ],
+    description: "Gel nutritivo para definição de cachos",
+    usage: "Aplicar nos fios úmidos e modelar"
   },
   {
     id: 78,
@@ -990,10 +768,13 @@ export const products: Product[] = [
     price: 21.95,
     category: "Shampoo",
     image: "/ela-e-carioca-shampoo-500ml.png",
-
-    groups: ["NUTRIÇÃO", "HIDRATAÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Shampoo nutritivo que limpa sem agredir. Prepara os fios para o tratamento hidronutritivo."
+    groups: [
+      "NUTRIÇÃO",
+      "HIDRATAÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 79,
@@ -1004,10 +785,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/papo-reto-shampoo-270ml.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Shampoo de limpeza profunda e reparação molecular. Remove impurezas e fortalece."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 80,
@@ -1018,38 +800,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/camomila-shampoo-250ml.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Shampoo iluminador para loiros. Realça os reflexos dourados e dá brilho."
-  },
-  {
-    id: 81,
-    name: "Shampoo Densidade",
-    brand: "LOLA",
-    collection: "Densidade",
-    size: "250ml",
-    price: 15.95,
-    category: "Shampoo",
-    image: "/densidade-shampoo-250ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ", "CRESCIMENTO/FORTALECIMENTO", "RECONSTRUÇÃO"],
-
-    description: "Shampoo restaurador de densidade. Fortalece a raiz e encorpa os fios finos."
-  },
-  {
-    id: 82,
-    name: "Shampoo Fortificante Danos Vorazes",
-    brand: "LOLA",
-    collection: "Danos Vorazes",
-    size: "250ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/danos-vorazes-shampoo-fortificante-250ml.png",
-
-    groups: ["ONDULADOS", "CACHOS PERFEITOS"],
-
-    description: "Shampoo de reparação suave. Limpa e inicia o processo de reconstrução dos fios danificados."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 83,
@@ -1060,10 +815,12 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/ghee-hidratacao-shampoo-250ml.png",
-
-    groups: ["CRONOGRAMA CAPILAR", "HIDRATAÇÃO"],
-
-    description: "Shampoo de hidratação. Limpa suavemente e repõe a umidade natural dos fios."
+    groups: [
+      "CRONOGRAMA CAPILAR",
+      "HIDRATAÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 84,
@@ -1074,10 +831,11 @@ export const products: Product[] = [
     price: 15.95,
     category: "Shampoo",
     image: "/morte-subita-shampoo-250ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Shampoo esfoliante e hidratante. Remove resíduos e prepara o cabelo para a máscara."
+    groups: [
+      "HIDRATAÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 85,
@@ -1088,10 +846,11 @@ export const products: Product[] = [
     price: 15.95,
     category: "Shampoo",
     image: "/loira-de-farmacia-shampoo-250ml.png",
-
-    groups: ["LOIROS ILUMINADOS"],
-
-    description: "Shampoo matizador violeta. Neutraliza tons amarelados e limpa sem ressecar."
+    groups: [
+      "LOIROS ILUMINADOS"
+    ],
+    description: "Shampoo para cabelos loiros mais bonitos e saudáveis. Rico em antioxidantes, matizo e neutralizo os tons amarelados dos fios, deixando seu tom de loiro revitalizado e mais brilhante. Com proteção térmica contra os danos dos raios UV e da poluição ambiental, protegendo sua cor por mais tempo.",
+    usage: "Aplique nos cabelos molhados e massageie delicadamente até fazer espuma. Repita a operação se necessário. Siga o tratamento usando a Máscara Matizadora Loira de Farmácia. #FicaADica: Se desejar um efeito matizador mais intenso, deixe nos fios pelo tempo necessário para alcançar a matização desejada e sempre acompanhado da Máscara Matizadora Loira de Farmácia."
   },
   {
     id: 86,
@@ -1102,10 +861,12 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/ghee-nutricao-shampoo-250ml.png",
-
-    groups: ["CRONOGRAMA CAPILAR", "NUTRIÇÃO"],
-
-    description: "Shampoo nutritivo. Limpa e devolve os lipídios essenciais para a saúde capilar."
+    groups: [
+      "CRONOGRAMA CAPILAR",
+      "NUTRIÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 87,
@@ -1116,52 +877,12 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/ghee-reconstrucao-shampoo-250ml.png",
-
-    groups: ["CRONOGRAMA CAPILAR", "RECONSTRUÇÃO"],
-
-    description: "Shampoo reconstrutor. Fortalece a fibra capilar durante a limpeza."
-  },
-  {
-    id: 88,
-    name: "Shampoo Reconstrutor Argan/Pracaxi",
-    brand: "LOLA",
-    collection: "Argan/Pracaxi",
-    size: "250ml",
-    price: 12.95,
-    category: "Shampoo",
-    image: "/argan-pracaxi-shampoo-250ml.png",
-
-    groups: [],
-
-    description: "Shampoo reparador com Óleo de Argan. Limpa e auxilia na reconstrução dos fios."
-  },
-  {
-    id: 89,
-    name: "Shampoo Rejuvenescedor Rapunzel",
-    brand: "LOLA",
-    collection: "Rapunzel",
-    size: "250ml",
-    price: 15.95,
-    category: "Shampoo",
-    image: "/rapunzel-shampoo-250ml.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Shampoo fortificante que estimula o crescimento e reduz a queda de cabelo."
-  },
-  {
-    id: 90,
-    name: "Shampoo S/ Enxágue Plot Twist",
-    brand: "LOLA",
-    collection: "Plot Twist",
-    size: "200ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/plot-twist-shampoo-sem-enxague-200ml.png",
-
-    groups: ["HIDRATAÇÃO", "CACHOS PERFEITOS"],
-
-    description: "Shampoo a seco em espuma. Limpa e revitaliza os cachos sem precisar de água."
+    groups: [
+      "CRONOGRAMA CAPILAR",
+      "RECONSTRUÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 91,
@@ -1172,10 +893,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/morte-subita-shampoo-solido-100g.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Shampoo em barra esfoliante. Prático, sustentável e com alto poder de limpeza e hidratação."
+    groups: [
+      "HIDRATAÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 92,
@@ -1186,10 +908,11 @@ export const products: Product[] = [
     price: 49.9,
     category: "Perfume",
     image: "/lyra-desodorante-colonia-75ml.png",
-
-    groups: ["PERFUMARIA"],
-
-    description: "Fragrância exuberante e marcante. Notas de frutas vermelhas e flores brancas, ideal para mulheres que brilham."
+    groups: [
+      "PERFUMARIA"
+    ],
+    description: "Lyra Desodorante Colônia traz o valor de uma joia em forma de fragrância para uma rotina mais perfumada!\r\n\r\n\r\nEudora Lyra se inspirou no mundo das joalherias para trazer em um frasco valioso uma fragrância exuberante e valiosa, uma combinação única de frutas vermelhas e flores intensas com a cremosidade do musk e cedro.\r\n\r\n\r\nLyra é o nome de uma constelação conhecida por ter uma das estrelas mais brilhantes, ideal para trazer um universo de brilho e glamour para você. \r\n\r\n\r\nDesodorante Colônia Lyra é um verdadeiro ícone de brilho que desperta emoções e cria memórias preciosas. \r\n\r\n\r\nApresentando o inovador acorde Joya, essa colônia feminina floral une os ingredientes mais sofisticados da perfumaria feminina em uma preciosa criação, tornando Lyra uma experiência única e inesquecível.\r\n\r\n\r\nLyra ilumina e inspira, assim como as joias em nossas vidas! \r\n\r\n\r\nFamília Olfativa: Oriental Floral.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 93,
@@ -1200,24 +923,8 @@ export const products: Product[] = [
     price: 39.9,
     category: "Perfume",
     image: "/la-victorie-intense-perfume-75ml-v2.png",
-
     groups: [],
-
     description: "Eau de Parfum intenso e sofisticado. Combina a força da flor de Tuberosa com a doçura do Caramelo."
-  },
-  {
-    id: 97,
-    name: "Club 6 Intenso",
-    brand: "EUDORA",
-    collection: "Perfumes",
-    size: "95ml",
-    price: 49.9,
-    category: "Perfume",
-    image: "/club-6-intenso-95ml.png",
-
-    groups: ["PERFUMARIA"],
-
-    description: "Para o homem que sabe o que quer. Fragrância Fougère Amadeirada com notas de Cedro e Sândalo."
   },
   {
     id: 98,
@@ -1228,10 +935,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/siage-reconstroi-fios-shampoo-250ml.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Reconstrução total para cabelos danificados. Enriquecido com Óleo de Argan e Queratina, recupera 1 ano de danos em 2 semanas."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "Indicação: cabelos cacheados\r\nSem sulfato, promove limpeza suave, sem remover os óleos naturais dos fios.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 99,
@@ -1242,10 +950,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/siage-reconstroi-fios-condicionador-200ml.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Desembaraça e reconstrói os fios. Hidratação intensa que acaba com a sensação de cabelos ásperos e porosos."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 100,
@@ -1256,10 +965,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/siage-reconstroi-fios-mascara-250g.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Tratamento intensivo que oferece o dobro de força aos fios e combate as pontas duplas."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "Máscara para reconstrução dos fios",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 101,
@@ -1270,10 +980,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/siage-glow-expert-shampoo-250ml.png",
-
-    groups: ["NUTRIÇÃO"],
-
-    description: "Limpa sem ressecar e prepara os fios para um brilho espelhado. Com Flor das Geleiras e GlossFix."
+    groups: [
+      "NUTRIÇÃO"
+    ],
+    description: "Indicação: cabelos cacheados\r\nSem sulfato, promove limpeza suave, sem remover os óleos naturais dos fios.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 102,
@@ -1284,10 +995,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/siage-glow-expert-condicionador-200ml.png",
-
-    groups: ["NUTRIÇÃO"],
-
-    description: "Sela as cutículas e garante brilho intenso por até 72 horas. Devolve a maciez e vitalidade."
+    groups: [
+      "NUTRIÇÃO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 103,
@@ -1298,10 +1010,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/siage-glow-expert-mascara-250g.png",
-
-    groups: ["NUTRIÇÃO"],
-
-    description: "Cria uma película que uniformiza a fibra capilar, proporcionando fios polidos e com brilho extremo."
+    groups: [
+      "NUTRIÇÃO"
+    ],
+    description: "Máscara para brilho e luminosidade",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 104,
@@ -1312,10 +1025,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/siage-hair-plastia-shampoo-250ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Plástica capilar que corrige lesões do fio. Com Bio Hialurônico, deixa o cabelo mais encorpado e macio."
+    groups: [
+      "HIDRATAÇÃO"
+    ],
+    description: "Indicação: cabelos cacheados\r\nSem sulfato, promove limpeza suave, sem remover os óleos naturais dos fios.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 105,
@@ -1326,10 +1040,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/siage-hair-plastia-condicionador-200ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Hidratação tridimensional que age em todas as camadas do fio. Elimina a porosidade e retém a água."
+    groups: [
+      "HIDRATAÇÃO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 106,
@@ -1340,10 +1055,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/siage-hair-plastia-mascara-250g.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Repõe a massa capilar e deixa os fios mais densos e resistentes. Resultado de salão em casa."
+    groups: [
+      "HIDRATAÇÃO"
+    ],
+    description: "Máscara para reconstrução capilar",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 107,
@@ -1354,10 +1070,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/siage-acelera-crescimento-shampoo-250ml.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Estimula o crescimento de novos fios e reduz a queda. Com Prebiótico e Biotina."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO"
+    ],
+    description: "Indicação: cabelos cacheados\r\nSem sulfato, promove limpeza suave, sem remover os óleos naturais dos fios.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 108,
@@ -1368,10 +1085,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/siage-acelera-crescimento-condicionador-200ml.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Fortalece a fibra capilar e previne a quebra, facilitando o crescimento saudável."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 109,
@@ -1382,10 +1100,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/siage-acelera-crescimento-mascara-250g.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Ação antiquebra imediata. Prolonga a vida dos fios e garante crescimento de até 3cm em 2 meses."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO"
+    ],
+    description: "Máscara estimuladora de crescimento",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 110,
@@ -1396,10 +1115,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Tratamento",
     image: "/siage-acelera-crescimento-tonico-65ml.png",
-
-    groups: ["CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Age diretamente no bulbo capilar, ativando o metabolismo e estimulando o crescimento."
+    groups: [
+      "CRESCIMENTO/FORTALECIMENTO"
+    ],
+    description: "Tônico capilar estimulador de crescimento",
+    usage: "Aplicar no couro cabeludo"
   },
   {
     id: 111,
@@ -1410,10 +1130,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Shampoo",
     image: "/siage-liso-intenso-shampoo-250ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Limpeza que alinha os fios. Fórmula com Creatina que bloqueia o frizz e prolonga o liso."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ"
+    ],
+    description: "Indicação: cabelos cacheados\r\nSem sulfato, promove limpeza suave, sem remover os óleos naturais dos fios.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 112,
@@ -1424,10 +1145,11 @@ export const products: Product[] = [
     price: 18.95,
     category: "Condicionador",
     image: "/siage-liso-intenso-condicionador-200ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Desembaraça e hidrata sem pesar. Mantém os cabelos lisos e disciplinados por mais tempo."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 113,
@@ -1438,150 +1160,11 @@ export const products: Product[] = [
     price: 21.95,
     category: "Máscara",
     image: "/siage-liso-intenso-mascara-250g.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Liso perfeito e hidratado. Reduz a porosidade e as pontas duplas, com proteção térmica."
-  },
-  {
-    id: 117,
-    name: "Shampoo Siàge Nutri Rosé",
-    brand: "EUDORA",
-    collection: "Siàge Nutri Rosé",
-    size: "250ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/siage-nutri-rose-shampoo-250ml.png",
-
-    groups: ["NUTRIÇÃO"],
-
-    description: "Nutrição e reparação da raiz às pontas. Com Elixir de Rosas e Argila Vermelha, não pesa na raiz."
-  },
-  {
-    id: 118,
-    name: "Condicionador Siàge Nutri Rosé",
-    brand: "EUDORA",
-    collection: "Siàge Nutri Rosé",
-    size: "200ml",
-    price: 18.95,
-    category: "Condicionador",
-    image: "/siage-nutri-rose-condicionador-200ml.png",
-
-    groups: ["NUTRIÇÃO"],
-
-    description: "Sela as cutículas e previne a tesoura. Repara as pontas duplas e deixa o cabelo macio."
-  },
-  {
-    id: 119,
-    name: "Máscara Siàge Nutri Rosé",
-    brand: "EUDORA",
-    collection: "Siàge Nutri Rosé",
-    size: "250g",
-    price: 21.95,
-    category: "Máscara",
-    image: "/siage-nutri-rose-mascara-250g.png",
-
-    groups: ["NUTRIÇÃO"],
-
-    description: "Nutrição profunda com efeito anti-tesoura. Repara instantaneamente a fibra danificada."
-  },
-  {
-    id: 120,
-    name: "Shampoo Siàge Hidratação Micelar",
-    brand: "EUDORA",
-    collection: "Siàge Hidratação Micelar",
-    size: "250ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/siage-hidratacao-micelar-shampoo-250ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Limpeza inteligente que remove impurezas sem ressecar. Com Ativos Micelares e Algas Marinhas."
-  },
-  {
-    id: 121,
-    name: "Condicionador Siàge Hidratação Micelar",
-    brand: "EUDORA",
-    collection: "Siàge Hidratação Micelar",
-    size: "200ml",
-    price: 18.95,
-    category: "Condicionador",
-    image: "/siage-hidratacao-micelar-condicionador-200ml.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Hidratação balanceada. Desembaraça e deixa os fios soltos e com movimento."
-  },
-  {
-    id: 122,
-    name: "Máscara Siàge Hidratação Micelar",
-    brand: "EUDORA",
-    collection: "Siàge Hidratação Micelar",
-    size: "250g",
-    price: 21.95,
-    category: "Máscara",
-    image: "/siage-hidratacao-micelar-mascara-250g.png",
-
-    groups: ["HIDRATAÇÃO"],
-
-    description: "Recupera a hidratação dos fios em 1 minuto. Cabelos 3x mais macios e soltos."
-  },
-  {
-    id: 126,
-    name: "Shampoo Siàge Men",
-    brand: "EUDORA",
-    collection: "Siàge Men",
-    size: "250ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/siage-men-shampoo-250ml.png",
-
-    groups: [],
-
-    description: "Limpeza refrescante e eficaz para o cabelo masculino. Controla a oleosidade e a caspa."
-  },
-  {
-    id: 127,
-    name: "Tônico Siàge Men",
-    brand: "EUDORA",
-    collection: "Siàge Men",
-    size: "100ml",
-    price: 24.95,
-    category: "Tratamento",
-    image: "/siage-men-tonico-100ml.png",
-
-    groups: [],
-
-    description: "Combate a queda e estimula o crescimento de novos fios. Fortalece a raiz."
-  },
-  {
-    id: 128,
-    name: "Pomada Modeladora Siàge Men",
-    brand: "EUDORA",
-    collection: "Siàge Men",
-    size: "90g",
-    price: 18.95,
-    category: "Styling",
-    image: "/siage-men-pomada-90g.png",
-
-    groups: [],
-
-    description: "Alta fixação e efeito matte. Modela os fios sem deixar resíduos."
-  },
-  {
-    id: 129,
-    name: "Shampoo Siàge Remove a Oleosidade",
-    brand: "EUDORA",
-    collection: "Siàge Remove a Oleosidade",
-    size: "250ml",
-    price: 18.95,
-    category: "Shampoo",
-    image: "/siage-remove-oleosidade-shampoo-250ml.png",
-
-    groups: [],
-
-    description: "Controla a oleosidade por até 8 horas. Limpa profundamente sem ressecar as pontas."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ"
+    ],
+    description: "Máscara micelar para tratamento intensivo",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 136,
@@ -1592,9 +1175,10 @@ export const products: Product[] = [
     price: 34.9,
     category: "Body Splash",
     image: "/instance-karite-body-splash.png",
-
-    groups: ["CORPO E BANHO"],
-
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
     description: "Spray perfumado desodorante corporal com karité. Proporciona hidratação e fragrância leve para uso diário."
   },
   {
@@ -1606,24 +1190,11 @@ export const products: Product[] = [
     price: 28.9,
     category: "Body Splash",
     image: "/instance-baunilha-body-splash.png",
-
-    groups: ["CORPO E BANHO"],
-
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
     description: "Spray perfumado desodorante corporal com fragrância de baunilha. Proporciona hidratação e fragrância leve para uso diário."
-  },
-  {
-    id: 140,
-    name: "Creme Acetinado La Victorie Intense",
-    brand: "EUDORA",
-    collection: "La Victorie",
-    size: "250g",
-    price: 36.9,
-    category: "Hidratante",
-    image: "/la-victorie-intense-creme-acetinado.png",
-
-    groups: ["CORPO E BANHO"],
-
-    description: "Creme acetinado hidratante desodorante corporal. Toque acetinado e hidratação intensa por até 48h com fragrância floral amadeirada."
   },
   {
     id: 149,
@@ -1634,10 +1205,12 @@ export const products: Product[] = [
     price: 28.9,
     category: "Hidratante",
     image: "/instance-frutas-vermelhas-hidratante.png",
-
-    groups: ["CORPO E BANHO"],
-
-    description: "Creme hidratante corporal com fragrância de frutas vermelhas. Proporciona hidratação e aroma frutado."
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Esfoliante corporal perfumado. Eudora Instance Frutas Vermelhas traz esfoliação delicada para uma pele renovada e macia.\r\n\r\n\r\nO Esfoliante Corporal Perfumado Eudora Instance Frutas Vermelha conta com sementes de morango e extratos naturais, garantindo uma fragrância surpreendente para deixar seu banho mais prazeroso. A combinação do dulçor das frutas vermelhas com a cremosidade de notas de baunilha traz uma fragrância frutal alegre e surpreendente para uma pele renovada e perfumada. Este esfoliante vegano age de maneira delicada, sem agredir a pele, renovando-a e proporcionando mais maciez. \r\n\r\n\r\nBenefícios do Esfoliante Corporal Perfumado Eudora Instance Frutas Vermelhas:\r\n\r\n\r\n    • ▸Esfoliante corporal que promove uma esfoliação suave e renovação da pele;\r\n    • ▸Fórmula vegana que age de forma delicada, sem agredir a pele;\r\n    • ▸Contém sementes de morango e extratos naturais para uma esfoliação eficaz;\r\n    • ▸Fragrância Frutal Alegre e surpreendente (Frutas Vermelhas e Baunilha);\r\n    • ▸Deixa a pele renovada, macia e intensamente perfumada após o banho;\r\n    • ▸Livre de parabenos, sulfatos, petrolatos e óleo mineral, para um cuidado consciente;\r\n    • ▸Ideal para completar a rotina de autocuidado, transformando o banho em um momento prazeroso.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 150,
@@ -1648,38 +1221,12 @@ export const products: Product[] = [
     price: 34.9,
     category: "Esfoliante",
     image: "/instance-frutas-vermelhas-esfoliante.png",
-
-    groups: ["CORPO E BANHO"],
-
-    description: "Esfoliante corporal com fragrância de frutas vermelhas. Remove células mortas e deixa a pele suave e hidratada."
-  },
-  {
-    id: 151,
-    name: "Máscara Esfoliante Nina Skin",
-    brand: "EUDORA",
-    collection: "Nina Skin",
-    size: "75ml",
-    price: 25.9,
-    category: "Skincare",
-    image: "/nina-skin-esfoliante.png",
-
-    groups: ["SKINCARE"],
-
-    description: "Máscara esfoliante com enzimas naturais. Remove impurezas e células mortas de forma suave, deixando a pele renovada e luminosa."
-  },
-  {
-    id: 152,
-    name: "Gel de Limpeza Nina Secrets",
-    brand: "EUDORA",
-    collection: "Nina Secrets",
-    size: "150ml",
-    price: 26.9,
-    category: "Skincare",
-    image: "/nina-secrets-gel-limpeza.png",
-
-    groups: ["SKINCARE"],
-
-    description: "Gel de limpeza facial. Remove impurezas e deixa a pele limpa e fresca."
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Esfoliante corporal perfumado. Eudora Instance Frutas Vermelhas traz esfoliação delicada para uma pele renovada e macia.\r\n\r\n\r\nO Esfoliante Corporal Perfumado Eudora Instance Frutas Vermelha conta com sementes de morango e extratos naturais, garantindo uma fragrância surpreendente para deixar seu banho mais prazeroso. A combinação do dulçor das frutas vermelhas com a cremosidade de notas de baunilha traz uma fragrância frutal alegre e surpreendente para uma pele renovada e perfumada. Este esfoliante vegano age de maneira delicada, sem agredir a pele, renovando-a e proporcionando mais maciez. \r\n\r\n\r\nBenefícios do Esfoliante Corporal Perfumado Eudora Instance Frutas Vermelhas:\r\n\r\n\r\n    • ▸Esfoliante corporal que promove uma esfoliação suave e renovação da pele;\r\n    • ▸Fórmula vegana que age de forma delicada, sem agredir a pele;\r\n    • ▸Contém sementes de morango e extratos naturais para uma esfoliação eficaz;\r\n    • ▸Fragrância Frutal Alegre e surpreendente (Frutas Vermelhas e Baunilha);\r\n    • ▸Deixa a pele renovada, macia e intensamente perfumada após o banho;\r\n    • ▸Livre de parabenos, sulfatos, petrolatos e óleo mineral, para um cuidado consciente;\r\n    • ▸Ideal para completar a rotina de autocuidado, transformando o banho em um momento prazeroso.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 153,
@@ -1690,10 +1237,12 @@ export const products: Product[] = [
     price: 29.9,
     category: "Shampoo",
     image: "/siage-pro-cronology-curvas-shampoo.png",
-
-    groups: ["ONDULADOS", "CACHOS PERFEITOS"],
-
-    description: "Shampoo específico para cabelos cacheados e crespos. Define e realça as curvas naturais."
+    groups: [
+      "ONDULADOS",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Indicação: cabelos cacheados\r\nSem sulfato, promove limpeza suave, sem remover os óleos naturais dos fios.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 154,
@@ -1704,24 +1253,12 @@ export const products: Product[] = [
     price: 26.9,
     category: "Condicionador",
     image: "/siage-pro-cronology-curvas-condicionador.png",
-
-    groups: ["ONDULADOS", "CACHOS PERFEITOS"],
-
-    description: "Condicionador que define e realça as curvas naturais dos cabelos cacheados."
-  },
-  {
-    id: 155,
-    name: "Óleo de Argan Siàge Reconstrói",
-    brand: "EUDORA",
-    collection: "Siàge Reconstrói os Fios",
-    size: "50ml",
-    price: 21.95,
-    category: "Tratamento",
-    image: "/siage-reconstroi-fios-oleo-argan.png",
-
-    groups: ["OLEOS"],
-
-    description: "Óleo de Argan reparador. Repõe proteínas, perfuma e protege do calor."
+    groups: [
+      "ONDULADOS",
+      "CACHOS PERFEITOS"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 156,
@@ -1732,10 +1269,11 @@ export const products: Product[] = [
     price: 29.9,
     category: "Tratamento",
     image: "/siage-reconstroi-fios-queratina.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Queratina líquida para cauterização. Repõe proteínas e reconstrói a fibra capilar danificada."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "Queratina líquida para fortalecimento",
+    usage: "Aplicar nos fios e deixar agir"
   },
   {
     id: 157,
@@ -1746,9 +1284,10 @@ export const products: Product[] = [
     price: 39.9,
     category: "Tratamento",
     image: "/images/products/eudora/siage-glow-expert-balm-100ml.png",
-
-    groups: ["NUTRIÇÃO", "FINALIZADORES"],
-
+    groups: [
+      "NUTRIÇÃO",
+      "FINALIZADORES"
+    ],
     description: "Balm finalizador que proporciona brilho e luminosidade instantâneos aos fios."
   },
   {
@@ -1760,10 +1299,11 @@ export const products: Product[] = [
     price: 39.9,
     category: "Tratamento",
     image: "/images/products/eudora/siage-liso-intenso-selante-100ml.png",
-
-    groups: ["ALISAMENTO/CONTROLE DE FRIZZ"],
-
-    description: "Selante finalizador com proteção térmica. Deixa o cabelo liso, brilhante e sem frizz."
+    groups: [
+      "ALISAMENTO/CONTROLE DE FRIZZ"
+    ],
+    description: "Tônico capilar estimulador de crescimento",
+    usage: "Aplicar no couro cabeludo"
   },
   {
     id: 159,
@@ -1771,13 +1311,14 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Acid Gold",
     size: "250ml",
-    price: 89.9,
+    price: 32.9,
     category: "Shampoo",
     image: "/images/products/goldspell/kit-acid-gold.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Shampoo reconstrutor da linha Acid Gold. Limpeza suave e reparação para cabelos danificados."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 160,
@@ -1785,13 +1326,14 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Acid Gold",
     size: "250ml",
-    price: 21.95,
+    price: 29.9,
     category: "Condicionador",
     image: "/images/products/goldspell/kit-acid-gold.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Condicionador reconstrutor Acid Gold. Sela as cutículas e devolve o brilho e a maciez."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
   {
     id: 161,
@@ -1799,13 +1341,14 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Acid Gold",
     size: "250ml",
-    price: 21.95,
+    price: 32.9,
     category: "Máscara",
     image: "/images/products/goldspell/mascara-acid-gold.png",
-
-    groups: ["RECONSTRUÇÃO"],
-
-    description: "Máscara capilar de alta performance. Reconstrução profunda e brilho espelhado."
+    groups: [
+      "RECONSTRUÇÃO"
+    ],
+    description: "Máscara com ácido para tratamento",
+    usage: "Aplicar na fibra capilar, deixar agir 10-15 minutos e enxaguar bem"
   },
   {
     id: 162,
@@ -1813,13 +1356,15 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Poderosa",
     size: "250ml",
-    price: 21.95,
+    price: 32.9,
     category: "Shampoo",
     image: "/images/products/goldspell/shampoo-poderoso.png",
-
-    groups: ["RECONSTRUÇÃO", "CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Shampoo Poderoso. Fortalece os fios e estimula o crescimento saudável."
+    groups: [
+      "RECONSTRUÇÃO",
+      "CRESCIMENTO/FORTALECIMENTO"
+    ],
+    description: "O Shampoo Siàge Liso Intenso limpa os fios sem ressecar, entregando cabelos macios, brilhantes e com liso alinhado.\r\n\r\n\r\n﻿\r\n\r\n\r\nSua fórmula com proteína Creatina, aliada ao complexo Liss Effect, bloqueia os agentes causadores do frizz e de fios indisciplinados, deixando os cabelos hidratados, macios e com muito brilho. Além de proteger do calor do secador e chapinha por até 230º. \r\n\r\n\r\nIdeal para todos os tipos de lisos, o Shampoo Siàge Liso Intenso entrega cuidado intenso, brilho extremo e hidratação para seus fios diariamente.\r\n\r\n\r\nLiso Intenso em cabelos alisados:\r\n\r\n\r\n-Aparência de lisos naturais;\r\n\r\n\r\n-Liso prolongado sem química;\r\n\r\n\r\n-Reduz porosidade dos fios;\r\n\r\n\r\n-Pontas hidratadas sem aspecto alisado;\r\n\r\n\r\nLiso Intenso em cabelos lisos com ondas:\r\n\r\n\r\n-Suaviza ondulações indesejadas;\r\n\r\n\r\n-2x menos volume.\r\n\r\n\r\nLiso Intenso em cabelos lisos naturais:\r\n\r\n\r\n-Frizz controlado;\r\n\r\n\r\n-Hidrata sem pesar.",
+    usage: "Conselho de Aplicação"
   },
   {
     id: 163,
@@ -1827,12 +1372,380 @@ export const products: Product[] = [
     brand: "GOLDSPELL",
     collection: "Poderosa",
     size: "250ml",
-    price: 21.95,
+    price: 29.9,
     category: "Condicionador",
     image: "/images/products/goldspell/kit-poderoso.png",
-
-    groups: ["RECONSTRUÇÃO", "CRESCIMENTO/FORTALECIMENTO"],
-
-    description: "Condicionador Poderoso. Desembaraça, hidrata e previne a quebra."
+    groups: [
+      "RECONSTRUÇÃO",
+      "CRESCIMENTO/FORTALECIMENTO"
+    ],
+    description: "cabelos cacheados\r\nProporciona alta emoliência aos cabelos cacheados e deixa os fios mais definidos e brilhantes.\r\n    • Desenvolvida para nutrir e fortalecer os fios, valorizando a beleza dos cachos;\r\n    • A linha é livre de sulfatos, petrolatos e parabenos;\r\n    • Sua fórmula conta com óleo de coco e colágeno, que promovem hidratação e definição aso cabelos cacheados.\r\nDireção olfativa: floral, fruity, gourmand,oriental",
+    usage: "após lavar os cabelos, aplique o condicionador uniformemente, do comprimento às pontas. Massageie suavemente e deixe agir por 1 minuto. Enxágue bem. O uso do condicionador também é indicado após máscaras de tratamento, para promover maior selamento das cutículas. Potencialize os resultados utilizando toda a linha Cachos Sim!."
   },
+  {
+    id: 164,
+    name: "Loção Desodorante Hidratante Cuide-se Bem Deleite",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "400ml",
+    price: 26.9,
+    category: "Hidratante",
+    image: "/images/products/boticario/deleite-locao.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Linha de cuidados diários com fragrâncias icônicas. Hidratação com cheirinho de leite e doçura."
+  },
+  {
+    id: 165,
+    name: "Body Splash Cuide-se Bem Cereja Livre",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.9,
+    category: "Body Splash",
+    image: "/images/products/boticario/cereja-livre-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância leve e fresca com notas de cereja. Sensação de frescor prolongado."
+  },
+  {
+    id: 166,
+    name: "Loção Hidratante Cuide-se Bem Doçura na Pessegura",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "400ml",
+    price: 26.9,
+    category: "Hidratante",
+    image: "/images/products/boticario/pessegura-locao-400ml.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Pele macia e perfumada com o doce cheirinho de pêssego. Rápida absorção."
+  },
+  {
+    id: 167,
+    name: "Loção Hidratante Cuide-se Bem Pessegura",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.9,
+    category: "Hidratante",
+    image: "/images/products/boticario/pessegura-locao-200ml.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Versão prática de 200ml. Hidratação profunda com aroma delicioso de pêssego."
+  },
+  {
+    id: 168,
+    name: "Loção Hidratante Cuide-se Bem Nuvem",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "400ml",
+    price: 26.9,
+    category: "Hidratante",
+    image: "/images/products/boticario/nuvem-locao.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Fragrância leve e confortável, como um abraço. Deixa a pele macia e hidratada."
+  },
+  {
+    id: 169,
+    name: "Body Splash Cuide-se Bem Nuvem de Alegria",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 26.9,
+    category: "Body Splash",
+    image: "/images/products/boticario/nuvem-alegria-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância revigorante e leve, perfeita para prolongar a sensação de banho tomado."
+  },
+  {
+    id: 170,
+    name: "Loção Hidratante Cuide-se Bem Amoruda",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "400ml",
+    price: 26.9,
+    category: "Hidratante",
+    image: "/images/products/boticario/amoruda-locao.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Hidratação com carinho e fragrância envolvente de amora. Pele macia o dia todo."
+  },
+  {
+    id: 171,
+    name: "Creme Esfoliante Cuide-se Bem Pessegura",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200g",
+    price: 28.9,
+    category: "Esfoliante",
+    image: "/images/products/boticario/pessegura-esfoliante.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Esfoliação intensa que remove células mortas e deixa a pele renovada e com cheirinho de pêssego."
+  },
+  {
+    id: 172,
+    name: "Loção Hidratante Cuide-se Bem Boa Noite",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "400ml",
+    price: 28.9,
+    category: "Hidratante",
+    image: "/images/products/boticario/boa-noite-locao.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Fórmula com Camomila e fragrância relaxante. Ideal para usar antes de dormir."
+  },
+  {
+    id: 173,
+    name: "Body Splash Cuide-se Bem Beijinho",
+    brand: "BOTICARIO",
+    collection: "Cuide-se Bem",
+    size: "200ml",
+    price: 28.29,
+    category: "Body Splash",
+    image: "/images/products/boticario/beijinho-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância floral oriental, doce e suave, com extrato de flores e manteiga de karité."
+  },
+  {
+    id: 174,
+    name: "Body Splash Tododia Manga Rosa e Água de Coco",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "200ml",
+    price: 28.95,
+    category: "Body Splash",
+    image: "/images/products/natura/manga-rosa-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância refrescante com notas frutais de manga rosa e água de coco. Sensação de frescor."
+  },
+  {
+    id: 175,
+    name: "Body Splash Tododia Acerola e Hibisco",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "200ml",
+    price: 32.95,
+    category: "Body Splash",
+    image: "/images/products/natura/acerola-hibisco-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Notas cítricas e vibrantes de acerola com o toque floral do hibisco. Muita energia para o dia."
+  },
+  {
+    id: 176,
+    name: "Body Splash Tododia Amora e Flor de Pêssego",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "200ml",
+    price: 32.95,
+    category: "Body Splash",
+    image: "/images/products/natura/amora-pessego-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância adocicada e envolvente. Notas frutais de amora combinadas com flores."
+  },
+  {
+    id: 177,
+    name: "Body Splash Tododia Jambo Rosa e Flor de Caju",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "200ml",
+    price: 32.95,
+    category: "Body Splash",
+    image: "/images/products/natura/jambo-caju-splash.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância floral delicada com notas frutais. Toque suave e feminino."
+  },
+  {
+    id: 178,
+    name: "Creme Nutritivo Tododia Amora e Flor de Pêssego",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "400ml",
+    price: 38.95,
+    category: "Hidratante",
+    image: "/images/products/natura/amora-pessego-creme.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Nutrição prebiótica que se adapta à sua pele. Deixa a pele firme e ultramacia."
+  },
+  {
+    id: 179,
+    name: "Creme Nutritivo Tododia Jambo Rosa e Flor de Caju",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "400ml",
+    price: 38.95,
+    category: "Hidratante",
+    image: "/images/products/natura/jambo-caju-creme.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Pele firme e macia com nutrição inteligente. Fragrância floral marcante."
+  },
+  {
+    id: 180,
+    name: "Creme Nutritivo Tododia Manga Rosa e Água de Coco",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "400ml",
+    price: 41.95,
+    category: "Hidratante",
+    image: "/images/products/natura/manga-rosa-creme.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Toque geladinho e refrescante, ideal para o verão. Nutre e acalma a pele."
+  },
+  {
+    id: 181,
+    name: "Óleo Bifásico Tododia Macadâmia",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "120ml",
+    price: 27.95,
+    category: "Tratamento",
+    image: "/images/products/natura/macadamia-oleo.png",
+    groups: [
+      "CORPO E BANHO",
+      "OLEOS",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Óleo bifásico para corpo com macadamia",
+    usage: "Aplicar no corpo"
+  },
+  {
+    id: 182,
+    name: "Esfoliante para o Corpo Tododia Macadâmia",
+    brand: "NATURA",
+    collection: "Tododia",
+    size: "300g",
+    price: 29.95,
+    category: "Esfoliante",
+    image: "/images/products/natura/macadamia-esfoliante.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Pele renovada e macia. Remove impurezas e células mortas com delicadeza."
+  },
+  {
+    id: 183,
+    name: "Polpa Hidratante Ekos Pitanga",
+    brand: "NATURA",
+    collection: "Ekos",
+    size: "400ml",
+    price: 49.95,
+    category: "Hidratante",
+    image: "/images/products/natura/ekos-pitanga-polpa.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Hidratação refrescante com óleo essencial de pitanga. Deixa a pele perfumada e radiante."
+  },
+  {
+    id: 184,
+    name: "Polpa Hidratante Ekos Açaí",
+    brand: "NATURA",
+    collection: "Ekos",
+    size: "400ml",
+    price: 45.95,
+    category: "Hidratante",
+    image: "/images/products/natura/ekos-acai-polpa.png",
+    groups: [
+      "CORPO E BANHO",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Produto corporal com açaí",
+    usage: "Aplicar no corpo"
+  },
+  {
+    id: 185,
+    name: "Colônia Frescor Ekos Pitanga",
+    brand: "NATURA",
+    collection: "Ekos",
+    size: "150ml",
+    price: 42.95,
+    category: "Body Splash",
+    image: "/images/products/natura/ekos-pitanga-frescor.png",
+    groups: [
+      "CORPO E BANHO",
+      "PERFUMARIA"
+    ],
+    description: "Fragrância vibrante das folhas de pitanga. Frescor imediato e prolongado."
+  },
+  {
+    id: 186,
+    name: "Óleo Trifásico Ekos Andiroba",
+    brand: "NATURA",
+    collection: "Ekos",
+    size: "200ml",
+    price: 42.95,
+    category: "Tratamento",
+    image: "/images/products/natura/ekos-andiroba-oleo.png",
+    groups: [
+      "CORPO E BANHO",
+      "OLEOS",
+      "HIDRATAÇÃO CORPORAL"
+    ],
+    description: "Óleo trifásico com andiroba para corpo",
+    usage: "Aplicar no corpo"
+  },
+  {
+    id: 187,
+    name: "Shampoo Cachos Sim",
+    brand: "HASKELL",
+    collection: "Cachos Sim",
+    size: "1L",
+    price: 21.95,
+    category: "Shampoo",
+    image: "/images/products/haskell/cachos-sim-shampoo-1l.webp",
+    groups: [
+      "NUTRIÇÃO",
+      "CACHOS PERFEITOS"
+    ],
+    description: "Prepara o cabelo para o tratamento intensivo. Possui pH equilibrado e evita a alta rigidez característica de shampoo.\r\n    • Ideal para recuperar os cabelos descoloridos;\r\n    • A linha possui ação antiemborrachamento e antiporosidade, protegendo os fios de danos futuros;\r\n    • Sua formulação conta com complexo de proteínas e vinagre balsâmico que, juntos, promovem a regeneração capilar de maneira intensiva, repondo a massa proteica nos fios.\r\nDireção olfativa: floral frutal",
+    usage: "nos cabelos molhados, aplique o shampoo, massageando o couro cabeludo em suaves movimentos circulares. Enxágue bem. Se necessário, repita a aplicação. Potencialize os resultados utilizando toda a linha Bendito Loiro."
+  }
 ];

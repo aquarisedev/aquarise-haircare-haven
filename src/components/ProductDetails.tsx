@@ -23,7 +23,7 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
     if (!product) return null;
 
     const handleWhatsAppClick = () => {
-        const phoneNumber = "+41766830515"; // Clean number without spaces
+        const phoneNumber = "+41766830515"; // Número limpo sem espaços
         const productUrl = `${window.location.origin}/?product=${product.id}`;
         const message = `${t("whatsapp.message")}${product.name} (${productUrl})`;
         const encodedMessage = encodeURIComponent(message);
@@ -38,7 +38,7 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
                 <DialogHeader>
                     <div className="flex items-start justify-between">
                         <div className="space-y-2">
-                            {/* Tags Row (Brand + Groups) */}
+                            {/* Linha de Tags (Marca + Grupos) */}
                             <div className="flex flex-wrap gap-2">
                                 <span className="inline-flex items-center rounded-full border border-primary/50 px-2.5 py-0.5 text-xs font-semibold text-primary uppercase tracking-wide">
                                     {product.brand}

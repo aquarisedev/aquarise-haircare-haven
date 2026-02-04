@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 const Footer = () => {
   return (
     <footer className="mt-20 bg-surface border-t border-border">
-      {/* Main Footer */}
+      {/* Rodapé Principal */}
       <div className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {/* About */}
+            {/* Sobre */}
             <div>
               <h4 className="gradient-text mb-4 text-xl font-bold font-heading">
                 Aquarise
@@ -30,7 +30,7 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Products */}
+            {/* Produtos */}
             <div>
               <h4 className="mb-4 font-semibold text-foreground">Produtos</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
@@ -62,7 +62,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Support */}
+            {/* Suporte */}
             <div>
               <h4 className="mb-4 font-semibold text-foreground">
                 Atendimento
@@ -91,7 +91,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Contato */}
             <div>
               <h4 className="mb-4 font-semibold text-foreground">Contato</h4>
               <ul className="space-y-3 text-sm text-muted-foreground">
@@ -115,7 +115,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Barra Inferior */}
       <div className="border-t border-border py-6">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
           <p>© 2025 Aquarise. Desenvolvido pela NeoVertex</p>
