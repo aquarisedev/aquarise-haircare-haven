@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams, Link } from "react-router-dom";
 import { Dialog, DialogContent, DialogTrigger, DialogDescription } from "@/components/ui/dialog";
 import {
   DropdownMenu,
@@ -29,7 +29,6 @@ const Header = () => {
   }, [searchParams]);
 
   const changeLanguage = (lng: string) => {
-    console.log("Changing language to:", lng);
     i18n.changeLanguage(lng);
   };
 
@@ -115,9 +114,7 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Search moved to navbar */}
-
-          {/* Espaço vazio para balancear o layout (mobile) */}
+          {/* Layout spacer for mobile */}
           <div className="w-16 lg:hidden"></div>
         </div>
       </div>
@@ -127,103 +124,72 @@ const Header = () => {
         <div className="w-full px-12">
           <div className="hidden items-center justify-between py-3 lg:flex">
             {/* Menu Items */}
-            <ul className="flex items-center gap-12 text-sm font-medium">
+            <ul className="flex items-center gap-6 xl:gap-8 text-sm font-medium">
               <li>
-                <a
-                  href="/"
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   {t("nav.home")}
-                </a>
+                </Link>
               </li>
-
               <li>
-                <button
-                  onClick={() => navigate("/?brand=HASKELL#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/marcas/HASKELL" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   HASKELL
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/?brand=LOLA#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/marcas/LOLA" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   LOLA
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/?brand=EUDORA#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/marcas/EUDORA" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   EUDORA
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/?brand=NATURA#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/marcas/NATURA" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   NATURA
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/?brand=BOTICARIO#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/marcas/BOTICARIO" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   O BOTICÁRIO
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/?brand=GOLDSPELL#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
+                <Link to="/marcas/GOLDSPELL" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
                   GOLDSPELL
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => navigate("/?brand=ACESSORIOS#produtos")}
-                  className="text-foreground transition-colors hover:text-primary"
-                >
-                  ACESSÓRIOS
-                </button>
+                <Link to="/marcas/ACESSORIOS" className="text-foreground transition-colors hover:text-primary whitespace-nowrap">
+                  {t("categories.acessorios").toUpperCase()}
+                </Link>
               </li>
             </ul>
 
-            {/* Icons aligned with menu */}
-            <div className="flex items-center gap-2">
-              <Dialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
-                <DialogTrigger asChild>
-                  <Button variant="ghost" size="icon">
-                    <Search className="h-5 w-5 text-foreground" />
-                  </Button>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[425px] top-[20%] translate-y-0">
-                  <DialogDescription className="sr-only">
-                    {t("search.placeholder")}
-                  </DialogDescription>
-                  <div className="flex flex-col gap-4">
-                    <h3 className="text-lg font-semibold">{t("search.placeholder")}</h3>
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                      <Input
-                        type="search"
-                        placeholder={t("search.placeholder")}
-                        className="pl-10"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        onKeyDown={handleSearch}
-                        autoFocus
-                      />
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+            {/* Right side icons */}
+            <div className="flex items-center gap-6">
+              <div className="relative hidden w-96 lg:block">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  type="search"
+                  placeholder={t("search.placeholder")}
+                  className="h-9 w-full rounded-md border border-input bg-transparent pl-10 pr-4 text-sm focus:border-primary focus:ring-1 focus:ring-primary"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={handleSearch}
+                />
+              </div>
+
+              <a
+                href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground transition-colors hover:text-primary"
+              >
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </a>
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -249,82 +215,36 @@ const Header = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://wa.me/41766830515"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-5 w-5 text-foreground"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                  </svg>
-                </a>
-              </Button>
-
-              <Button variant="ghost" size="icon" asChild>
-                <a
-                  href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5 text-foreground" />
-                </a>
-              </Button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Gaveta do Menu Mobile */}
+      {/* Menu Mobile */}
       <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-        <SheetContent side="left" className="w-[280px] sm:w-[350px]">
-          <SheetHeader>
-            <SheetTitle>
-              <div
-                className="gradient-primary h-16 w-56"
-                style={{
-                  maskImage: "url(/logo-aquarise.png)",
-                  maskSize: "contain",
-                  maskRepeat: "no-repeat",
-                  maskPosition: "left center",
-                  WebkitMaskImage: "url(/logo-aquarise.png)",
-                  WebkitMaskSize: "contain",
-                  WebkitMaskRepeat: "no-repeat",
-                  WebkitMaskPosition: "left center",
-                }}
-                role="img"
-                aria-label="Aquarise"
-              />
-            </SheetTitle>
+        <SheetContent side="left" className="w-[300px] sm:w-[350px] overflow-y-auto">
+          <SheetHeader className="mb-4">
+            <SheetTitle className="text-left font-heading text-xl text-primary">Aquarise</SheetTitle>
           </SheetHeader>
-
-          <nav className="mt-8">
-            <ul className="space-y-1">
+          <nav className="flex flex-col gap-4">
+            <ul className="grid gap-1">
               <li>
-                <a
-                  href="/"
+                <Link
+                  to="/"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">{t("nav.home")}</span>
-                </a>
+                </Link>
               </li>
 
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=HASKELL#produtos");
+                    navigate("/marcas/HASKELL");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">HASKELL</span>
                 </button>
@@ -332,10 +252,10 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=LOLA#produtos");
+                    navigate("/marcas/LOLA");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">LOLA</span>
                 </button>
@@ -343,10 +263,10 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=EUDORA#produtos");
+                    navigate("/marcas/EUDORA");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">EUDORA</span>
                 </button>
@@ -354,10 +274,10 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=NATURA#produtos");
+                    navigate("/marcas/NATURA");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">NATURA</span>
                 </button>
@@ -365,10 +285,10 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=BOTICARIO#produtos");
+                    navigate("/marcas/BOTICARIO");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">O BOTICÁRIO</span>
                 </button>
@@ -376,10 +296,10 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=GOLDSPELL#produtos");
+                    navigate("/marcas/GOLDSPELL");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">GOLDSPELL</span>
                 </button>
@@ -387,24 +307,22 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?brand=ACESSORIOS#produtos");
+                    navigate("/marcas/ACESSORIOS");
                     setMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-2 text-foreground transition-colors hover:bg-muted"
                 >
-                  <span className="font-medium">ACESSÓRIOS</span>
+                  <span className="font-medium">{t("categories.acessorios").toUpperCase()}</span>
                 </button>
               </li>
-
-
             </ul>
 
-            <div className="mt-8 border-t border-border pt-6 space-y-2">
+            <div className="mt-2 border-t border-border pt-4 grid grid-cols-2 gap-2">
               <a
-                href="https://wa.me/41766830515"
+                href="https://wa.me/41779640572"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                className="flex items-center justify-center gap-2 rounded-lg px-2 py-2 text-foreground transition-colors hover:bg-muted border border-border"
               >
                 <svg
                   viewBox="0 0 24 24"
@@ -414,22 +332,48 @@ const Header = () => {
                 >
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                 </svg>
-                <span className="font-medium">WhatsApp</span>
+                <span className="font-medium text-sm">WhatsApp</span>
               </a>
               <a
                 href="https://www.instagram.com/aquariseshop?igsh=MXhiaDFpN3dnbnUwdg=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                className="flex items-center justify-center gap-2 rounded-lg px-2 py-2 text-foreground transition-colors hover:bg-muted border border-border"
               >
                 <Instagram className="h-5 w-5" />
-                <span className="font-medium">@aquariseshop</span>
+                <span className="font-medium text-sm">Instagram</span>
               </a>
+            </div>
+
+            <div className="mt-2 border-t border-border pt-4">
+              <p className="px-4 text-xs font-semibold text-muted-foreground uppercase mb-2 text-center">{t("header.language", "Idioma")}</p>
+              <div className="grid grid-cols-5 gap-1 px-1">
+                <button onClick={() => changeLanguage("pt-BR")} className="flex flex-col items-center justify-center p-1 rounded hover:bg-muted text-[10px]">
+                  <span className="text-xl mb-1">🇧🇷</span>
+                  <span className="mt-1">PT-BR</span>
+                </button>
+                <button onClick={() => changeLanguage("pt-PT")} className="flex flex-col items-center justify-center p-1 rounded hover:bg-muted text-[10px]">
+                  <span className="text-xl mb-1">🇵🇹</span>
+                  <span className="mt-1">PT-PT</span>
+                </button>
+                <button onClick={() => changeLanguage("en")} className="flex flex-col items-center justify-center p-1 rounded hover:bg-muted text-[10px]">
+                  <span className="text-xl mb-1">🇺🇸</span>
+                  <span className="mt-1">EN</span>
+                </button>
+                <button onClick={() => changeLanguage("fr-CH")} className="flex flex-col items-center justify-center p-1 rounded hover:bg-muted text-[10px]">
+                  <span className="text-xl mb-1">🇨🇭</span>
+                  <span className="mt-1">FR</span>
+                </button>
+                <button onClick={() => changeLanguage("es")} className="flex flex-col items-center justify-center p-1 rounded hover:bg-muted text-[10px]">
+                  <span className="text-xl mb-1">🇪🇸</span>
+                  <span className="mt-1">ES</span>
+                </button>
+              </div>
             </div>
           </nav>
         </SheetContent>
       </Sheet>
-    </header >
+    </header>
   );
 };
 

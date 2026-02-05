@@ -38,10 +38,10 @@ const ProductCollectionSection = ({
         {collection !== "Outros" ? collection : t("products.collection")}
       </h4>
 
-      {/* Mobile: Horizontal Scroll (All Products) */}
-      <div className="flex overflow-x-auto pb-6 gap-4 snap-x snap-mandatory -mx-4 px-4 scrollbar-hide sm:hidden overscroll-x-contain">
+      {/* Mobile: Grid 2 Columns */}
+      <div className="grid grid-cols-2 gap-4 pb-6 sm:hidden">
         {products.map((product) => (
-          <div key={product.id} className="min-w-[280px] snap-center">
+          <div key={product.id} className="min-w-0">
             <ProductCard
               {...product}
               onClick={() => onProductClick(product)}

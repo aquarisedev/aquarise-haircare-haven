@@ -35,22 +35,22 @@ const Footer = () => {
               <h4 className="mb-4 font-semibold text-foreground">Produtos</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <a href="/?search=HASKELL" className="hover:text-primary transition-colors">
+                  <a href="/marcas/HASKELL" className="hover:text-primary transition-colors">
                     HASKELL
                   </a>
                 </li>
                 <li>
-                  <a href="/?search=LOLA" className="hover:text-primary transition-colors">
+                  <a href="/marcas/LOLA" className="hover:text-primary transition-colors">
                     LOLA
                   </a>
                 </li>
                 <li>
-                  <a href="/?search=EUDORA" className="hover:text-primary transition-colors">
+                  <a href="/marcas/EUDORA" className="hover:text-primary transition-colors">
                     EUDORA
                   </a>
                 </li>
                 <li>
-                  <a href="/?search=GOLDSPELL" className="hover:text-primary transition-colors">
+                  <a href="/marcas/GOLDSPELL" className="hover:text-primary transition-colors">
                     GOLDSPELL
                   </a>
                 </li>
@@ -107,7 +107,7 @@ const Footer = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                  <span>+41 77 900 01 21</span>
+                  <span>+41 77 964 05 72</span>
                 </li>
               </ul>
             </div>

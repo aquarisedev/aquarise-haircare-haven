@@ -32,7 +32,7 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
     if (!product) return null;
 
     const handleWhatsAppClick = () => {
-        const phoneNumber = "+41779000121"; // Número limpo sem espaços
+        const phoneNumber = "+41779640572"; // Número atualizado
         const productUrl = `${window.location.origin}/?product=${product.id}`;
         const message = `${t("whatsapp.message")}${product.name} (${productUrl})`;
         const encodedMessage = encodeURIComponent(message);

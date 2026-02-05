@@ -144,7 +144,7 @@ export const chatwootService = {
                 body: JSON.stringify(payload),
             });
 
-            console.log("✅ Dados enviados para webhook:", payload);
+            // console.log("✅ Dados enviados para webhook:", payload);
             return await response.json();
         } catch (error) {
             console.error("❌ Erro ao enviar para webhook:", error);
