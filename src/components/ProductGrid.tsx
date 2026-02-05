@@ -172,11 +172,23 @@ const ProductGrid = () => {
     );
   }
 
-  // Agrupar produtos por Marca e depois por Coleção (apenas se não houver consulta de busca OU se houver filtro de marca)
-  // Aplicamos o agrupamento à lista filtrada (que pode ser todos os produtos ou apenas uma categoria específica)
-  const groupedProducts = (!searchQuery || brandParam)
+  // Detectar se é uma busca por acessórios para forçar o modo agrupado
+  const isAccessoriesSearch = searchQuery && (
+    searchQuery.includes("acessorios") ||
+    searchQuery.includes("acessórios") ||
+    searchQuery === "acessorios"
+  );
+
+  // Agrupar produtos por Marca e depois por Coleção
+  // Aplicamos o agrupamento se NÃO houver busca (padrão) OU se houver filtro de marca OU se for busca de acessórios
+  const groupedProducts = (!searchQuery || brandParam || isAccessoriesSearch)
     ? filteredProducts.reduce((acc, product) => {
-      const brand = product.brand;
+      // Se estivermos na página de acessórios (via brand ou search), queremos que o título principal seja "Acessórios"
+      let brand: string = product.brand;
+      if (brandParam === "ACESSORIOS" || isAccessoriesSearch) {
+        brand = "Acessórios";
+      }
+
       const collection = product.collection || "Outros";
 
       if (!acc[brand]) {
@@ -218,8 +230,9 @@ const ProductGrid = () => {
           )}
         </div>
 
-        {/* Se tiver brandParam, queremos a visualização agrupada, então tratamos como !searchQuery */}
-        {searchQuery && !brandParam ? (
+        {/* Se tiver brandParam, queremos a visualização agrupada, então tratamos como !searchQuery.
+            Se for busca por acessórios, também queremos agrupada. */}
+        {searchQuery && !brandParam && !isAccessoriesSearch ? (
           // Visualização de Resultados de Busca (Grade Plana)
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredProducts.map((product) => (
