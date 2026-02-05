@@ -141,11 +141,14 @@ const ProductGrid = () => {
   let filteredProducts = products;
 
   if (searchQuery) {
-    filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(searchQuery) ||
-      product.brand.toLowerCase().includes(searchQuery) ||
-      product.collection?.toLowerCase().includes(searchQuery)
-    );
+    const normalizedQuery = searchQuery.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    filteredProducts = products.filter((product) => {
+      const pName = product.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      const pBrand = product.brand.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      const pCollection = (product.collection || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+      return pName.includes(normalizedQuery) || pBrand.includes(normalizedQuery) || pCollection.includes(normalizedQuery);
+    });
   } else if (brandParam) {
     if (brandParam === "ACESSORIOS") {
       filteredProducts = products.filter((product) => {

@@ -187,7 +187,7 @@ const Header = () => {
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/?search=ACESSORIOS#produtos")}
+                  onClick={() => navigate("/?brand=ACESSORIOS#produtos")}
                   className="text-foreground transition-colors hover:text-primary"
                 >
                   ACESSÓRIOS
