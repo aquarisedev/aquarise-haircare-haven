@@ -387,7 +387,7 @@ const Header = () => {
               <li>
                 <button
                   onClick={() => {
-                    navigate("/?search=ACESSORIOS#produtos");
+                    navigate("/?brand=ACESSORIOS#produtos");
                     setMobileMenuOpen(false);
                   }}
                   className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
@@ -429,7 +429,7 @@ const Header = () => {
           </nav>
         </SheetContent>
       </Sheet>
-    </header>
+    </header >
   );
 };
 
