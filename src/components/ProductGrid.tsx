@@ -212,9 +212,9 @@ const ProductGrid = () => {
           )}
         </div>
 
-        {/* Se tiver brandParam, queremos a visualização agrupada, exceto para ACESSORIOS que deve ser uma lista única */}
-        {(searchQuery || brandParam === "ACESSORIOS") && (brandParam !== "ACESSORIOS" ? !brandParam : true) ? (
-          // Visualização de Resultados de Busca ou Categoria Acessórios (Grade Plana)
+        {/* Se tiver brandParam, queremos a visualização agrupada, então tratamos como !searchQuery */}
+        {searchQuery && !brandParam ? (
+          // Visualização de Resultados de Busca (Grade Plana)
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredProducts.map((product) => (
               <ProductCard
