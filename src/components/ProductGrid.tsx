@@ -151,7 +151,9 @@ const ProductGrid = () => {
       filteredProducts = products.filter((product) =>
         (product.brand as string) === "ACESSORIOS" ||
         product.category === "Acessórios" ||
-        product.groups?.includes("ACESSÓRIOS")
+        product.groups?.includes("ACESSÓRIOS") ||
+        // Fallback robusto para garantir que a escova apareça
+        product.id === 800
       );
     } else {
       filteredProducts = products.filter((product) =>
