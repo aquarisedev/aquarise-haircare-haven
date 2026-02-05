@@ -147,9 +147,17 @@ const ProductGrid = () => {
       product.collection?.toLowerCase().includes(searchQuery)
     );
   } else if (brandParam) {
-    filteredProducts = products.filter((product) =>
-      product.brand === brandParam
-    );
+    if (brandParam === "ACESSORIOS") {
+      filteredProducts = products.filter((product) =>
+        (product.brand as string) === "ACESSORIOS" ||
+        product.category === "Acessórios" ||
+        product.groups?.includes("ACESSÓRIOS")
+      );
+    } else {
+      filteredProducts = products.filter((product) =>
+        product.brand === brandParam
+      );
+    }
   } else if (groupParam) {
     filteredProducts = products.filter((product) =>
       product.groups?.includes(groupParam)

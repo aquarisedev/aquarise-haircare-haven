@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { Star, Share2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
+import { useState, useEffect } from "react";
 
 interface ProductDetailsProps {
     product: Product | null;
@@ -19,11 +20,19 @@ interface ProductDetailsProps {
 
 const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) => {
     const { t } = useTranslation();
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    // Reset selected image when product changes or dialog opens
+    useEffect(() => {
+        if (product) {
+            setSelectedImage(product.image);
+        }
+    }, [product, open]);
 
     if (!product) return null;
 
     const handleWhatsAppClick = () => {
-        const phoneNumber = "+41766830515"; // Número limpo sem espaços
+        const phoneNumber = "+41779000121"; // Número limpo sem espaços
         const productUrl = `${window.location.origin}/?product=${product.id}`;
         const message = `${t("whatsapp.message")}${product.name} (${productUrl})`;
         const encodedMessage = encodeURIComponent(message);
@@ -97,16 +106,38 @@ const ProductDetails = ({ product, open, onOpenChange }: ProductDetailsProps) =>
                 </DialogHeader>
 
                 <div className="grid gap-6 py-4 md:grid-cols-2">
-                    <div className="aspect-square relative overflow-hidden rounded-lg bg-muted">
-                        {product.image && product.image !== "/placeholder.svg" ? (
-                            <img
-                                src={product.image}
-                                alt={product.name}
-                                className={`h-full w-full object-contain ${product.imageClassName || "p-4"}`}
-                            />
-                        ) : (
-                            <div className="flex h-full items-center justify-center bg-gray-100">
-                                <span className="text-6xl text-gray-300 font-bold">{product.brand[0]}</span>
+                    <div className="flex flex-col gap-4">
+                        <div className="aspect-square relative overflow-hidden rounded-lg bg-muted">
+                            {selectedImage && selectedImage !== "/placeholder.svg" ? (
+                                <img
+                                    src={selectedImage}
+                                    alt={product.name}
+                                    className={`h-full w-full object-contain ${product.imageClassName || "p-4"}`}
+                                />
+                            ) : (
+                                <div className="flex h-full items-center justify-center bg-gray-100">
+                                    <span className="text-6xl text-gray-300 font-bold">{product.brand[0]}</span>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Image Gallery Thumbnails */}
+                        {product.images && product.images.length > 1 && (
+                            <div className="flex gap-2 overflow-x-auto pb-2">
+                                {product.images.map((img, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => setSelectedImage(img)}
+                                        className={`relative aspect-square w-20 flex-shrink-0 overflow-hidden rounded-md border-2 transition-all ${selectedImage === img ? "border-primary shadow-md" : "border-transparent hover:border-primary/50"
+                                            }`}
+                                    >
+                                        <img
+                                            src={img}
+                                            alt={`${product.name} view ${idx + 1}`}
+                                            className="h-full w-full object-contain p-1 mix-blend-multiply"
+                                        />
+                                    </button>
+                                ))}
                             </div>
                         )}
                     </div>

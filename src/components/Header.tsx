@@ -185,6 +185,14 @@ const Header = () => {
                   GOLDSPELL
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => navigate("/?brand=ACESSORIOS#produtos")}
+                  className="text-foreground transition-colors hover:text-primary"
+                >
+                  ACESSÓRIOS
+                </button>
+              </li>
             </ul>
 
             {/* Icons aligned with menu */}
@@ -374,6 +382,17 @@ const Header = () => {
                   className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
                 >
                   <span className="font-medium">GOLDSPELL</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    navigate("/?search=ACESSORIOS#produtos");
+                    setMobileMenuOpen(false);
+                  }}
+                  className="flex w-full items-center gap-3 rounded-lg px-4 py-3 text-foreground transition-colors hover:bg-muted"
+                >
+                  <span className="font-medium">ACESSÓRIOS</span>
                 </button>
               </li>
 

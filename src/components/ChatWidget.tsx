@@ -192,14 +192,14 @@ const ChatWidget = () => {
 
         // Validar se o telefone começa com +
         if (!formData.phone.startsWith('+')) {
-            alert('⚠️ Por favor, inclua o código do país com + na frente do telefone.\n\nExemplo: +41 76 683 05 15');
+            alert('⚠️ Por favor, inclua o código do país com + na frente do telefone.\n\nExemplo: +41 77 900 01 21');
             return;
         }
 
         // Validar se tem pelo menos o código do país (+ seguido de números)
         const phoneRegex = /^\+\d+/;
         if (!phoneRegex.test(formData.phone)) {
-            alert('⚠️ Formato de telefone inválido.\n\nPor favor, use o formato: +[código do país] [número]\n\nExemplo: +41 76 683 05 15');
+            alert('⚠️ Formato de telefone inválido.\n\nPor favor, use o formato: +[código do país] [número]\n\nExemplo: +41 77 900 01 21');
             return;
         }
 
@@ -357,7 +357,7 @@ const ChatWidget = () => {
                                     />
                                     <input
                                         type="tel"
-                                        placeholder="Seu telefone (ex: +41 76 683 05 15)"
+                                        placeholder="Seu telefone (ex: +41 77 900 01 21)"
                                         className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
                                         value={formData.phone}
                                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
