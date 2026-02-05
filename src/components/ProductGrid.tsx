@@ -148,13 +148,19 @@ const ProductGrid = () => {
     );
   } else if (brandParam) {
     if (brandParam === "ACESSORIOS") {
-      filteredProducts = products.filter((product) =>
-        (product.brand as string) === "ACESSORIOS" ||
-        product.category === "Acessórios" ||
-        product.groups?.includes("ACESSÓRIOS") ||
-        // Fallback robusto para garantir que a escova apareça
-        product.id === 800
-      );
+      filteredProducts = products.filter((product) => {
+        const pBrand = (product.brand || "").toString().toUpperCase();
+        const pCat = (product.category || "").toString().toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+        const pGroup = (product.groups || []).map(g => g.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ""));
+
+        return (
+          pBrand === "ACESSORIOS" ||
+          pCat === "ACESSORIOS" ||
+          pGroup.includes("ACESSORIOS") ||
+          // Fallback robusto para garantir que a escova apareça
+          product.id === 800
+        );
+      });
     } else {
       filteredProducts = products.filter((product) =>
         product.brand === brandParam
