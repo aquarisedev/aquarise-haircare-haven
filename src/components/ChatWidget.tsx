@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import { chatwootService, Message } from "../services/chatwoot";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 // --- Funções Auxiliares para Cookies e UUID ---
 const generateUUID = () => {
@@ -39,6 +40,7 @@ const COOKIE_USER_NAME = "chat_user_name";
 const COOKIE_USER_PHONE = "chat_user_phone";
 
 const ChatWidget = () => {
+    const { t, i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [view, setView] = useState<"form" | "chat">("form"); // 'form' ou 'chat'
 
@@ -54,6 +56,19 @@ const ChatWidget = () => {
 
     const scrollRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
+
+    const languages = [
+        { code: 'pt-BR', flag: '🇧🇷' },
+        { code: 'pt-PT', flag: '🇵🇹' },
+        { code: 'fr-CH', flag: '🇨🇭' },
+        { code: 'en', flag: '🇺🇸' },
+        { code: 'es', flag: '🇪🇸' },
+        { code: 'fr', flag: '🇫🇷' },
+    ];
+
+    const handleLanguageChange = (langCode: string) => {
+        i18n.changeLanguage(langCode);
+    };
 
     useEffect(() => {
         // 1. Inicializar ID do Usuário
@@ -207,7 +222,7 @@ const ChatWidget = () => {
 
         try {
             // 1. Criar/Atualizar Contato
-            const contact = await chatwootService.createContact(sourceId, formData.name, formData.email, formData.phone);
+            const contact = await chatwootService.createContact(sourceId, formData.name, formData.email, formData.phone, i18n.language);
 
             // 2. Criar Conversa
             // Nota: A lógica de criação de conversa pode variar dependendo da versão da API.
@@ -258,7 +273,8 @@ const ChatWidget = () => {
                     formData.phone,               // Telefone do remetente
                     formData.name,                // Nome do remetente
                     tempContent,                  // Conteúdo da mensagem
-                    formData.email                // Email do remetente
+                    formData.email,               // Email do remetente
+                    i18n.language                 // Idioma atual
                 );
             }
 
@@ -268,24 +284,7 @@ const ChatWidget = () => {
         }
     };
 
-    const handleResetChat = () => {
-        // Limpar todos os cookies do chat
-        document.cookie = COOKIE_USER_ID + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = COOKIE_CONV_ID + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = COOKIE_USER_NAME + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        document.cookie = COOKIE_USER_PHONE + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 
-        // Resetar estados
-        setFormData({ name: "", email: "", phone: "" });
-        setMessages([]);
-        setConversationId("");
-        setView("form");
-
-        // Gerar novo UUID
-        const newUuid = generateUUID();
-        setCookie(COOKIE_USER_ID, newUuid, 365);
-        setSourceId(newUuid);
-    };
 
     return (
         <>
@@ -305,28 +304,13 @@ const ChatWidget = () => {
                     {/* Cabeçalho */}
                     <div className="gradient-primary p-4 flex justify-between items-center text-white shrink-0">
                         <div>
-                            <h3 className="font-heading font-semibold text-lg">Aquarise Shop</h3>
-                            <p className="text-xs opacity-90">Atendimento Online</p>
+                            <h3 className="font-heading font-semibold text-lg">{t('chat.title')}</h3>
+                            <p className="text-xs opacity-90">{t('chat.subtitle')}</p>
                         </div>
-                        <div className="flex gap-2">
-                            {view === "chat" && (
-                                <button
-                                    onClick={handleResetChat}
-                                    className="hover:bg-white/20 rounded-full p-1 transition-colors"
-                                    title="Reiniciar chat"
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-                                        <path d="M21 3v5h-5" />
-                                        <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-                                        <path d="M3 21v-5h5" />
-                                    </svg>
-                                </button>
-                            )}
-                            <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 rounded-full p-1 transition-colors">
-                                <X className="w-5 h-5" />
-                            </button>
-                        </div>
+
+                        <button onClick={() => setIsOpen(false)} className="hover:bg-white/20 rounded-full p-1 transition-colors">
+                            <X className="w-5 h-5" />
+                        </button>
                     </div>
 
                     {/* Corpo */}
@@ -335,13 +319,28 @@ const ChatWidget = () => {
                         {/* VISUALIZAÇÃO: FORMULÁRIO */}
                         {view === "form" && (
                             <div className="p-6 h-full flex flex-col justify-center">
+                                {/* Seletor de Idioma */}
+                                <div className="flex justify-center gap-3 mb-6">
+                                    {languages.map((lang) => (
+                                        <button
+                                            key={lang.code}
+                                            onClick={() => handleLanguageChange(lang.code)}
+                                            className={`text-2xl hover:scale-125 transition-transform duration-200 ${i18n.language === lang.code ? 'scale-125 grayscale-0' : 'grayscale opacity-70 hover:grayscale-0 hover:opacity-100'
+                                                }`}
+                                            title={lang.code}
+                                        >
+                                            {lang.flag}
+                                        </button>
+                                    ))}
+                                </div>
+
                                 <p className="text-sm text-gray-600 mb-6 text-center">
-                                    Olá! Preencha seus dados abaixo para falar com nossa Inteligência Artificial ou com um atendente.
+                                    {t('chat.welcome')}
                                 </p>
                                 <form onSubmit={handleStartChat} className="space-y-4">
                                     <input
                                         type="text"
-                                        placeholder="Seu nome"
+                                        placeholder={t('chat.name')}
                                         className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
                                         value={formData.name}
                                         onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
@@ -349,7 +348,7 @@ const ChatWidget = () => {
                                     />
                                     <input
                                         type="email"
-                                        placeholder="Seu email"
+                                        placeholder={t('chat.email')}
                                         className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
                                         value={formData.email}
                                         onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
@@ -357,7 +356,7 @@ const ChatWidget = () => {
                                     />
                                     <input
                                         type="tel"
-                                        placeholder="Seu telefone (ex: +41 77 900 01 21)"
+                                        placeholder={t('chat.phone')}
                                         className="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50"
                                         value={formData.phone}
                                         onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
@@ -368,7 +367,7 @@ const ChatWidget = () => {
                                         disabled={loading}
                                         className="w-full gradient-primary text-white font-medium py-3 rounded-lg shadow-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
                                     >
-                                        {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <span>Iniciar Conversa</span>}
+                                        {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <span>{t('chat.start')}</span>}
                                     </button>
                                 </form>
                             </div>
@@ -431,7 +430,7 @@ const ChatWidget = () => {
                                         <input
                                             type="text"
                                             className="flex-1 px-4 py-2 bg-gray-50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/30"
-                                            placeholder="Digite sua mensagem..."
+                                            placeholder={t('chat.input_placeholder')}
                                             value={newMessage}
                                             onChange={(e) => setNewMessage(e.target.value)}
                                         />
@@ -448,7 +447,7 @@ const ChatWidget = () => {
                         )}
 
                     </div>
-                </div>
+                </div >
             )}
         </>
     );

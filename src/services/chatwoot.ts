@@ -21,7 +21,7 @@ export interface Message {
 export const chatwootService = {
     // 1. Criar ou Obter Contato
     // Usa o uuid para identificar o usuário de forma persistente
-    async createContact(sourceId: string, name: string, email: string, phone: string) {
+    async createContact(sourceId: string, name: string, email: string, phone: string, language: string = 'fr-CH') {
         try {
             const response = await fetch(`${BASE_URL}/public/api/v1/inboxes/${INBOX_IDENTIFIER}/contacts`, {
                 method: "POST",
@@ -33,7 +33,9 @@ export const chatwootService = {
                     phone_number: phone,
                     custom_attributes: {
                         telefoneSITE: phone,
-                        telefone: phone
+                        telefone: phone,
+                        language: language,
+                        idioma: language
                     }
                 }),
             });
@@ -94,11 +96,9 @@ export const chatwootService = {
 
     // 5. Enviar para Webhook do n8n
     // Envia os dados no formato esperado pelo workflow "01. Secretária"
-    async sendToWebhook(messageId: number, conversationId: number, contactId: number, senderPhone: string, senderName: string, content: string, senderEmail?: string) {
+    async sendToWebhook(messageId: number, conversationId: number, contactId: number, senderPhone: string, senderName: string, content: string, senderEmail?: string, language: string = 'fr-CH') {
         try {
             const webhookURL = "/api/webhook"; // Proxy local que redireciona para n8n
-
-
 
             const payload = {
                 body: {
@@ -121,7 +121,12 @@ export const chatwootService = {
                         identifier: null,
                         thumbnail: "",
                         avatar: "",
-                        custom_attributes: {},
+                        custom_attributes: {
+                            telefoneSITE: senderPhone,
+                            telefone: senderPhone,
+                            language: language,
+                            idioma: language
+                        },
                         additional_attributes: {},
                         blocked: false
                     },
